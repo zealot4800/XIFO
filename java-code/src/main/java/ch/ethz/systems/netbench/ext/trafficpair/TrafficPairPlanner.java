@@ -15,7 +15,7 @@ import java.util.Map;
 public class TrafficPairPlanner extends TrafficPlanner {
 
     private final long flowSizeByte;
-
+    private final String serviceId;
     private String fileName;
     private List<TrafficPair> trafficPairs;
     private final boolean useFile;
@@ -33,12 +33,13 @@ public class TrafficPairPlanner extends TrafficPlanner {
      *
      * @param trafficPairsFileName  File name of the traffic pairs file
      */
-    public TrafficPairPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, String trafficPairsFileName, long flowSizeByte) {
+    public TrafficPairPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, String trafficPairsFileName, long flowSizeByte, String serviceId) {
         super (idToTransportLayerMap);
         this.fileName = trafficPairsFileName;
         this.useFile = true;
         SimulationLogger.logInfo("Flow planner", "TRAFFIC_PAIR_FILE");
         this.flowSizeByte = flowSizeByte;
+        this.serviceId = serviceId;
     }
 
     /**
@@ -46,11 +47,12 @@ public class TrafficPairPlanner extends TrafficPlanner {
      *
      * @param trafficPairs  Traffic pairs
      */
-    public TrafficPairPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, List<TrafficPair> trafficPairs, long flowSizeByte) {
+    public TrafficPairPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, List<TrafficPair> trafficPairs, long flowSizeByte, String serviceId) {
         super (idToTransportLayerMap);
         this.trafficPairs = trafficPairs;
         this.useFile = false;
         this.flowSizeByte = flowSizeByte;
+        this.serviceId = serviceId;
         SimulationLogger.logInfo("Flow planner", "TRAFFIC_PAIR_LIST(flowSizeByte=" + flowSizeByte + ", pairs=" + trafficPairs + ")");
     }
 
@@ -84,7 +86,7 @@ public class TrafficPairPlanner extends TrafficPlanner {
                 int dstId = Integer.valueOf(match[1]);
 
                 // Register the flow immediately
-                registerFlow(0, srcId, dstId, flowSizeByte);
+                registerFlow(0, srcId, dstId, flowSizeByte, serviceId);
 
             }
 
@@ -102,7 +104,7 @@ public class TrafficPairPlanner extends TrafficPlanner {
      */
     private void createPlanFromPairList() {
         for (TrafficPair pair : trafficPairs) {
-            registerFlow(0, pair.getFrom(), pair.getTo(), flowSizeByte);
+            registerFlow(0, pair.getFrom(), pair.getTo(), flowSizeByte, serviceId);
         }
     }
 

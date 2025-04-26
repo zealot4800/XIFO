@@ -18,8 +18,8 @@ set key opaque
 plot "projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_99th_fct_ms.dat" using 4 title "PIFO" w lp  ls 21 lw 4, \
             '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
             '' using 3 title "DCTCP" w lp ls 27 lw 4, \
-            '' using 2 title "TCP"  w lp ls 28 lw 4
-
+            '' using 2 title "TCP"  w lp ls 28 lw 4, \
+            '' using 6 title "XIFO" w lp ls 29 lw 4
 
 ########################################################################################################################
 # Mean flow completion time <100KB: pFabric-based scheduling schemes
@@ -34,7 +34,8 @@ set key opaque
 plot "projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_mean_fct_ms.dat" using 4 title "PIFO" w lp  ls 21 lw 4, \
             '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
             '' using 3 title "DCTCP" w lp ls 27 lw 4, \
-            '' using 2 title "TCP"  w lp ls 28 lw 4
+            '' using 2 title "TCP"  w lp ls 28 lw 4, \
+            '' using 6 title "XIFO" w lp ls 29 lw 4
 
 ########################################################################################################################
 # Mean flow completion time >10MB: pFabric-based scheduling schemes
@@ -49,4 +50,5 @@ set key opaque
 plot "projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_geq_1MB_mean_fct_ms.dat" using 4 title "PIFO" w lp  ls 21 lw 4, \
             '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
             '' using 3 title "DCTCP" w lp ls 27 lw 4, \
-            '' using 2 title "TCP"  w lp ls 28 lw 4
+            '' using 2 title "TCP"  w lp ls 28 lw 4, \
+            '' using 6 title "XIFO" w lp ls 29 lw 4

@@ -96,7 +96,7 @@ public class TcpResendTest {
         }).when(networkDeviceReceiver).receiveFromTransportLayer(receiverOutgoingPacketCaptor.capture());
 
         // Start a flow from 0 to 1 of size <bytes>
-        Simulator.registerEvent(new FlowStartEvent(0, senderLayer, 1, 700));
+        Simulator.registerEvent(new FlowStartEvent(0, senderLayer, 1, 700, "YT"));
 
         // Run the simulator for a 7 nanoseconds to allow a resend to happen
         Simulator.runNs(7);

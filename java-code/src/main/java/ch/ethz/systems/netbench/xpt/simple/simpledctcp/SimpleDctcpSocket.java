@@ -13,7 +13,6 @@ public class SimpleDctcpSocket extends SimpleTcpSocket {
     private long totalBytes;
     private long markedBytes;
     private long alphaUpdateWindow;
-
     /**
      * Create a TCP socket. By default, it is the receiver.
      * Use the {@link #start() start} method to make the socket a
@@ -24,9 +23,10 @@ public class SimpleDctcpSocket extends SimpleTcpSocket {
      * @param sourceId       Source network device identifier
      * @param destinationId  Target network device identifier
      * @param flowSizeByte   Size of the flow in bytes
+     * @param serviceId
      */
-    SimpleDctcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte) {
-        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte);
+    SimpleDctcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte, String serviceId) {
+        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte, serviceId);
         this.DCTCP_WEIGHT_NEW_ESTIMATION = Simulator.getConfiguration().getDoublePropertyWithDefault("DCTCP_WEIGHT_NEW_ESTIMATION", 0.0625);
         this.DCTCP_WEIGHT_OLD_ESTIMATION = 1.0 - DCTCP_WEIGHT_NEW_ESTIMATION;
         this.alphaFraction = 0.0;

@@ -15,6 +15,7 @@ public class FlowLogger {
     private final int sourceId;
     private final int targetId;
     private final long flowSizeByte;
+    private final String serviceId;
 
     // Statistic tracking variables
     private long totalBytesReceived;
@@ -26,11 +27,12 @@ public class FlowLogger {
     // Logging
     private final boolean flowThroughputEnabled;
 
-    public FlowLogger(long flowId, int sourceId, int targetId, long flowSizeByte) {
+    public FlowLogger(long flowId, int sourceId, int targetId, long flowSizeByte, String serviceId) {
         this.flowId = flowId;
         this.sourceId = sourceId;
         this.targetId = targetId;
         this.flowSizeByte = flowSizeByte;
+        this.serviceId = serviceId;
 
         this.flowStartTime = Simulator.getCurrentTime();
         this.measureStartTime = Simulator.getCurrentTime();
@@ -131,7 +133,14 @@ public class FlowLogger {
     long getFlowSizeByte() {
         return flowSizeByte;
     }
-
+    /**
+     * Retrieve service identifier.
+     *
+     * @return  Service identifier
+     */
+    String getServiceId() {
+        return serviceId;
+    }
     /**
      * Check whether the flow is completed (all bytes acknowledged/confirmed).
      *

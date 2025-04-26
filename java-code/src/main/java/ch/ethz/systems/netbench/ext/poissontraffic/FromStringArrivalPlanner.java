@@ -24,7 +24,7 @@ public class FromStringArrivalPlanner extends TrafficPlanner {
 
     /**
      * Creates plan based on the given string:
-     * (start_time, src_id, dst_id, flow_size_byte);(start_time, src_id, dst_id, flow_size_byte);...
+     * (start_time, src_id, dst_id, flow_size_byte, serviceId);(start_time, src_id, dst_id, flow_size_byte, serviceId);...
      *
      * @param durationNs    Duration in nanoseconds
      */
@@ -40,7 +40,8 @@ public class FromStringArrivalPlanner extends TrafficPlanner {
                 Long.valueOf(arrivalSpl[0].trim()),
                 Integer.valueOf(arrivalSpl[1].trim()),
                 Integer.valueOf(arrivalSpl[2].trim()),
-                Long.valueOf(arrivalSpl[3].trim())
+                Long.valueOf(arrivalSpl[3].trim()),
+                String.valueOf(arrivalSpl[4])
             );
 
         }

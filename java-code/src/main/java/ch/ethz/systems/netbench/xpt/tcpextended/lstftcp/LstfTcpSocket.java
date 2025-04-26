@@ -15,8 +15,8 @@ public class LstfTcpSocket extends NewRenoTcpSocket {
     private String rankDistribution;
     private long rankBound;
 
-    public LstfTcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte, String rankDistribution, long rankBound) {
-        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte);
+    public LstfTcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte, String rankDistribution, long rankBound, String serviceId) {
+        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte, serviceId);
         this.rankDistribution = rankDistribution;
         this.rankBound = rankBound;
     }
@@ -99,7 +99,8 @@ public class LstfTcpSocket extends NewRenoTcpSocket {
             false, ACK, false, // URG, ACK, PSH
             false, SYN, false, // RST, SYN, FIN
             0, // Window size
-            priority
+            priority,
+            serviceId
         );
 
     }

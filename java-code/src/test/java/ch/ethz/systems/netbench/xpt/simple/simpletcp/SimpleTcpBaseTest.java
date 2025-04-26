@@ -60,7 +60,7 @@ public class SimpleTcpBaseTest {
         receiverLayer.setNetworkDevice(networkDeviceReceiver);
 
         // Start a flow from 88 to 77 of size 1000
-        senderLayer.startFlow(77, 1000);
+        senderLayer.startFlow(77, 1000, "YT");
 
         // Make sure that the first SYN of the three-way handshake is sent
         verify(networkDeviceSender, times(1)).receiveFromTransportLayer(packetCaptor.capture());

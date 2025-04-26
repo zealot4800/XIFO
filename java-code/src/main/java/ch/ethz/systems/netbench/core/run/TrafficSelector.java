@@ -33,6 +33,7 @@ class TrafficSelector {
             case "poisson_arrival":
 
                 FlowSizeDistribution flowSizeDistribution;
+                ServiceDistribution serviceDistribution;
                 switch (Simulator.getConfiguration().getPropertyOrFail("traffic_flow_size_dist")) {
 
                     case "pfabric_data_mining_lower_bound": {
@@ -86,7 +87,11 @@ class TrafficSelector {
                     }
 
                 }
-
+                switch (Simulator.getConfiguration().getPropertyOrFail("Quality_of_service")){
+                    default:
+                        serviceDistribution = new PfabricServiceType();
+                        break;
+                }
                 // Attempt to retrieve pair probabilities file
                 String pairProbabilitiesFile = Simulator.getConfiguration().getPropertyWithDefault("traffic_probabilities_file", null);
 
@@ -97,6 +102,7 @@ class TrafficSelector {
 	                        idToTransportLayer,
 	                        Simulator.getConfiguration().getIntegerPropertyOrFail("traffic_lambda_flow_starts_per_s"),
 	                        flowSizeDistribution,
+                            serviceDistribution,
                             Simulator.getConfiguration().getPropertyOrFail("traffic_probabilities_file")
 	                );
 
@@ -107,11 +113,11 @@ class TrafficSelector {
 
                     switch (generativePairProbabilities) {
                         case "all_to_all":
-
                             return new PoissonArrivalPlanner(
                                     idToTransportLayer,
                                     Simulator.getConfiguration().getIntegerPropertyOrFail("traffic_lambda_flow_starts_per_s"),
                                     flowSizeDistribution,
+                                    serviceDistribution,
                                     PoissonArrivalPlanner.PairDistribution.ALL_TO_ALL
                             );
 
@@ -120,6 +126,7 @@ class TrafficSelector {
                                     idToTransportLayer,
                                     Simulator.getConfiguration().getIntegerPropertyOrFail("traffic_lambda_flow_starts_per_s"),
                                     flowSizeDistribution,
+                                    serviceDistribution,
                                     PoissonArrivalPlanner.PairDistribution.ALL_TO_ALL_FRACTION
                             );
 
@@ -128,6 +135,7 @@ class TrafficSelector {
                                     idToTransportLayer,
                                     Simulator.getConfiguration().getIntegerPropertyOrFail("traffic_lambda_flow_starts_per_s"),
                                     flowSizeDistribution,
+                                    serviceDistribution,
                                     PoissonArrivalPlanner.PairDistribution.ALL_TO_ALL_SERVER_FRACTION
                             );
 
@@ -136,6 +144,7 @@ class TrafficSelector {
                                     idToTransportLayer,
                                     Simulator.getConfiguration().getIntegerPropertyOrFail("traffic_lambda_flow_starts_per_s"),
                                     flowSizeDistribution,
+                                    serviceDistribution,
                                     PoissonArrivalPlanner.PairDistribution.PAIRINGS_FRACTION
                             );
                             
@@ -144,6 +153,7 @@ class TrafficSelector {
                                     idToTransportLayer,
                                     Simulator.getConfiguration().getDoublePropertyOrFail("traffic_lambda_flow_starts_per_s"),
                                     flowSizeDistribution,
+                                    serviceDistribution,
                                     PoissonArrivalPlanner.PairDistribution.PARETO_SKEW_DISTRIBUTION
                             );
 
@@ -152,6 +162,7 @@ class TrafficSelector {
                                     idToTransportLayer,
                                     Simulator.getConfiguration().getIntegerPropertyOrFail("traffic_lambda_flow_starts_per_s"),
                                     flowSizeDistribution,
+                                    serviceDistribution,
                                     PoissonArrivalPlanner.PairDistribution.DUAL_ALL_TO_ALL_FRACTION
                             );
 
@@ -160,6 +171,7 @@ class TrafficSelector {
                                     idToTransportLayer,
                                     Simulator.getConfiguration().getIntegerPropertyOrFail("traffic_lambda_flow_starts_per_s"),
                                     flowSizeDistribution,
+                                    serviceDistribution,
                                     PoissonArrivalPlanner.PairDistribution.DUAL_ALL_TO_ALL_SERVER_FRACTION
                             );
 
@@ -181,7 +193,8 @@ class TrafficSelector {
                                 TrafficPairPlanner.generateAllToAll(
                                         Simulator.getConfiguration().getGraphDetails().getNumNodes()
                                 ),
-                                Simulator.getConfiguration().getLongPropertyOrFail("traffic_pair_flow_size_byte")
+                                Simulator.getConfiguration().getLongPropertyOrFail("traffic_pair_flow_size_byte"),
+                                Simulator.getConfiguration().getPropertyOrFail("traffic_pair_serviceId")
                         );
 
                     case "stride":
@@ -191,7 +204,8 @@ class TrafficSelector {
                                         Simulator.getConfiguration().getGraphDetails().getNumNodes(),
                                         Simulator.getConfiguration().getIntegerPropertyOrFail("traffic_pair_stride")
                                 ),
-                                Simulator.getConfiguration().getLongPropertyOrFail("traffic_pair_flow_size_byte")
+                                Simulator.getConfiguration().getLongPropertyOrFail("traffic_pair_flow_size_byte"),
+                                Simulator.getConfiguration().getPropertyOrFail("traffic_pair_serviceId")
                         );
 
                     case "custom":
@@ -203,7 +217,8 @@ class TrafficSelector {
                         return new TrafficPairPlanner(
                                 idToTransportLayer,
                                 pairs,
-                                Simulator.getConfiguration().getLongPropertyOrFail("traffic_pair_flow_size_byte")
+                                Simulator.getConfiguration().getLongPropertyOrFail("traffic_pair_flow_size_byte"),
+                                Simulator.getConfiguration().getPropertyOrFail("traffic_pair_serviceId")
                         );
                 }
 

@@ -29,11 +29,11 @@ public class EventTest {
     public void testQueueOrder() {
 
         // Events
-        Event e1 = new FlowStartEvent(1000, null, 0, 0);
-        Event e2 = new FlowStartEvent(0, null, 0, 0);
-        Event e3 = new FlowStartEvent(848, null, 0, 0);
-        Event e4 = new FlowStartEvent(1000, null, 0, 0);
-        Event e5 = new FlowStartEvent(999999, null, 0, 0);
+        Event e1 = new FlowStartEvent(1000, null, 0, 0,"YT");
+        Event e2 = new FlowStartEvent(0, null, 0, 0, "YT");
+        Event e3 = new FlowStartEvent(848, null, 0, 0, "YT");
+        Event e4 = new FlowStartEvent(1000, null, 0, 0, "YT");
+        Event e5 = new FlowStartEvent(999999, null, 0, 0, "YT");
 
         // Create queue
         PriorityQueue<Event> queue = new PriorityQueue<>();

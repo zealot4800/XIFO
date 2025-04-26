@@ -2,7 +2,7 @@ import numpy as np
 import csv
 import sys
 import os
-
+from collections import defaultdict
 
 ##################################
 # Setup
@@ -54,7 +54,8 @@ def analyze_flow_completion():
         end_time = []
         duration = []
         completed = []
-
+        service_ids = []
+        
         print("Reading in flow completion log file...")
 
         # Read in column lists
@@ -68,11 +69,11 @@ def analyze_flow_completion():
             end_time.append(float(row[6]))
             duration.append(float(row[7]))
             completed.append(row[8] == 'TRUE')
-
-            if len(row) != 9:
+            service_ids.append(row[9])
+            if len(row) != 10:
                 print("Invalid row: ", row)
                 exit()
-
+        
         print("Calculating statistics...")
 
         statistics = {
@@ -135,6 +136,36 @@ def analyze_flow_completion():
                 statistics[range_name[j] + '_throughput_0.1th_Gbps'] = np.percentile(range_completed_throughput[j], 0.1)
             else:
                 statistics[range_name[j] + '_flows_completed_fraction'] = 0
+
+
+        # Below code is for the seviceTime
+        # Services Statics
+        service_flow_size = defaultdict(list)
+        service_durations = defaultdict(list)
+        service_num_flows = defaultdict(int)
+
+        # Collect statistics per service
+        for i in range(0, len(flow_ids)):
+            sid = service_ids[i]
+            if sid not in service_flow_size:
+                service_flow_size[sid] = 0  
+            if sid not in service_durations:
+                service_durations[sid] = 0  
+            
+            service_flow_size[sid] += total_size_bytes[i]
+            service_durations[sid] += duration[i]
+            service_num_flows[sid] += 1
+        
+        print(service_durations)
+        print(service_flow_size)
+        print(service_num_flows)
+        # New: Add service-specific statistics
+        for sid in service_flow_size.keys():
+            statistics[f'service_{sid}_num_flows'] = service_num_flows[sid]
+            statistics[f'service_{sid}_mean_fct_ns'] = np.mean(service_durations[sid])
+            statistics[f'service_{sid}_median_fct_ns'] = np.median(service_durations[sid])
+            statistics[f'service_{sid}_99th_fct_ns'] = np.percentile(service_durations[sid], 99)
+            statistics[f'service_{sid}_99.9th_fct_ns'] = np.percentile(service_durations[sid], 99.9)
 
         # Print raw results
         print('Writing to result file flow_completion.statistics...')

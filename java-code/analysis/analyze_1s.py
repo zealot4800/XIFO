@@ -2,6 +2,7 @@ import numpy as np
 import csv
 import sys
 import os
+from collections import defaultdict
 
 
 ##################################
@@ -54,6 +55,7 @@ def analyze_flow_completion():
         end_time = []
         duration = []
         completed = []
+        service_ids = []
 
         print("Reading in flow completion log file...")
 
@@ -71,7 +73,8 @@ def analyze_flow_completion():
                 end_time.append(float(row[6]))
                 duration.append(float(row[7]))
                 completed.append(row[8] == 'TRUE')
-                if len(row) != 9:
+                service_ids.append(row[9])
+                if len(row) != 10:
                     print("Invalid row: ", row)
                     exit()
 
@@ -145,6 +148,32 @@ def analyze_flow_completion():
         with open(analysis_folder_path + '/flow_completion.statistics', 'w+') as outfile:
             for key, value in sorted(statistics.items()):
                 outfile.write(str(key) + "=" + str(value) + "\n")
+
+        # Below code is for the seviceTime
+        # Services Statics
+        service_flow_size = defaultdict(list)
+        service_durations = defaultdict(list)
+        service_num_flows = defaultdict(int)
+
+        # Collect statistics per service
+        for i in range(0, len(flow_ids)):
+            sid = service_ids[i]
+            service_flow_size[sid].append(total_size_bytes[i])
+            service_durations[sid].append(duration[i])
+            service_num_flows[sid] += 1
+        
+        # New: Add service-specific statistics
+        for sid in service_flow_size.keys():
+            statistics[f'service_{sid}_num_flows'] = service_num_flows[sid]
+            statistics[f'service_{sid}_mean_fct_ns'] = np.mean(service_durations[sid])
+            statistics[f'service_{sid}_median_fct_ns'] = np.median(service_durations[sid])
+            statistics[f'service_{sid}_99th_fct_ns'] = np.percentile(service_durations[sid], 99)
+            statistics[f'service_{sid}_99.9th_fct_ns'] = np.percentile(service_durations[sid], 99.9)
+        
+        with open(analysis_folder_path + 'flow_completion.statistics', 'w+') as outfile:
+            for key, value in sorted(statistics.items()):
+                if key.startswith('service_'):
+                    outfile.write(str(key) + "=" + str(value) + "\n")
 
 
 ##################################

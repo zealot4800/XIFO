@@ -40,7 +40,8 @@ public class TcpPacketTest {
                 473737, 373, // Seq number, Ack number
                 false, false, false, false, true, false, false, false, false,
                 // NS  CWR    ECE    URG    ACK   PSH    RST    SYN    FIN
-                4262, 892 // Window size
+                4262, 892, // Window size
+                "YT"
         );
 
         // Default getters
@@ -117,7 +118,8 @@ public class TcpPacketTest {
                     473737, 373, // Seq number, Ack number
                     false, false, false, false, true, false, false, false, false,
                     // NS  CWR    ECE    URG    ACK   PSH    RST    SYN    FIN
-                    4262, 0 // Window size
+                    4262, 0, // Window size
+                    "YT"
             );
             packet1.setFlowletId(r.nextInt());
             packet1.setHashSrcDstFlowletDependent();
@@ -152,7 +154,8 @@ public class TcpPacketTest {
                     473737, 373, // Seq number, Ack number
                     false, false, false, false, true, false, false, false, false,
                     // NS  CWR    ECE    URG    ACK   PSH    RST    SYN    FIN
-                    4262, 0 // Window size
+                    4262, 0, // Window size
+                    "YT"
             );
             packet1.setFlowletId(i);
             packet1.setHashSrcDstFlowFlowletDependent();
@@ -221,7 +224,8 @@ public class TcpPacketTest {
                             473737, 373, // Seq number, Ack number
                             false, false, false, false, true, false, false, false, false,
                             // NS  CWR    ECE    URG    ACK   PSH    RST    SYN    FIN
-                            4262, 0 // Window size
+                            4262, 0, // Window size
+                            "YT"
                     );
                     packet1.setFlowletId(j);
                     packet1.setHashSrcDstFlowFlowletDependent();

@@ -26,9 +26,10 @@ public class DemoSocket extends Socket {
      * @param sourceId       Source network device identifier
      * @param destinationId  Target network device identifier
      * @param flowSizeByte   Size of the flow in bytes
+     * @param serviceId
      */
-    DemoSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte) {
-        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte);
+    DemoSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte, String serviceId) {
+        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte, serviceId);
     }
 
     @Override

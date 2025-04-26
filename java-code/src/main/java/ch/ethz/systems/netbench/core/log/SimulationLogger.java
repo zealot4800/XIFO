@@ -408,17 +408,11 @@ public class SimulationLogger {
             // Header
             if (logHumanReadableFlowCompletionEnabled) {
                 writerFlowCompletionFile.write(
-                        String.format(
-                                "%-11s%-6s%-6s%-13s%-13s%-15s%-10s\n",
-                                "FlowId",
-                                "Src",
-                                "Dst",
-                                "Sent (byte)",
-                                "Total (byte)",
-                                "Duration (ms)",
-                                "Progress"
-                        )
-                );
+                    String.format(
+                            "%-11s%-6s%-6s%-13s%-13s%-15s%-10s%-10s%-10s\n",
+                            "FlowId", "Src", "Dst", "Sent (byte)", "Total (byte)", "Duration (ms)", "Status", "Progress", "ServiceId"
+                    )
+            );            
             }
 
             // Sort them based on starting time
@@ -441,7 +435,7 @@ public class SimulationLogger {
                 if (logHumanReadableFlowCompletionEnabled) {
                     writerFlowCompletionFile.write(
                             String.format(
-                                    "%-11s%-6s%-6s%-13s%-13s%-8.2f%-7s%.2f%%\n",
+                                    "%-11s%-6s%-6s%-13s%-13s%-15s%-10s%-10s%-10s\n",
                                     logger.getFlowId(),
                                     logger.getSourceId(),
                                     logger.getTargetId(),
@@ -449,7 +443,8 @@ public class SimulationLogger {
                                     logger.getFlowSizeByte(),
                                     (logger.isCompleted() ? (logger.getFlowEndTime() - logger.getFlowStartTime()) / 1e6 : (Simulator.getCurrentTime() - logger.getFlowStartTime()) / 1e6),
                                     (logger.isCompleted() ? "" : " (DNF)"),
-                                    ((double) logger.getTotalBytesReceived() / (double) logger.getFlowSizeByte()) * 100
+                                    ((double) logger.getTotalBytesReceived() / (double) logger.getFlowSizeByte()) * 100,
+                                    logger.getServiceId()
                             )
                     );
                 }
@@ -464,7 +459,8 @@ public class SimulationLogger {
                                 logger.getFlowStartTime() + "," +
                                 (logger.isCompleted() ? logger.getFlowEndTime() : Simulator.getCurrentTime()) + "," +
                                 (logger.isCompleted() ? (logger.getFlowEndTime() - logger.getFlowStartTime()) : (Simulator.getCurrentTime() - logger.getFlowStartTime())) + "," +
-                                (logger.isCompleted() ? "TRUE" : "FALSE") + "\n"
+                                (logger.isCompleted() ? "TRUE" : "FALSE") + "," +
+                                logger.getServiceId() + "\n"
                 );
 
             }

@@ -53,9 +53,10 @@ public class BareSocket extends Socket {
      * @param sourceId       Source network device identifier
      * @param destinationId  Target network device identifier
      * @param flowSizeByte   Size of the flow in bytes
+     * @param serviceId 
      */
-    BareSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte) {
-        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte);
+    BareSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte, String serviceId) {
+        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte, serviceId);
         this.slowStartThreshold = 30000;
         this.congestionWindow = 3 * 1380;
         this.sendNextNumber = 0;
@@ -90,7 +91,8 @@ public class BareSocket extends Socket {
                     packet.getSequenceNumber() + packet.getDataSizeByte(),
                     packet.getECN(),
                     true,
-                    0
+                    0,
+                    serviceId
             ));
 
         // As sender, save that flow is confirmed, and send another packet out
@@ -190,7 +192,8 @@ public class BareSocket extends Socket {
                     0,
                     false,
                     false,
-                    congestionWindow
+                    congestionWindow,
+                    serviceId
             ));
 
             // Determine next amount to send
@@ -371,7 +374,8 @@ public class BareSocket extends Socket {
                 ackNumber,
                 ECE,
                 ACK,
-                congestionWindow
+                congestionWindow,
+                serviceId
         );
     }
 

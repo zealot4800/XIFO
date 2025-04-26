@@ -14,9 +14,10 @@ public class PfzeroSocket extends NewRenoTcpSocket {
     	int sourceId,
     	int destinationId,
     	long flowSizeByte,
-    	long seed
+    	long seed,
+        String serviceId
     ) {
-		super(transportLayer, flowId, sourceId, destinationId, flowSizeByte);
+		super(transportLayer, flowId, sourceId, destinationId, flowSizeByte, serviceId);
 		//6*(1200 + 96)*2*3
 		this.roundTripTimeout = 23328L;
 		this.congestionWindow = this.slowStartThreshold;
@@ -39,7 +40,8 @@ public class PfzeroSocket extends NewRenoTcpSocket {
             false, ACK, false, // URG, ACK, PSH
             false, SYN, false, // RST, SYN, FIN
             0, // Window size
-            0
+            0,
+            serviceId
         );
     }
 

@@ -115,7 +115,7 @@ public class SimpleTcpSequenceTest {
         }).when(networkDeviceReceiver).receiveFromTransportLayer(receiverOutgoingPacketCaptor.capture());
 
         // Start a flow from 0 to 1 of size <bytes>
-        senderLayer.startFlow(1, flowSizeByte);
+        senderLayer.startFlow(1, flowSizeByte, "YT");
 
         ////////////////////////////////
         // Sender outgoing packets check

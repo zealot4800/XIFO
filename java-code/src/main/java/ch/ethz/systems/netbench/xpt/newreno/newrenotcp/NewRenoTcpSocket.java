@@ -143,9 +143,10 @@ public class NewRenoTcpSocket extends Socket {
      * @param sourceId          Source network device identifier
      * @param destinationId     Target network device identifier
      * @param flowSizeByte      Size of the flow in bytes
+     * @param serviceId
      */
-    public NewRenoTcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte) {
-        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte);
+    public NewRenoTcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte, String serviceId) {
+        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte, serviceId);
 
         // Load in TCP constant parameters
 
@@ -970,7 +971,7 @@ public class NewRenoTcpSocket extends Socket {
      * @param ACK               True iff carries acknowledgment
      * @param SYN               True iff is a synchronization packet
      * @param ECE               True iff it wants to let other party know there congestion was encountered
-     *
+     * @param serviceId
      * @return  TCP packet instance
      */
     protected FullExtTcpPacket createPacket(
@@ -988,7 +989,8 @@ public class NewRenoTcpSocket extends Socket {
                 false, false, ECE, // NS, CWR, ECE
                 false, ACK, false, // URG, ACK, PSH
                 false, SYN, false, // RST, SYN, FIN
-                congestionWindow, 0 // Window size, Priority
+                congestionWindow, 0, // Window size, Priority
+                serviceId
         );
     }
 

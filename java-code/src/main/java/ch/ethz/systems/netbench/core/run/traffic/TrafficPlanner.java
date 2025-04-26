@@ -34,7 +34,7 @@ public abstract class TrafficPlanner {
      * @param dstId         Destination network device identifier
      * @param flowSizeByte  Flow size in bytes
      */
-    protected void registerFlow(long time, int srcId, int dstId, long flowSizeByte) {
+    protected void registerFlow(long time, int srcId, int dstId, long flowSizeByte, String serviceId) {
 
         // Some checking
         if (srcId == dstId) {
@@ -50,7 +50,7 @@ public abstract class TrafficPlanner {
         }
 
         // Create event
-        FlowStartEvent event = new FlowStartEvent(time, idToTransportLayerMap.get(srcId), dstId, flowSizeByte);
+        FlowStartEvent event = new FlowStartEvent(time, idToTransportLayerMap.get(srcId), dstId, flowSizeByte, serviceId);
 
         // Register event
         Simulator.registerEvent(event);

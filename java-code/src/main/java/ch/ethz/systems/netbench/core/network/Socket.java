@@ -10,6 +10,7 @@ public abstract class Socket {
     protected final int sourceId;
     protected final int destinationId;
     protected final long flowSizeByte;
+    protected final String serviceId;
     private long remainderToConfirmFlowSizeByte;
     private boolean isReceiver;
     private FlowLogger privateLogger;
@@ -24,19 +25,20 @@ public abstract class Socket {
      * @param destinationId     Target network device identifier
      * @param flowSizeByte      Size of the flow in bytes
      */
-    public Socket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte) {
+    public Socket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte, String serviceId) {
 
         // Initialize higher variables
         this.transportLayer = transportLayer;
         this.flowId = flowId;
         this.flowSizeByte = flowSizeByte;
+        this.serviceId = serviceId;
         this.remainderToConfirmFlowSizeByte = flowSizeByte;
         this.sourceId = sourceId;
         this.destinationId = destinationId;
         this.isReceiver = true;
 
         // Initialize logger
-        this.privateLogger = new FlowLogger(flowId, sourceId, destinationId, flowSizeByte);
+        this.privateLogger = new FlowLogger(flowId, sourceId, destinationId, flowSizeByte, serviceId);
 
     }
 

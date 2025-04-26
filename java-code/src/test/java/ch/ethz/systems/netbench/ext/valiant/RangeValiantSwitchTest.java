@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -220,7 +222,7 @@ public class RangeValiantSwitchTest {
         for (int fid = 0; fid < 1000; fid += 1) {
 
             // Create packet with distinguishable random hash
-            TcpPacket packetLocal = new FullExtTcpPacket(fid, 0, 4, 1, 100, 3525, 255, 333, 552, false, false, false, false, false, false, false, false, false, 0, 0);
+            TcpPacket packetLocal = new FullExtTcpPacket(fid, 0, 4, 1, 100, 3525, 255, 333, 552, false, false, false, false, false, false, false, false, false, 0, 0, "YT");
 
             // Pass packet to device
             device4identity.receiveFromTransportLayer(packetLocal);
@@ -257,8 +259,8 @@ public class RangeValiantSwitchTest {
         for (int fid = 0; fid < 99; fid++) {
 
             // Two packets with the same flow identifier
-            TcpPacket packetLocal = new FullExtTcpPacket(fid, 0, 4, 1, 100, 3525, 255, 333, 552, false, false, false, false, false, false, false, false, false, 0, 0);
-            TcpPacket packetLocal2 = new FullExtTcpPacket(fid, 0, 4, 1, 100, 3525, 255, 333, 552, false, false, false, false, false, false, false, false, false, 0, 0);
+            TcpPacket packetLocal = new FullExtTcpPacket(fid, 0, 4, 1, 100, 3525, 255, 333, 552, false, false, false, false, false, false, false, false, false, 0, 0, "YT");
+            TcpPacket packetLocal2 = new FullExtTcpPacket(fid, 0, 4, 1, 100, 3525, 255, 333, 552, false, false, false, false, false, false, false, false, false, 0, 0, "YT");
 
             // Pass both packets to the device
             device4identity.receiveFromTransportLayer(packetLocal);

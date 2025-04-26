@@ -8,8 +8,6 @@ import ch.ethz.systems.netbench.xpt.tcpbase.PriorityHeader;
 
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.locks.ReentrantLock;
-
 public class SPPIFOQueue implements Queue {
 
     private final ArrayList<ArrayBlockingQueue> queueList;

@@ -24,6 +24,7 @@ import ch.ethz.systems.netbench.xpt.ports.AFQ.AFQOutputPortGenerator;
 import ch.ethz.systems.netbench.xpt.ports.FIFO.FIFOOutputPortGenerator;
 import ch.ethz.systems.netbench.xpt.ports.PIFO.PIFOOutputPortGenerator;
 import ch.ethz.systems.netbench.xpt.ports.SPPIFO.SPPIFOOutputPortGenerator;
+import ch.ethz.systems.netbench.xpt.ports.XIFO.XIFOOutputPortGenerator;
 import ch.ethz.systems.netbench.xpt.ports.Greedy.GreedyOutputPortGenerator_Advanced;
 import ch.ethz.systems.netbench.xpt.ports.Greedy.GreedyOutputPortGenerator_Simple;
 import ch.ethz.systems.netbench.xpt.ports.SPPIFO_WFQ.WFQSPPIFOOutputPortGenerator;
@@ -188,6 +189,13 @@ class InfrastructureSelector {
 
             case "sppifo":
                 return new SPPIFOOutputPortGenerator(
+                        Simulator.getConfiguration().getLongPropertyOrFail("output_port_number_queues"),
+                        Simulator.getConfiguration().getLongPropertyOrFail("output_port_max_size_per_queue_packets"),
+                        Simulator.getConfiguration().getPropertyOrFail("output_port_step_size")
+                );
+
+            case "xifo":
+                return new XIFOOutputPortGenerator(
                         Simulator.getConfiguration().getLongPropertyOrFail("output_port_number_queues"),
                         Simulator.getConfiguration().getLongPropertyOrFail("output_port_max_size_per_queue_packets"),
                         Simulator.getConfiguration().getPropertyOrFail("output_port_step_size")

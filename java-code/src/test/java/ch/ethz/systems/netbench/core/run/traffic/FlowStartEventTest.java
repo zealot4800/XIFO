@@ -26,42 +26,42 @@ public class FlowStartEventTest {
     @Test
     public void testTriggerIsolated() {
         TransportLayer transportLayer = mock(TransportLayer.class);
-        FlowStartEvent event = new FlowStartEvent(1000, transportLayer, 98, 100000);
+        FlowStartEvent event = new FlowStartEvent(1000, transportLayer, 98, 100000, "YT");
         event.trigger();
-        verify(transportLayer, times(1)).startFlow(98, 100000);
+        verify(transportLayer, times(1)).startFlow(98, 100000, "YT");
     }
 
     @Test
     public void testTriggerInSimulation() {
         TransportLayer transportLayer = mock(TransportLayer.class);
-        FlowStartEvent event = new FlowStartEvent(1000, transportLayer, 23, 56737);
+        FlowStartEvent event = new FlowStartEvent(1000, transportLayer, 23, 56737, "YT");
         Simulator.registerEvent(event);
         Simulator.runNs(2000);
-        verify(transportLayer, times(1)).startFlow(23, 56737);
+        verify(transportLayer, times(1)).startFlow(23, 56737, "YT");
     }
 
     @Test
     public void testTriggerInSimulationJustNot() {
         TransportLayer transportLayer = mock(TransportLayer.class);
-        FlowStartEvent event = new FlowStartEvent(1000, transportLayer, 98, 100000);
+        FlowStartEvent event = new FlowStartEvent(1000, transportLayer, 98, 100000, "YT");
         Simulator.registerEvent(event);
         Simulator.runNs(999);
-        verify(transportLayer, times(0)).startFlow(98, 100000);
+        verify(transportLayer, times(0)).startFlow(98, 100000, "YT");
     }
 
     @Test
     public void testTriggerInSimulationJust() {
         TransportLayer transportLayer = mock(TransportLayer.class);
-        FlowStartEvent event = new FlowStartEvent(999, transportLayer, 98, 100000);
+        FlowStartEvent event = new FlowStartEvent(999, transportLayer, 98, 100000, "YT");
         Simulator.registerEvent(event);
         Simulator.runNs(999);
-        verify(transportLayer, times(1)).startFlow(98, 100000);
+        verify(transportLayer, times(1)).startFlow(98, 100000, "YT");
     }
 
     @Test
     public void testToString() {
         TransportLayer transportLayer = mock(TransportLayer.class);
-        FlowStartEvent event = new FlowStartEvent(999, transportLayer, 98, 100000);
+        FlowStartEvent event = new FlowStartEvent(999, transportLayer, 98, 100000, "YT");
         event.toString();
     }
 

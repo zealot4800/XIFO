@@ -79,7 +79,7 @@ public abstract class TransportLayer {
         if (socket == null && !finishedFlowIds.contains(packet.getFlowId())) {
 
             // Create the socket instance in the other direction
-            socket = createSocket(packet.getFlowId(), packet.getSourceId(),-1);
+            socket = createSocket(packet.getFlowId(), packet.getSourceId(), -1, "Default");
             flowIdToReceiver.put(packet.getFlowId(), this);
             flowIdToSocket.put(packet.getFlowId(), socket);
         }
@@ -97,10 +97,10 @@ public abstract class TransportLayer {
      * @param destination       Destination network device identifier
      * @param flowSizeByte      Byte size of the flow
      */
-    public void startFlow(int destination, long flowSizeByte) {
+    public void startFlow(int destination, long flowSizeByte, String serviceId) {
 
         // Create new outgoing socket
-        Socket socket = createSocket(flowIdCounter, destination, flowSizeByte);
+        Socket socket = createSocket(flowIdCounter, destination, flowSizeByte, serviceId);
         flowIdToSocket.put(flowIdCounter, socket);
         flowIdCounter++;
 
@@ -119,10 +119,10 @@ public abstract class TransportLayer {
      * @param flowId            Flow identifier of the socket
      * @param destinationId     Destination network device identifier
      * @param flowSizeByte      Flow size to be transferred from source to destination in bytes
-     *
+     * @param serviceId
      * @return  Socket instance
      */
-    protected abstract Socket createSocket(long flowId, int destinationId, long flowSizeByte);
+    protected abstract Socket createSocket(long flowId, int destinationId, long flowSizeByte, String serviceId);
 
     /**
      * Remove the socket from the transport layer after the flow has been finished.

@@ -7,8 +7,8 @@ import ch.ethz.systems.netbench.xpt.tcpbase.FullExtTcpPacket;
 
 public class SpHalfTcpSocket extends NewRenoTcpSocket {
 	
-    public SpHalfTcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte) {
-		super(transportLayer, flowId, sourceId, destinationId, flowSizeByte);
+    public SpHalfTcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte, String serviceId) {
+		super(transportLayer, flowId, sourceId, destinationId, flowSizeByte, serviceId);
 	}
 
 	/**
@@ -47,7 +47,8 @@ public class SpHalfTcpSocket extends NewRenoTcpSocket {
             false, ACK, false, // URG, ACK, PSH
             false, SYN, false, // RST, SYN, FIN
             0, // Window size
-            priority
+            priority,
+            serviceId
         );
     }
 

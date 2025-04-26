@@ -3,6 +3,7 @@ package ch.ethz.systems.netbench.ext.poissontraffic;
 import ch.ethz.systems.netbench.core.Simulator;
 import ch.ethz.systems.netbench.core.run.traffic.TrafficPlanner;
 import ch.ethz.systems.netbench.ext.poissontraffic.flowsize.FlowSizeDistribution;
+import ch.ethz.systems.netbench.ext.poissontraffic.flowsize.ServiceDistribution;
 import ch.ethz.systems.netbench.core.log.SimulationLogger;
 import ch.ethz.systems.netbench.core.network.TransportLayer;
 import org.apache.commons.lang3.tuple.ImmutablePair;
@@ -27,15 +28,17 @@ public class PoissonArrivalPlanner extends TrafficPlanner {
 
     private final double lambdaFlowStartsPerSecond;
     private final FlowSizeDistribution flowSizeDistribution;
+    private final ServiceDistribution serviceDisribution;
     private final Random ownIndependentRng;
     private final RandomCollection<Pair<Integer, Integer>> randomPairGenerator;
 
-    private PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution) {
+    private PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution, ServiceDistribution serviceDistribution) {
         super(idToTransportLayerMap);
         this.lambdaFlowStartsPerSecond = lambdaFlowStartsPerSecond;
         this.flowSizeDistribution = flowSizeDistribution;
         this.ownIndependentRng = Simulator.selectIndependentRandom("poisson_inter_arrival");
         this.randomPairGenerator = new RandomCollection<>(Simulator.selectIndependentRandom("pair_probabilities_draw"));
+        this.serviceDisribution = serviceDistribution;
     }
 
     /**
@@ -44,10 +47,11 @@ public class PoissonArrivalPlanner extends TrafficPlanner {
      * @param idToTransportLayerMap     Maps a network device identifier to its corresponding transport layer
      * @param lambdaFlowStartsPerSecond Poisson-arrival lambda
      * @param flowSizeDistribution      Flow size distribution
+     * @param serviceDisribution        Service Distribution
      * @param fileName                  Name of the input file with communication probability densities
      */
-    public PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution, String fileName) {
-        this(idToTransportLayerMap, lambdaFlowStartsPerSecond, flowSizeDistribution);
+    public PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution, ServiceDistribution serviceDistribution, String fileName) {
+        this(idToTransportLayerMap, lambdaFlowStartsPerSecond, flowSizeDistribution, serviceDistribution);
         this.readPairProbabilitiesFromFile(fileName);
         SimulationLogger.logInfo("Flow planner", "POISSON_ARRIVAL(lambda=" + lambdaFlowStartsPerSecond + ", fileName=" + fileName + ")");
     }
@@ -60,8 +64,8 @@ public class PoissonArrivalPlanner extends TrafficPlanner {
      * @param flowSizeDistribution      Flow size distribution
      * @param pairDistribution          Choice of static pair distribution which is valid for any topology
      */
-    public PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution, PairDistribution pairDistribution) {
-        this(idToTransportLayerMap, lambdaFlowStartsPerSecond, flowSizeDistribution);
+    public PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution, ServiceDistribution serviceDistribution, PairDistribution pairDistribution) {
+        this(idToTransportLayerMap, lambdaFlowStartsPerSecond, flowSizeDistribution, serviceDistribution);
         switch (pairDistribution) {
 
             case ALL_TO_ALL:
@@ -600,7 +604,7 @@ public class PoissonArrivalPlanner extends TrafficPlanner {
 
             // Register flow
             Pair<Integer, Integer> pair = choosePair();
-            registerFlow(time, pair.getLeft(), pair.getRight(), flowSizeDistribution.generateFlowSizeByte());
+            registerFlow(time, pair.getLeft(), pair.getRight(), flowSizeDistribution.generateFlowSizeByte(), serviceDisribution.serviceDisribution());
             // Advance time to next arrival
             time += interArrivalTime;
             x++;
