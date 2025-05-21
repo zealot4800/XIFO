@@ -5,25 +5,24 @@ import ch.ethz.systems.netbench.core.network.NetworkDevice;
 import ch.ethz.systems.netbench.core.network.Packet;
 import ch.ethz.systems.netbench.xpt.tcpbase.FullExtTcpPacket;
 import ch.ethz.systems.netbench.xpt.tcpbase.PriorityHeader;
-import ch.ethz.systems.netbench.xpt.serviceTime.ServiceIdToServiceTime;
+import ch.ethz.systems.netbench.xpt.ports.XIFO.KLLSketch;
 
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class XIFOQueue implements Queue {
-
+    
     private final ArrayList<ArrayBlockingQueue> queueList;
     private final Map queueBounds;
     private int ownId;
     private String stepSize;
-    ServiceIdToServiceTime serviceIdToServiceTime;
+    private final SampleBufferKLL scheduler;
     public XIFOQueue(long numQueues, long perQueueCapacity, NetworkDevice ownNetworkDevice, String stepSize){
         this.queueList = new ArrayList((int)numQueues);
         this.queueBounds = new HashMap();
         
-
+        this.scheduler = new SampleBufferKLL(100, 20);
         ArrayBlockingQueue fifo;
-        serviceIdToServiceTime = new ServiceIdToServiceTime();
         for (int i=0; i<(int)numQueues; i++){
             fifo = new ArrayBlockingQueue<Packet>((int)perQueueCapacity);
             queueList.add(fifo);
@@ -32,7 +31,6 @@ public class XIFOQueue implements Queue {
         this.ownId = ownNetworkDevice.getIdentifier();
         this.stepSize = stepSize;
     }
-    double alpha = 0.3;
     // Packet dropped and null returned if selected queue exceeds its size
     @Override
     public boolean offer(Object o) {
@@ -40,53 +38,14 @@ public class XIFOQueue implements Queue {
         // Extract rank from header
         Packet packet = (Packet) o;
         PriorityHeader header = (PriorityHeader) packet;
-        int Flowrank = (int)header.getPriority();
-        
-        // Get the serviceId of the flow
-        String serviceId = header.getServiceId();
-        Double Servicerank = serviceIdToServiceTime.getServiceTime(serviceId);
-        boolean returnValue = false;
-
-        int rank = (int) Math.floor((alpha * Math.log(Flowrank)) + ((1 - alpha) * Math.exp(-Servicerank)));
-
-        // Mapping based on queue bounds
-        int currentQueueBound;
-        for (int q=queueList.size()-1; q>=0; q--){
-            currentQueueBound = (int)queueBounds.get(q);
-            if ((currentQueueBound <= rank) || q==0) {
-                boolean result = queueList.get(q).offer(o);
-                if (!result){
-                    returnValue = false;
-                    break;
-                } else {
-
-                    // Per-packet queue bound adaptation
-                    queueBounds.put(q, rank);
-                    int cost = currentQueueBound - rank;
-                    if (cost > 0){
-                        for (int w=queueList.size()-1; w>q; w--){
-                            currentQueueBound = (int) queueBounds.get(w);
-
-                            // Update queue bounds
-                            if (this.stepSize.equals("cost")){
-                                queueBounds.put(w, currentQueueBound-cost);
-                            } else if (this.stepSize.equals("1")){
-                                queueBounds.put(w, currentQueueBound-1);
-                            } else if (this.stepSize.equals("rank")){
-                                queueBounds.put(w, currentQueueBound-rank);
-                            } else if (this.stepSize.equals("queueBound")){
-                                queueBounds.put(w, queueBounds.get(w-1));
-                            } else {
-                                System.out.println("ERROR: SP-PIFO step size not supported.");
-                            }
-                        }
-                    }
-                    returnValue = true;
-                    break;
-                }
-            }
+        int rank = (int)header.getPriority();
+        scheduler.insert(rank);
+        int queue = scheduler.getQueueIndex(rank);
+        boolean result = queueList.get(queue).offer(o);
+        if(!result){
+            return false;
         }
-        return returnValue;
+        return true;
     }
 
     @Override
