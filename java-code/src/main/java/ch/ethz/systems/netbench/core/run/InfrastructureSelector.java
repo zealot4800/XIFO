@@ -195,7 +195,7 @@ class InfrastructureSelector {
                 );
 
             case "xifo":
-                return new XIFOOutputPortGenerator(
+                    return new XIFOOutputPortGenerator(
                         Simulator.getConfiguration().getLongPropertyOrFail("output_port_number_queues"),
                         Simulator.getConfiguration().getLongPropertyOrFail("output_port_max_size_per_queue_packets"),
                         Simulator.getConfiguration().getPropertyOrFail("output_port_step_size")
@@ -295,7 +295,7 @@ class InfrastructureSelector {
             case "buffertcp":
                 return new BufferTcpTransportLayerGenerator();
             
-                case "dctcp":
+            case "dctcp":
                 return new NewRenoDctcpTransportLayerGenerator();
 
             case "simple_tcp":

@@ -43,6 +43,11 @@ public class SimulationLogger {
     // Statistic counters
     private static Map<String, Long> statisticCounters = new HashMap<>();
 
+    // To maintain packet Drop Rate
+    private static Map<String, Integer> packetDropMap = new HashMap<>();
+
+    // To maintain queueu utilization
+    private static Map<Integer, Integer> queueUtilizationMap = new HashMap<>();
     // Print streams used
     private static PrintStream originalOutOutputStream;
     private static PrintStream originalErrOutputStream;
@@ -268,6 +273,14 @@ public class SimulationLogger {
             }
             writerStatistics.close();
 
+            // Write Packet Drop information with each rank
+            BufferedWriter writerPacketDrop = openWriter("packetDropPerService.log");
+            for(Map.Entry<String, Integer> entry : packetDropMap.entrySet()){
+                String serivce = entry.getKey();
+                Integer packetDrop = entry.getValue();
+                writerPacketDrop.write("Rank " + serivce + " Number of packet Droped are: " + packetDrop + "\n");
+            }
+            writerPacketDrop.close();
             // Close *all* the running log files
             writerRunInfoFile.close();
             writerFlowCompletionCsvFile.close();
@@ -331,9 +344,9 @@ public class SimulationLogger {
         }
     }
 
-    public static void logInversionsPerRank(int id, int rank, long inversion) {
+    public static void logInversionsPerService(String serviceId, int rank, long inversion) {
         try {
-            writerInversionsTracking.write(id + "," + rank + "," + inversion + "\n");
+            writerInversionsTracking.write(serviceId + "," + rank + "," + inversion + "\n");
         } catch (IOException e) {
             throw new LogFailureException(e);
         }
@@ -431,7 +444,6 @@ public class SimulationLogger {
             });
 
             for (FlowLogger logger : flowLoggers) {
-
                 if (logHumanReadableFlowCompletionEnabled) {
                     writerFlowCompletionFile.write(
                             String.format(
@@ -597,6 +609,10 @@ public class SimulationLogger {
 
     public static boolean hasRankMappingEnabled() {
         return rankMappingEnabled;
+    }
+
+    public static void logDropPacketRank(String service) {
+        packetDropMap.put(service, packetDropMap.getOrDefault(service, 0) + 1);
     }
 
     public static boolean hasQueueBoundTrackingEnabled() {

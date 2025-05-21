@@ -5,28 +5,39 @@ import java.util.Map;
 
 public class ServiceIdToServiceTime {
 
-    private final Map<String, Double> serviceTime;
+    private final Map<String, Integer> serviceTime;
 
     public ServiceIdToServiceTime() {
         this.serviceTime = new HashMap<>();
-        // Below informaion are added in millisecond 
-        //e.g. 3.0 represents 3 millisecond
-        serviceTime.put("MI", 0.01);
-        serviceTime.put("CS", 0.1);
-        serviceTime.put("TV", 0.5);
-        serviceTime.put("YT", 1.5);
-        serviceTime.put("SN", 3.0);
-        serviceTime.put("RT", 7.0);
-        serviceTime.put("EW", 11.0);
-        serviceTime.put("QW", 20.0);
-        serviceTime.put("YU", 30.0);
-        serviceTime.put("GH", 50.0);
-        serviceTime.put("RF", 80.0);
-        serviceTime.put("Default", 150.0);
+
+        // Times are in nanoseconds with finer gradation
+        // Critical services (1ms–3ms)
+        serviceTime.put("VoIP", 3_000);   
+        serviceTime.put("Game", 4_000);   
+        serviceTime.put("AR", 5_000);  
+
+        // Interactive services (5ms–15ms)
+        serviceTime.put("Web", 8_000);   
+        serviceTime.put("SSH", 10_000);  
+
+        // Streaming Media
+        serviceTime.put("Audio", 15_000);  
+        serviceTime.put("Video", 20_000);  
+
+        // Background > 500ms (e.g., software updates, backups)
+        serviceTime.put("Backup", 80_000);  
+        serviceTime.put("Update", 60_000);  
+
+        // Default background service
+        serviceTime.put("Default", 100_000);
     }
 
-    // Getter to retrieve the service time map
-    public Double getServiceTime(String serviceId) {
-        return serviceTime.get(serviceId);
+    private long calculateInversePriority(long latency) {
+        return 1_000_000L / latency; 
+    }
+    
+    public Integer getServiceTime(String serviceId) {
+        return (int) calculateInversePriority(serviceTime.getOrDefault(serviceId, 
+                                            serviceTime.get("Default")));
     }
 }

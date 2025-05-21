@@ -28,7 +28,8 @@ public class SPPIFOQueue implements Queue {
         this.ownId = ownNetworkDevice.getIdentifier();
         this.stepSize = stepSize;
     }
-
+    int min_rank = Integer.MAX_VALUE;
+    int max_rank = Integer.MIN_VALUE;
     // Packet dropped and null returned if selected queue exceeds its size
     @Override
     public boolean offer(Object o) {
@@ -37,7 +38,8 @@ public class SPPIFOQueue implements Queue {
         Packet packet = (Packet) o;
         PriorityHeader header = (PriorityHeader) packet;
         int rank = (int)header.getPriority();
-
+        min_rank = Math.min(min_rank, rank);
+        max_rank = Math.max(max_rank, rank);
         boolean returnValue = false;
 
         // Mapping based on queue bounds
@@ -77,6 +79,10 @@ public class SPPIFOQueue implements Queue {
                 }
             }
         }
+        if(!returnValue){
+            String serviceId = header.getServiceId();
+            SimulationLogger.logDropPacketRank(serviceId);
+        }
         return returnValue;
     }
 
@@ -114,7 +120,7 @@ public class SPPIFOQueue implements Queue {
                         }
                     }
                     if (count_inversions != 0) {
-                        SimulationLogger.logInversionsPerRank(this.ownId, rank, count_inversions);
+                        SimulationLogger.logInversionsPerService(((FullExtTcpPacket)p).getServiceId(), rank, count_inversions);
                     }
                 }
                 return p;
