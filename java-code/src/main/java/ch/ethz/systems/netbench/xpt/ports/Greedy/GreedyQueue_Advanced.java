@@ -499,7 +499,7 @@ public class GreedyQueue_Advanced implements Queue {
                         }
 
                         if (rankSmallest < rank) {
-                            SimulationLogger.logInversionsPerService(((FullExtTcpPacket)p).getServiceId(), rank, 1);
+                            SimulationLogger.logInversions(this.ownId, rank, q);
                             // System.out.println("Rank " + rank + " is blocking the transmission to " + rankSmallest);
                         }
                     }

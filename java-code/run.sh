@@ -54,38 +54,38 @@ mvn clean compile assembly:single
 # python3 projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/analyze.py
 # gnuplot projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/plot.gnuplot
 
-#/* Figure 6: SP-PIFO performance (alternative distributions) */
+# /* Figure 6: SP-PIFO performance (alternative distributions) */
 
-#/* Figure 6a: Exponential */
+# /* Figure 6a: Exponential */
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/FIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/SPPIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/Greedy.properties 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/XIFO.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/XIFO.properties 
 
-#/* Figure 6b: Inverse exponential */
+# #/* Figure 6b: Inverse exponential */
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/FIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/SPPIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/Greedy.properties 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/XIFO.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/XIFO.properties 
 
 # #/* Figure 6c: Poisson */
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/FIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/SPPIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/Greedy.properties 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/XIFO.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/XIFO.properties 
 
-#/* Figure 6d: Convex */
+# #/* Figure 6d: Convex */
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/FIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/SPPIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/Greedy.properties 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/XIFO.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/XIFO.properties 
 
 # /* Analyze and plot */
-# python3 projects/sppifo/plots/sppifo_analysis/alternative_distributions/analyze.py
-# gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/plot.gnuplot
-# gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/plot.gnuplot
-# gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/plot.gnuplot
-# gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/plot.gnuplot
+python3 projects/sppifo/plots/sppifo_analysis/alternative_distributions/analyze.py
+gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/plot.gnuplot
+gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/plot.gnuplot
+gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/plot.gnuplot
+gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/plot.gnuplot
 
 #/* Figure 7: pFabric: FCT statistics across different flow sizes in data mining workload */
 

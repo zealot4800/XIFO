@@ -120,7 +120,7 @@ public class SPPIFOQueue implements Queue {
                         }
                     }
                     if (count_inversions != 0) {
-                        SimulationLogger.logInversionsPerService(((FullExtTcpPacket)p).getServiceId(), rank, count_inversions);
+                        SimulationLogger.logInversions(this.ownId, rank, count_inversions);
                     }
                 }
                 return p;
