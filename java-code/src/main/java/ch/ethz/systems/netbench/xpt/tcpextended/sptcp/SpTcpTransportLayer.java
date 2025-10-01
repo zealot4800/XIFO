@@ -16,8 +16,8 @@ public class SpTcpTransportLayer extends TransportLayer {
     }
 
     @Override
-    protected Socket createSocket(long flowId, int destinationId, long flowSizeByte, String serviceId) {
-        return new SpTcpSocket(this, flowId, this.identifier, destinationId, flowSizeByte, serviceId);
+    protected Socket createSocket(long flowId, int destinationId, long flowSizeByte) {
+        return new SpTcpSocket(this, flowId, this.identifier, destinationId, flowSizeByte);
     }
 
 }

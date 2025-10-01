@@ -1,13 +1,13 @@
 package ch.ethz.systems.netbench.xpt.ports.PIFO;
 
+import java.util.Arrays;
+import java.util.Queue;
+import java.util.concurrent.PriorityBlockingQueue;
+
 import ch.ethz.systems.netbench.core.Simulator;
-import ch.ethz.systems.netbench.core.log.SimulationLogger;
 import ch.ethz.systems.netbench.core.network.NetworkDevice;
 import ch.ethz.systems.netbench.core.network.Packet;
 import ch.ethz.systems.netbench.xpt.tcpbase.FullExtTcpPacket;
-
-import java.util.*;
-import java.util.concurrent.PriorityBlockingQueue;
 
 
 public class PIFOQueue extends PriorityBlockingQueue implements Queue {
@@ -55,8 +55,6 @@ public class PIFOQueue extends PriorityBlockingQueue implements Queue {
             Arrays.sort(contentPIFO);
             FullExtTcpPacket drop_packet = (FullExtTcpPacket) contentPIFO[this.size()-1];
             this.remove(drop_packet);
-            String serviceId = ((FullExtTcpPacket)packet).getServiceId();
-            SimulationLogger.logDropPacketRank(serviceId);
             /* Debug */
             message = message + "]\n";
             message = message + "Packet dropped: " + drop_packet.getPriority() + "(" + drop_packet.getEnqueueTime() + ")";

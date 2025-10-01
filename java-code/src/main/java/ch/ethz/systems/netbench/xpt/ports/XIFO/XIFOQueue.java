@@ -1,13 +1,18 @@
 package ch.ethz.systems.netbench.xpt.ports.XIFO;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
+
 import ch.ethz.systems.netbench.core.log.SimulationLogger;
 import ch.ethz.systems.netbench.core.network.NetworkDevice;
 import ch.ethz.systems.netbench.core.network.Packet;
 import ch.ethz.systems.netbench.xpt.tcpbase.FullExtTcpPacket;
 import ch.ethz.systems.netbench.xpt.tcpbase.PriorityHeader;
-
-import java.util.*;
-import java.util.concurrent.ArrayBlockingQueue;
 
 public class XIFOQueue implements Queue {
 
@@ -15,14 +20,14 @@ public class XIFOQueue implements Queue {
     private final Map<Integer, Integer> queueBounds;
     private final KLLSketch scheduler;
     private final int ownId;
-    private final String stepSize;
+    private final long bufferSize;
     
-    public XIFOQueue(long numQueues, long perQueueCapacity, NetworkDevice ownNetworkDevice, String stepSize) {
+    public XIFOQueue(long numQueues, long perQueueCapacity, NetworkDevice ownNetworkDevice, long window) {
         this.queueList = new ArrayList<>((int) numQueues);
         this.queueBounds = new HashMap<>();
-        this.scheduler = new KLLSketch(1024);
         this.ownId = ownNetworkDevice.getIdentifier();
-        this.stepSize = stepSize;
+        this.bufferSize = window;
+        this.scheduler = new KLLSketch((int) bufferSize);
 
         for (int i = 0; i < (int) numQueues; i++) {
             queueList.add(new ArrayBlockingQueue<>((int) perQueueCapacity));

@@ -1,18 +1,20 @@
 package ch.ethz.systems.netbench.xpt.tcpbase;
 
-import ch.ethz.systems.netbench.core.Simulator;
-import ch.ethz.systems.netbench.ext.basic.TcpPacket;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import org.junit.After;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import static org.junit.Assert.*;
+import ch.ethz.systems.netbench.core.Simulator;
+import ch.ethz.systems.netbench.ext.basic.TcpPacket;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TcpPacketTest {
@@ -40,8 +42,7 @@ public class TcpPacketTest {
                 473737, 373, // Seq number, Ack number
                 false, false, false, false, true, false, false, false, false,
                 // NS  CWR    ECE    URG    ACK   PSH    RST    SYN    FIN
-                4262, 892, // Window size
-                "YT"
+                4262, 892 // Window size
         );
 
         // Default getters
@@ -118,8 +119,7 @@ public class TcpPacketTest {
                     473737, 373, // Seq number, Ack number
                     false, false, false, false, true, false, false, false, false,
                     // NS  CWR    ECE    URG    ACK   PSH    RST    SYN    FIN
-                    4262, 0, // Window size
-                    "YT"
+                    4262, 0 // Window size
             );
             packet1.setFlowletId(r.nextInt());
             packet1.setHashSrcDstFlowletDependent();
@@ -154,8 +154,7 @@ public class TcpPacketTest {
                     473737, 373, // Seq number, Ack number
                     false, false, false, false, true, false, false, false, false,
                     // NS  CWR    ECE    URG    ACK   PSH    RST    SYN    FIN
-                    4262, 0, // Window size
-                    "YT"
+                    4262, 0 // Window size
             );
             packet1.setFlowletId(i);
             packet1.setHashSrcDstFlowFlowletDependent();
@@ -224,8 +223,7 @@ public class TcpPacketTest {
                             473737, 373, // Seq number, Ack number
                             false, false, false, false, true, false, false, false, false,
                             // NS  CWR    ECE    URG    ACK   PSH    RST    SYN    FIN
-                            4262, 0, // Window size
-                            "YT"
+                            4262, 0 // Window size
                     );
                     packet1.setFlowletId(j);
                     packet1.setHashSrcDstFlowFlowletDependent();

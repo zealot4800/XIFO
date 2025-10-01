@@ -59,6 +59,13 @@ def analyze_flow_completion():
 
         # Read in column lists
         for row in reader:
+            if len(row) > 9 and row[-1] == '':
+                row = row[:-1]
+
+            if len(row) != 9:
+                print("Invalid row: ", row)
+                exit()
+
             flow_ids.append(float(row[0]))
             source_ids.append(float(row[1]))
             target_ids.append(float(row[2]))
@@ -68,10 +75,6 @@ def analyze_flow_completion():
             end_time.append(float(row[6]))
             duration.append(float(row[7]))
             completed.append(row[8] == 'TRUE')
-
-            if len(row) != 9:
-                print("Invalid row: ", row)
-                exit()
 
         print("Calculating statistics...")
 

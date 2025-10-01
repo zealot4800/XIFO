@@ -7,8 +7,8 @@ import ch.ethz.systems.netbench.xpt.tcpbase.FullExtTcpPacket;
 
 public class SpTcpSocket extends NewRenoTcpSocket {
 	
-    public SpTcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte, String serviceId) {
-		super(transportLayer, flowId, sourceId, destinationId, flowSizeByte, serviceId);
+    public SpTcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte) {
+		super(transportLayer, flowId, sourceId, destinationId, flowSizeByte);
 		this.roundTripTimeout = 23328L;
 		this.congestionWindow = this.slowStartThreshold;
 	}
@@ -44,8 +44,7 @@ public class SpTcpSocket extends NewRenoTcpSocket {
             false, ACK, false, // URG, ACK, PSH
             false, SYN, false, // RST, SYN, FIN
             0, // Window size
-            priority,
-            serviceId
+            priority
         );
     }
 

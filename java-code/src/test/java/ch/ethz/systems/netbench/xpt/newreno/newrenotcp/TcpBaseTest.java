@@ -1,22 +1,24 @@
 package ch.ethz.systems.netbench.xpt.newreno.newrenotcp;
 
-import ch.ethz.systems.netbench.core.Simulator;
-import ch.ethz.systems.netbench.core.config.BaseAllowedProperties;
-import ch.ethz.systems.netbench.core.config.NBProperties;
-import ch.ethz.systems.netbench.core.network.NetworkDevice;
-import ch.ethz.systems.netbench.core.network.Packet;
-import ch.ethz.systems.netbench.xpt.simple.simpletcp.SimpleTcpTransportLayer;
-import ch.ethz.systems.netbench.ext.basic.TcpPacket;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
-
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import org.mockito.runners.MockitoJUnitRunner;
+
+import ch.ethz.systems.netbench.core.Simulator;
+import ch.ethz.systems.netbench.core.config.BaseAllowedProperties;
+import ch.ethz.systems.netbench.core.config.NBProperties;
+import ch.ethz.systems.netbench.core.network.NetworkDevice;
+import ch.ethz.systems.netbench.core.network.Packet;
+import ch.ethz.systems.netbench.ext.basic.TcpPacket;
+import ch.ethz.systems.netbench.xpt.simple.simpletcp.SimpleTcpTransportLayer;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TcpBaseTest {
@@ -60,7 +62,7 @@ public class TcpBaseTest {
         receiverLayer.setNetworkDevice(networkDeviceReceiver);
 
         // Start a flow from 88 to 77 of size 1000
-        senderLayer.startFlow(77, 1000, "YT");
+        senderLayer.startFlow(77, 1000);
 
         // Make sure that the first SYN of the three-way handshake is sent
         verify(networkDeviceSender, times(1)).receiveFromTransportLayer(packetCaptor.capture());

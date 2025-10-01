@@ -1,10 +1,5 @@
 package ch.ethz.systems.netbench.ext.trafficpair;
 
-import ch.ethz.systems.netbench.core.Simulator;
-import ch.ethz.systems.netbench.core.log.SimulationLogger;
-import ch.ethz.systems.netbench.core.network.TransportLayer;
-import ch.ethz.systems.netbench.core.run.traffic.TrafficPlanner;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
@@ -12,10 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import ch.ethz.systems.netbench.core.Simulator;
+import ch.ethz.systems.netbench.core.log.SimulationLogger;
+import ch.ethz.systems.netbench.core.network.TransportLayer;
+import ch.ethz.systems.netbench.core.run.traffic.TrafficPlanner;
+
 public class TrafficPairPlanner extends TrafficPlanner {
 
     private final long flowSizeByte;
-    private final String serviceId;
     private String fileName;
     private List<TrafficPair> trafficPairs;
     private final boolean useFile;
@@ -33,13 +32,12 @@ public class TrafficPairPlanner extends TrafficPlanner {
      *
      * @param trafficPairsFileName  File name of the traffic pairs file
      */
-    public TrafficPairPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, String trafficPairsFileName, long flowSizeByte, String serviceId) {
+    public TrafficPairPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, String trafficPairsFileName, long flowSizeByte) {
         super (idToTransportLayerMap);
         this.fileName = trafficPairsFileName;
         this.useFile = true;
         SimulationLogger.logInfo("Flow planner", "TRAFFIC_PAIR_FILE");
         this.flowSizeByte = flowSizeByte;
-        this.serviceId = serviceId;
     }
 
     /**
@@ -47,12 +45,11 @@ public class TrafficPairPlanner extends TrafficPlanner {
      *
      * @param trafficPairs  Traffic pairs
      */
-    public TrafficPairPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, List<TrafficPair> trafficPairs, long flowSizeByte, String serviceId) {
+    public TrafficPairPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, List<TrafficPair> trafficPairs, long flowSizeByte) {
         super (idToTransportLayerMap);
         this.trafficPairs = trafficPairs;
         this.useFile = false;
         this.flowSizeByte = flowSizeByte;
-        this.serviceId = serviceId;
         SimulationLogger.logInfo("Flow planner", "TRAFFIC_PAIR_LIST(flowSizeByte=" + flowSizeByte + ", pairs=" + trafficPairs + ")");
     }
 
@@ -86,7 +83,7 @@ public class TrafficPairPlanner extends TrafficPlanner {
                 int dstId = Integer.valueOf(match[1]);
 
                 // Register the flow immediately
-                registerFlow(0, srcId, dstId, flowSizeByte, serviceId);
+                registerFlow(0, srcId, dstId, flowSizeByte);
 
             }
 
@@ -104,7 +101,7 @@ public class TrafficPairPlanner extends TrafficPlanner {
      */
     private void createPlanFromPairList() {
         for (TrafficPair pair : trafficPairs) {
-            registerFlow(0, pair.getFrom(), pair.getTo(), flowSizeByte, serviceId);
+            registerFlow(0, pair.getFrom(), pair.getTo(), flowSizeByte);
         }
     }
 

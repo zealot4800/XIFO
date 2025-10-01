@@ -2,6 +2,7 @@ package ch.ethz.systems.netbench.core.run;
 
 import ch.ethz.systems.netbench.core.Simulator;
 import ch.ethz.systems.netbench.core.config.exceptions.PropertyValueInvalidException;
+import ch.ethz.systems.netbench.core.log.SimulationLogger;
 import ch.ethz.systems.netbench.core.run.infrastructure.IntermediaryGenerator;
 import ch.ethz.systems.netbench.core.run.infrastructure.LinkGenerator;
 import ch.ethz.systems.netbench.core.run.infrastructure.NetworkDeviceGenerator;
@@ -20,18 +21,19 @@ import ch.ethz.systems.netbench.ext.flowlet.IdentityFlowletIntermediaryGenerator
 import ch.ethz.systems.netbench.ext.flowlet.UniformFlowletIntermediaryGenerator;
 import ch.ethz.systems.netbench.ext.hybrid.EcmpThenValiantSwitchGenerator;
 import ch.ethz.systems.netbench.ext.valiant.RangeValiantSwitchGenerator;
-import ch.ethz.systems.netbench.xpt.ports.AFQ.AFQOutputPortGenerator;
-import ch.ethz.systems.netbench.xpt.ports.FIFO.FIFOOutputPortGenerator;
-import ch.ethz.systems.netbench.xpt.ports.PIFO.PIFOOutputPortGenerator;
-import ch.ethz.systems.netbench.xpt.ports.SPPIFO.SPPIFOOutputPortGenerator;
-import ch.ethz.systems.netbench.xpt.ports.XIFO.XIFOOutputPortGenerator;
-import ch.ethz.systems.netbench.xpt.ports.Greedy.GreedyOutputPortGenerator_Advanced;
-import ch.ethz.systems.netbench.xpt.ports.Greedy.GreedyOutputPortGenerator_Simple;
-import ch.ethz.systems.netbench.xpt.ports.SPPIFO_WFQ.WFQSPPIFOOutputPortGenerator;
-import ch.ethz.systems.netbench.xpt.ports.PIFO_WFQ.WFQPIFOOutputPortGenerator;
 import ch.ethz.systems.netbench.xpt.asaf.routing.priority.PriorityFlowletIntermediaryGenerator;
 import ch.ethz.systems.netbench.xpt.newreno.newrenodctcp.NewRenoDctcpTransportLayerGenerator;
 import ch.ethz.systems.netbench.xpt.newreno.newrenotcp.NewRenoTcpTransportLayerGenerator;
+import ch.ethz.systems.netbench.xpt.ports.AFQ.AFQOutputPortGenerator;
+import ch.ethz.systems.netbench.xpt.ports.FIFO.FIFOOutputPortGenerator;
+import ch.ethz.systems.netbench.xpt.ports.Greedy.GreedyOutputPortGenerator_Advanced;
+import ch.ethz.systems.netbench.xpt.ports.Greedy.GreedyOutputPortGenerator_Simple;
+import ch.ethz.systems.netbench.xpt.ports.PIFO.PIFOOutputPortGenerator;
+import ch.ethz.systems.netbench.xpt.ports.PIFO_WFQ.WFQPIFOOutputPortGenerator;
+import ch.ethz.systems.netbench.xpt.ports.SPPIFO.SPPIFOOutputPortGenerator;
+import ch.ethz.systems.netbench.xpt.ports.SPPIFO_WFQ.WFQSPPIFOOutputPortGenerator;
+import ch.ethz.systems.netbench.xpt.ports.XIFO.XIFOOutputPortGenerator;
+import ch.ethz.systems.netbench.xpt.ports.XIFO_WFQ.WFQXIFOOutputPortGenerator;
 import ch.ethz.systems.netbench.xpt.simple.simpledctcp.SimpleDctcpTransportLayerGenerator;
 import ch.ethz.systems.netbench.xpt.simple.simpletcp.SimpleTcpTransportLayerGenerator;
 import ch.ethz.systems.netbench.xpt.sourcerouting.EcmpThenSourceRoutingSwitchGenerator;
@@ -195,10 +197,17 @@ class InfrastructureSelector {
                 );
 
             case "xifo":
-                    return new XIFOOutputPortGenerator(
+                return new XIFOOutputPortGenerator(
                         Simulator.getConfiguration().getLongPropertyOrFail("output_port_number_queues"),
                         Simulator.getConfiguration().getLongPropertyOrFail("output_port_max_size_per_queue_packets"),
-                        Simulator.getConfiguration().getPropertyOrFail("output_port_step_size")
+                        Simulator.getConfiguration().getLongPropertyOrFail("sliding_window_size")
+                );
+
+            case "wfqxifo":
+                return new WFQXIFOOutputPortGenerator(
+                        Simulator.getConfiguration().getLongPropertyOrFail("output_port_number_queues"),
+                        Simulator.getConfiguration().getLongPropertyOrFail("output_port_max_size_per_queue_packets"),
+                        Simulator.getConfiguration().getLongPropertyOrFail("sliding_window_size")
                 );
 
             case "greedy_simple":

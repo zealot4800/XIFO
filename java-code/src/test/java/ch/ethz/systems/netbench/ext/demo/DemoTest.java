@@ -61,7 +61,7 @@ public class DemoTest {
         receiverLayer.setNetworkDevice(networkDeviceReceiver);
 
         // Start a flow from 88 to 77 of size 2000
-        senderLayer.startFlow(77, 2000, "YT");
+        senderLayer.startFlow(77, 2000);
 
         // First data packet
         verify(networkDeviceSender, times(1)).receiveFromTransportLayer(packetCaptor.capture());

@@ -19,8 +19,8 @@ public class PfabricTransportLayer extends TransportLayer {
     }
 
     @Override
-    protected Socket createSocket(long flowId, int destinationId, long flowSizeByte, String serviceId) {
-        return new PfabricSocket(this, flowId, this.identifier, destinationId, flowSizeByte, seed, serviceId);
+    protected Socket createSocket(long flowId, int destinationId, long flowSizeByte ) {
+        return new PfabricSocket(this, flowId, this.identifier, destinationId, flowSizeByte, seed);
     }
 
 }

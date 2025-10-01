@@ -53,30 +53,35 @@ plot "projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabr
             '' using 2 title "TCP"  w lp ls 28 lw 4, \
             '' using 6 title "XIFO" w lp ls 29 lw 4
 
+########################################################################################################################
+# Mean Throughput: pFabric
+########################################################################################################################
+set output 'projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_mean_throughput.pdf'
 
-############################################################################################################################
-# Mean Flow completion time per service: pFabric-based scheduling schemes
-############################################################################################################################
-set output 'projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_perSevice_mean_fct_ms.pdf'
+set xlabel 'Load'
+set ylabel 'Throughput(Gbps)'
+set yrange [0:1]
+set ytics auto
+set key opaque
+plot "projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_mean_throughput.dat" using 4 title "PIFO" w lp  ls 21 lw 4, \
+            '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
+            '' using 3 title "DCTCP" w lp ls 27 lw 4, \
+            '' using 2 title "TCP"  w lp ls 28 lw 4, \
+            '' using 6 title "XIFO" w lp ls 29 lw 4
 
-set xlabel 'Service'
-set ylabel 'Flow Completion Time (ms)'
-set yrange [0:75000]
-set boxwidth 0.7
-set style data histogram
-set style fill solid 0.6
-set bars front
-set key top center horizontal samplen 1.5 spacing 0.8
-midnight = "#191970"
 
-# Update xtics to match the 12 services in your data and rotate the labels
-set xtics rotate by -45 ("VoIP" 0, "Game" 1, "AR" 2, "Web" 3, "SSH" 4, "Audio" 5, "Video" 6, "Backup" 7, "Update" 8, "Default" 9)
+########################################################################################################################
+# Packet Dropped: pFabric
+########################################################################################################################
+set output 'projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_packet_drop.pdf'
 
-# Update xrange to include all 12 data points
-set xrange [-0.5:11.5]
-
-plot "projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_service_based_fct_ms.dat" using 2:xtic(1) title "TCP" linecolor rgb midnight lw 4, \
-     '' using 3 title "DCTCP" linecolor rgb "#F46D43" lw 4, \
-     '' using 4 title "PIFO" linecolor rgb "#FDAE61" lw 4, \
-     '' using 5 title "SP-PIFO" linecolor rgb "#66C2A5" lw 4, \
-     '' using 6 title "XIFO" linecolor rgb "#3288BD" lw 4
+set xlabel 'Load'
+set ylabel 'Number of Packet drops(·10^5)'
+set yrange [0:6]
+set ytics auto
+set key opaque
+plot "projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_packet_drop.dat" using 4 title "PIFO" w lp  ls 21 lw 4, \
+            '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
+            '' using 3 title "DCTCP" w lp ls 27 lw 4, \
+            '' using 2 title "TCP"  w lp ls 28 lw 4, \
+            '' using 6 title "XIFO" w lp ls 29 lw 4

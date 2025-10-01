@@ -79,10 +79,6 @@ public class SPPIFOQueue implements Queue {
                 }
             }
         }
-        if(!returnValue){
-            String serviceId = header.getServiceId();
-            SimulationLogger.logDropPacketRank(serviceId);
-        }
         return returnValue;
     }
 

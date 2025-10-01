@@ -1,12 +1,11 @@
 package ch.ethz.systems.netbench.core.network;
 
-import ch.ethz.systems.netbench.ext.basic.IpPacket;
-import ch.ethz.systems.netbench.xpt.tcpbase.FullExtTcpPacket;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import ch.ethz.systems.netbench.ext.basic.IpPacket;
 
 /**
  * The transport layer represents the entity that communicates
@@ -79,7 +78,7 @@ public abstract class TransportLayer {
         if (socket == null && !finishedFlowIds.contains(packet.getFlowId())) {
 
             // Create the socket instance in the other direction
-            socket = createSocket(packet.getFlowId(), packet.getSourceId(), -1, "Default");
+            socket = createSocket(packet.getFlowId(), packet.getSourceId(), -1);
             flowIdToReceiver.put(packet.getFlowId(), this);
             flowIdToSocket.put(packet.getFlowId(), socket);
         }
@@ -97,10 +96,10 @@ public abstract class TransportLayer {
      * @param destination       Destination network device identifier
      * @param flowSizeByte      Byte size of the flow
      */
-    public void startFlow(int destination, long flowSizeByte, String serviceId) {
+    public void startFlow(int destination, long flowSizeByte) {
 
         // Create new outgoing socket
-        Socket socket = createSocket(flowIdCounter, destination, flowSizeByte, serviceId);
+        Socket socket = createSocket(flowIdCounter, destination, flowSizeByte);
         flowIdToSocket.put(flowIdCounter, socket);
         flowIdCounter++;
 
@@ -119,10 +118,9 @@ public abstract class TransportLayer {
      * @param flowId            Flow identifier of the socket
      * @param destinationId     Destination network device identifier
      * @param flowSizeByte      Flow size to be transferred from source to destination in bytes
-     * @param serviceId
      * @return  Socket instance
      */
-    protected abstract Socket createSocket(long flowId, int destinationId, long flowSizeByte, String serviceId);
+    protected abstract Socket createSocket(long flowId, int destinationId, long flowSizeByte);
 
     /**
      * Remove the socket from the transport layer after the flow has been finished.

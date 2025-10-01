@@ -1,10 +1,10 @@
 package ch.ethz.systems.netbench.core.run.traffic;
 
+import java.util.Map;
+
 import ch.ethz.systems.netbench.core.Simulator;
 import ch.ethz.systems.netbench.core.config.GraphDetails;
 import ch.ethz.systems.netbench.core.network.TransportLayer;
-
-import java.util.Map;
 
 public abstract class TrafficPlanner {
 
@@ -34,7 +34,7 @@ public abstract class TrafficPlanner {
      * @param dstId         Destination network device identifier
      * @param flowSizeByte  Flow size in bytes
      */
-    protected void registerFlow(long time, int srcId, int dstId, long flowSizeByte, String serviceId) {
+    protected void registerFlow(long time, int srcId, int dstId, long flowSizeByte) {
 
         // Some checking
         if (srcId == dstId) {
@@ -50,7 +50,7 @@ public abstract class TrafficPlanner {
         }
 
         // Create event
-        FlowStartEvent event = new FlowStartEvent(time, idToTransportLayerMap.get(srcId), dstId, flowSizeByte, serviceId);
+        FlowStartEvent event = new FlowStartEvent(time, idToTransportLayerMap.get(srcId), dstId, flowSizeByte);
 
         // Register event
         Simulator.registerEvent(event);

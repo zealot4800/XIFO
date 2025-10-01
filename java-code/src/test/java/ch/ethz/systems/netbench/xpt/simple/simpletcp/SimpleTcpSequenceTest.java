@@ -1,19 +1,5 @@
 package ch.ethz.systems.netbench.xpt.simple.simpletcp;
 
-import ch.ethz.systems.netbench.core.Simulator;
-import ch.ethz.systems.netbench.core.config.BaseAllowedProperties;
-import ch.ethz.systems.netbench.core.config.NBProperties;
-import ch.ethz.systems.netbench.core.network.NetworkDevice;
-import ch.ethz.systems.netbench.core.network.Packet;
-import ch.ethz.systems.netbench.ext.basic.TcpPacket;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.runners.MockitoJUnitRunner;
-import org.mockito.stubbing.Answer;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -21,7 +7,21 @@ import java.io.IOException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
 import static org.mockito.Mockito.doAnswer;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.stubbing.Answer;
+
+import ch.ethz.systems.netbench.core.Simulator;
+import ch.ethz.systems.netbench.core.config.BaseAllowedProperties;
+import ch.ethz.systems.netbench.core.config.NBProperties;
+import ch.ethz.systems.netbench.core.network.NetworkDevice;
+import ch.ethz.systems.netbench.core.network.Packet;
+import ch.ethz.systems.netbench.ext.basic.TcpPacket;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SimpleTcpSequenceTest {
@@ -115,7 +115,7 @@ public class SimpleTcpSequenceTest {
         }).when(networkDeviceReceiver).receiveFromTransportLayer(receiverOutgoingPacketCaptor.capture());
 
         // Start a flow from 0 to 1 of size <bytes>
-        senderLayer.startFlow(1, flowSizeByte, "YT");
+        senderLayer.startFlow(1, flowSizeByte);
 
         ////////////////////////////////
         // Sender outgoing packets check

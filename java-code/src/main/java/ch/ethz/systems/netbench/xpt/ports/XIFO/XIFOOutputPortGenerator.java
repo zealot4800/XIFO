@@ -10,19 +10,19 @@ public class XIFOOutputPortGenerator extends OutputPortGenerator {
 
     private final long numberQueues;
     private final long sizePerQueuePackets;
-    private final String stepSize;
+    private final long bufferSize;
 
-    public XIFOOutputPortGenerator(long numberQueues, long sizePerQueuePackets, String stepSize) {
+    public XIFOOutputPortGenerator(long numberQueues, long sizePerQueuePackets, long windowSize) {
         this.numberQueues = numberQueues;
         this.sizePerQueuePackets = sizePerQueuePackets;
-        this.stepSize = stepSize;
+        this.bufferSize = windowSize;
         SimulationLogger.logInfo("Port", "XIFO(numberQueues=" + numberQueues + ", sizePerQueuePackets=" + sizePerQueuePackets +
-                ", stepSize=" + stepSize + ")");
+                ", stepSize=" + bufferSize + ")");
     }
 
     @Override
     public OutputPort generate(NetworkDevice ownNetworkDevice, NetworkDevice towardsNetworkDevice, Link link) {
-        return new XIFOOutputPort(ownNetworkDevice, towardsNetworkDevice, link, numberQueues, sizePerQueuePackets, stepSize);
+        return new XIFOOutputPort(ownNetworkDevice, towardsNetworkDevice, link, numberQueues, sizePerQueuePackets, bufferSize);
     }
 
 }

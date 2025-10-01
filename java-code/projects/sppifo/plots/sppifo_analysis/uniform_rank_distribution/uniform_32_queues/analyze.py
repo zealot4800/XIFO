@@ -9,12 +9,14 @@ def analyze_inversions():
     inversionsSPPIFO = {}
     inversionsGreedy = {}
     inversionsFixed_queue_bounds = {}
+    inversionsXIFO = {}
 
     for i in range(0,101):
         inversionsFIFO[i] = 0
         inversionsSPPIFO[i] = 0
         inversionsGreedy[i] = 0
         inversionsFixed_queue_bounds[i] = 0
+        inversionsXIFO[i] = 0
 
     with open("temp/sppifo/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/FIFO_32/inversions_tracking.csv.log") as file:
         reader = csv.reader(file)
@@ -48,12 +50,20 @@ def analyze_inversions():
             if port == 1:
                 inversionsFixed_queue_bounds[rank] = inversionsFixed_queue_bounds[rank] + 1
 
+    with open("temp/sppifo/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/XIFO_32/inversions_tracking.csv.log") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            port = int(row[0])
+            rank = int(row[1])
+            if port == 1:
+                inversionsXIFO[rank] = inversionsXIFO[rank] + 1
+
     # Write results in file
     w = open("projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.dat", 'w')
     axis = range(0,100)
-    w.write("#  FIFO    SPPIFO  SPPIFOFIXED Fixed_queue_bounds\n")
+    w.write("#  FIFO    SPPIFO  SPPIFOFIXED Fixed_queue_bounds XIFO\n")
     for line in range(0,len(axis)):
-        w.write("%s   %s   %s   %s   %s\n" % (axis[line], inversionsFIFO[line], inversionsSPPIFO[line], inversionsGreedy[line], inversionsFixed_queue_bounds[line]))
+        w.write("%s   %s   %s   %s   %s   %s \n" % (axis[line], inversionsFIFO[line], inversionsSPPIFO[line], inversionsGreedy[line], inversionsFixed_queue_bounds[line], inversionsXIFO[line]))
 
 # Call analysis functions
 analyze_inversions()

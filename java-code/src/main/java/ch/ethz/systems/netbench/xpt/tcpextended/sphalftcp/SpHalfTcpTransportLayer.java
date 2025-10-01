@@ -16,8 +16,8 @@ public class SpHalfTcpTransportLayer extends TransportLayer {
     }
 
     @Override
-    protected Socket createSocket(long flowId, int destinationId, long flowSizeByte, String serviceId) {
-        return new SpHalfTcpSocket(this, flowId, this.identifier, destinationId, flowSizeByte, serviceId);
+    protected Socket createSocket(long flowId, int destinationId, long flowSizeByte) {
+        return new SpHalfTcpSocket(this, flowId, this.identifier, destinationId, flowSizeByte);
     }
 
 }

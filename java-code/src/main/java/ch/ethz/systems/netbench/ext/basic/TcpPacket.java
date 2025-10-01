@@ -21,7 +21,6 @@ public abstract class TcpPacket extends IpPacket implements TcpHeader {
     private final boolean FIN;
     private final double windowSize;
     private final long dataSizeByte;
-    private final String serviceId;
 
     // Mechanisms fields
     private int nonSequentialHash = -1;
@@ -31,7 +30,7 @@ public abstract class TcpPacket extends IpPacket implements TcpHeader {
             int sourceId, int destinationId, int TTL, // IP header fields
             int sourcePort, int destinationPort, long sequenceNumber, long acknowledgementNumber,
             boolean NS, boolean CWR, boolean ECE, boolean URG, boolean ACK, boolean PSH,
-            boolean RST, boolean SYN, boolean FIN, double windowSize, String serviceId
+            boolean RST, boolean SYN, boolean FIN, double windowSize
     ) {
         super(flowId, TCP_HEADER_SIZE_BIT + dataSizeByte * 8L, sourceId, destinationId, TTL);
         this.sourcePort = sourcePort;
@@ -49,17 +48,11 @@ public abstract class TcpPacket extends IpPacket implements TcpHeader {
         this.FIN = FIN;
         this.windowSize = windowSize;
         this.dataSizeByte = dataSizeByte;
-        this.serviceId = serviceId;
     }
 
     @Override
     public long getDataSizeByte() {
         return dataSizeByte;
-    }
-
-    @Override
-    public String getServiceId() {
-        return serviceId;
     }
 
     @Override

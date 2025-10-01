@@ -21,7 +21,8 @@ plot "projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairn
             '' using 4 title "AFQ"  w lp ls 22 lw 4, \
             '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
             '' using 3 title "DCTCP" w lp ls 27 lw 4, \
-            '' using 2 title "TCP"  w lp ls 28 lw 4
+            '' using 2 title "TCP"  w lp ls 28 lw 4, \
+            '' using 7 title "XIFO" w lp ls 24 lw 4
 
 ########################################################################################################################
 # Mean flow completion time <100KB: pFabric-based scheduling schemes
@@ -38,7 +39,8 @@ plot "projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairn
            '' using 4 title "AFQ"  w lp ls 22 lw 4, \
            '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
            '' using 3 title "DCTCP" w lp ls 27 lw 4, \
-           '' using 2 title "TCP"  w lp ls 28 lw 4
+           '' using 2 title "TCP"  w lp ls 28 lw 4, \
+           '' using 7 title "XIFO" w lp ls 24 lw 4
 
 
 ########################################################################################################################
@@ -121,6 +123,5 @@ plot "projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairn
                 ''  using 8:9:10 title "AFQ" linecolor rgb aqua lw 3, \
                 ''  using 11:12:13 title "SP-PIFO" linecolor rgb ocean lw 3, \
                 ''  using 5:6:7  title "DCTCP" linecolor rgb wave lw 3, \
-                ''  using 2:3:4 title "TCP" linecolor rgb foam lw 3
-
-
+                ''  using 2:3:4 title "TCP" linecolor rgb foam lw 3, \
+                ''  using 17:18:19 title "XIFO" linecolor rgb stone lw 3

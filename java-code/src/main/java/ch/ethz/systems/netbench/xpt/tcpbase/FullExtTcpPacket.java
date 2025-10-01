@@ -1,9 +1,8 @@
 package ch.ethz.systems.netbench.xpt.tcpbase;
 
-import ch.ethz.systems.netbench.core.Simulator;
-import ch.ethz.systems.netbench.ext.basic.TcpPacket;
-
 import java.util.Collection;
+
+import ch.ethz.systems.netbench.ext.basic.TcpPacket;
 
 public class FullExtTcpPacket extends TcpPacket implements SelectiveAckHeader, EchoHeader, PriorityHeader, Comparable {
 
@@ -14,8 +13,8 @@ public class FullExtTcpPacket extends TcpPacket implements SelectiveAckHeader, E
     private int enqueuedRound;
     private long enqueueTime;
 
-    public FullExtTcpPacket(long flowId, long dataSizeByte, int sourceId, int destinationId, int TTL, int sourcePort, int destinationPort, long sequenceNumber, long acknowledgementNumber, boolean NS, boolean CWR, boolean ECE, boolean URG, boolean ACK, boolean PSH, boolean RST, boolean SYN, boolean FIN, double windowSize, long priority, String serviceId) {
-        super(flowId, dataSizeByte, sourceId, destinationId, TTL, sourcePort, destinationPort, sequenceNumber, acknowledgementNumber, NS, CWR, ECE, URG, ACK, PSH, RST, SYN, FIN, windowSize, serviceId);
+    public FullExtTcpPacket(long flowId, long dataSizeByte, int sourceId, int destinationId, int TTL, int sourcePort, int destinationPort, long sequenceNumber, long acknowledgementNumber, boolean NS, boolean CWR, boolean ECE, boolean URG, boolean ACK, boolean PSH, boolean RST, boolean SYN, boolean FIN, double windowSize, long priority) {
+        super(flowId, dataSizeByte, sourceId, destinationId, TTL, sourcePort, destinationPort, sequenceNumber, acknowledgementNumber, NS, CWR, ECE, URG, ACK, PSH, RST, SYN, FIN, windowSize);
         this.priority = priority;
     }
 

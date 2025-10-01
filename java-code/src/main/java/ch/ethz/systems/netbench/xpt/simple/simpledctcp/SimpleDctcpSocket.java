@@ -23,10 +23,9 @@ public class SimpleDctcpSocket extends SimpleTcpSocket {
      * @param sourceId       Source network device identifier
      * @param destinationId  Target network device identifier
      * @param flowSizeByte   Size of the flow in bytes
-     * @param serviceId
      */
-    SimpleDctcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte, String serviceId) {
-        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte, serviceId);
+    SimpleDctcpSocket(TransportLayer transportLayer, long flowId, int sourceId, int destinationId, long flowSizeByte) {
+        super(transportLayer, flowId, sourceId, destinationId, flowSizeByte);
         this.DCTCP_WEIGHT_NEW_ESTIMATION = Simulator.getConfiguration().getDoublePropertyWithDefault("DCTCP_WEIGHT_NEW_ESTIMATION", 0.0625);
         this.DCTCP_WEIGHT_OLD_ESTIMATION = 1.0 - DCTCP_WEIGHT_NEW_ESTIMATION;
         this.alphaFraction = 0.0;

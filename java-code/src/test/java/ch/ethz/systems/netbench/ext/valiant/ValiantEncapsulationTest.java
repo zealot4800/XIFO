@@ -1,15 +1,19 @@
 package ch.ethz.systems.netbench.ext.valiant;
 
-import ch.ethz.systems.netbench.ext.basic.TcpPacket;
-import ch.ethz.systems.netbench.xpt.tcpbase.FullExtTcpPacket;
 import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import ch.ethz.systems.netbench.ext.basic.TcpPacket;
+import ch.ethz.systems.netbench.xpt.tcpbase.FullExtTcpPacket;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ValiantEncapsulationTest {
@@ -63,8 +67,7 @@ public class ValiantEncapsulationTest {
                 473737, 373, // Seq number, Ack number
                 false, false, false, false, true, false, false, false, false,
                 // NS  CWR    ECE    URG    ACK   PSH    RST    SYN    FIN
-                4262, 0, // Window size
-                "YT"
+                4262, 0 // Window size
         );
 
         // Create packet

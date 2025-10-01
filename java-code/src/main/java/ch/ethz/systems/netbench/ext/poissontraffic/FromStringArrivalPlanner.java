@@ -1,10 +1,10 @@
 package ch.ethz.systems.netbench.ext.poissontraffic;
 
+import java.util.Map;
+
 import ch.ethz.systems.netbench.core.log.SimulationLogger;
 import ch.ethz.systems.netbench.core.network.TransportLayer;
 import ch.ethz.systems.netbench.core.run.traffic.TrafficPlanner;
-
-import java.util.Map;
 
 public class FromStringArrivalPlanner extends TrafficPlanner {
 
@@ -24,7 +24,6 @@ public class FromStringArrivalPlanner extends TrafficPlanner {
 
     /**
      * Creates plan based on the given string:
-     * (start_time, src_id, dst_id, flow_size_byte, serviceId);(start_time, src_id, dst_id, flow_size_byte, serviceId);...
      *
      * @param durationNs    Duration in nanoseconds
      */
@@ -40,8 +39,7 @@ public class FromStringArrivalPlanner extends TrafficPlanner {
                 Long.valueOf(arrivalSpl[0].trim()),
                 Integer.valueOf(arrivalSpl[1].trim()),
                 Integer.valueOf(arrivalSpl[2].trim()),
-                Long.valueOf(arrivalSpl[3].trim()),
-                String.valueOf(arrivalSpl[4])
+                Long.valueOf(arrivalSpl[3].trim())
             );
 
         }

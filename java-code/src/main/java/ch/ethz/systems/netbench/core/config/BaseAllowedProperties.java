@@ -43,9 +43,6 @@ public class BaseAllowedProperties {
             // Routing
             "network_device_routing",
 
-            //  Qualityofservice
-            "Quality_of_service",
-
             // Traffic
             "traffic",
             "traffic_flow_size_dist",
@@ -101,6 +98,8 @@ public class BaseAllowedProperties {
             "output_port_adaptation_period",
             "transport_layer_rank_distribution",
             "transport_layer_rank_bound",
+
+            "sliding_window_size",
 
             // TCP
             "TCP_ROUND_TRIP_TIMEOUT_NS",

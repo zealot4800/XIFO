@@ -26,6 +26,13 @@ def analyze_inversions():
     blockings_utilizationGreedy[3] = 0
     blockings_utilizationGreedy[4] = 0
 
+    blockings_utilizationXIFO = {}
+    blockings_utilizationXIFO[0] = 0
+    blockings_utilizationXIFO[1] = 0
+    blockings_utilizationXIFO[2] = 0
+    blockings_utilizationXIFO[3] = 0
+    blockings_utilizationXIFO[4] = 0
+
     #SPPIFO
     with open("temp/sppifo/sppifo_analysis/uniform_rank_distribution/utilization/SPPIFO_20/inversions_tracking.csv.log") as file:
         reader = csv.reader(file)
@@ -104,13 +111,39 @@ def analyze_inversions():
         for row in reader:
             blockings_utilizationFIFO[4] = blockings_utilizationFIFO[4] + 1
 
+    #XIFO
+    with open("temp/sppifo/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_20/inversions_tracking.csv.log") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            blockings_utilizationXIFO[0] = blockings_utilizationXIFO[0] + 1
+    
+    with open("temp/sppifo/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_40/inversions_tracking.csv.log") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            blockings_utilizationXIFO[1] = blockings_utilizationXIFO[1] + 1
+    
+    with open("temp/sppifo/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_60/inversions_tracking.csv.log") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            blockings_utilizationXIFO[2] = blockings_utilizationXIFO[2] + 1
+    
+    with open("temp/sppifo/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_80/inversions_tracking.csv.log") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            blockings_utilizationXIFO[3] = blockings_utilizationXIFO[3] + 1
+    
+    with open("temp/sppifo/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_90/inversions_tracking.csv.log") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            blockings_utilizationXIFO[4] = blockings_utilizationXIFO[4] + 1
+
     axis = [20,40,60,80,90]
 
     # Write results in file
     w = open("projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.dat", 'w')
-    w.write("#  FIFO    SPPIFO  Greedy\n")
+    w.write("#  FIFO    SPPIFO  Greedy   XIFO\n")
     for line in range(0,len(axis)):
-        w.write("%s   %s   %s   %s\n" % (axis[line], blockings_utilizationFIFO[line], blockings_utilizationSPPIFO[line], blockings_utilizationGreedy[line]))
+        w.write("%s   %s   %s   %s   %s\n" % (axis[line], blockings_utilizationFIFO[line], blockings_utilizationSPPIFO[line], blockings_utilizationGreedy[line], blockings_utilizationXIFO[line]))
 
 # Call analysis functions
 analyze_inversions()

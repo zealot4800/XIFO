@@ -4,7 +4,7 @@ import ch.ethz.systems.netbench.ext.basic.TcpPacket;
 
 class BarePacket extends TcpPacket {
 
-    BarePacket(long flowId, long dataSizeByte, int sourceId, int destinationId, long sequenceNumber, long acknowledgementNumber, boolean ECE, boolean ACK, double windowSize, String serviceId) {
+    BarePacket(long flowId, long dataSizeByte, int sourceId, int destinationId, long sequenceNumber, long acknowledgementNumber, boolean ECE, boolean ACK, double windowSize) {
         super(
                 flowId,
                 dataSizeByte,
@@ -24,8 +24,7 @@ class BarePacket extends TcpPacket {
                 false,
                 false,
                 false,
-                windowSize,
-                serviceId
+                windowSize
         );
     }
 

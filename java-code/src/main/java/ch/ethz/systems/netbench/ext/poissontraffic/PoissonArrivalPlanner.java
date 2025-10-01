@@ -1,18 +1,22 @@
 package ch.ethz.systems.netbench.ext.poissontraffic;
 
-import ch.ethz.systems.netbench.core.Simulator;
-import ch.ethz.systems.netbench.core.run.traffic.TrafficPlanner;
-import ch.ethz.systems.netbench.ext.poissontraffic.flowsize.FlowSizeDistribution;
-import ch.ethz.systems.netbench.ext.poissontraffic.flowsize.ServiceDistribution;
-import ch.ethz.systems.netbench.core.log.SimulationLogger;
-import ch.ethz.systems.netbench.core.network.TransportLayer;
-import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.apache.commons.lang3.tuple.Pair;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
+
+import ch.ethz.systems.netbench.core.Simulator;
+import ch.ethz.systems.netbench.core.log.SimulationLogger;
+import ch.ethz.systems.netbench.core.network.TransportLayer;
+import ch.ethz.systems.netbench.core.run.traffic.TrafficPlanner;
+import ch.ethz.systems.netbench.ext.poissontraffic.flowsize.FlowSizeDistribution;
 
 public class PoissonArrivalPlanner extends TrafficPlanner {
 
@@ -28,17 +32,15 @@ public class PoissonArrivalPlanner extends TrafficPlanner {
 
     private final double lambdaFlowStartsPerSecond;
     private final FlowSizeDistribution flowSizeDistribution;
-    private final ServiceDistribution serviceDisribution;
     private final Random ownIndependentRng;
     private final RandomCollection<Pair<Integer, Integer>> randomPairGenerator;
 
-    private PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution, ServiceDistribution serviceDistribution) {
+    private PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution) {
         super(idToTransportLayerMap);
         this.lambdaFlowStartsPerSecond = lambdaFlowStartsPerSecond;
         this.flowSizeDistribution = flowSizeDistribution;
         this.ownIndependentRng = Simulator.selectIndependentRandom("poisson_inter_arrival");
         this.randomPairGenerator = new RandomCollection<>(Simulator.selectIndependentRandom("pair_probabilities_draw"));
-        this.serviceDisribution = serviceDistribution;
     }
 
     /**
@@ -50,8 +52,8 @@ public class PoissonArrivalPlanner extends TrafficPlanner {
      * @param serviceDisribution        Service Distribution
      * @param fileName                  Name of the input file with communication probability densities
      */
-    public PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution, ServiceDistribution serviceDistribution, String fileName) {
-        this(idToTransportLayerMap, lambdaFlowStartsPerSecond, flowSizeDistribution, serviceDistribution);
+    public PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution, String fileName) {
+        this(idToTransportLayerMap, lambdaFlowStartsPerSecond, flowSizeDistribution);
         this.readPairProbabilitiesFromFile(fileName);
         SimulationLogger.logInfo("Flow planner", "POISSON_ARRIVAL(lambda=" + lambdaFlowStartsPerSecond + ", fileName=" + fileName + ")");
     }
@@ -64,8 +66,8 @@ public class PoissonArrivalPlanner extends TrafficPlanner {
      * @param flowSizeDistribution      Flow size distribution
      * @param pairDistribution          Choice of static pair distribution which is valid for any topology
      */
-    public PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution, ServiceDistribution serviceDistribution, PairDistribution pairDistribution) {
-        this(idToTransportLayerMap, lambdaFlowStartsPerSecond, flowSizeDistribution, serviceDistribution);
+    public PoissonArrivalPlanner(Map<Integer, TransportLayer> idToTransportLayerMap, double lambdaFlowStartsPerSecond, FlowSizeDistribution flowSizeDistribution, PairDistribution pairDistribution) {
+        this(idToTransportLayerMap, lambdaFlowStartsPerSecond, flowSizeDistribution);
         switch (pairDistribution) {
 
             case ALL_TO_ALL:
@@ -604,7 +606,12 @@ public class PoissonArrivalPlanner extends TrafficPlanner {
 
             // Register flow
             Pair<Integer, Integer> pair = choosePair();
-            registerFlow(time, pair.getLeft(), pair.getRight(), flowSizeDistribution.generateFlowSizeByte(), serviceDisribution.serviceDisribution());
+            registerFlow(
+                time,
+                pair.getLeft().intValue(),
+                pair.getRight().intValue(),
+                flowSizeDistribution.generateFlowSizeByte()
+            );
             // Advance time to next arrival
             time += interArrivalTime;
             x++;

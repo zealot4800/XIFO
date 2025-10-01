@@ -1,16 +1,16 @@
 package ch.ethz.systems.netbench.core.network;
 
-import ch.ethz.systems.netbench.core.Simulator;
-import ch.ethz.systems.netbench.core.run.traffic.FlowStartEvent;
+import java.util.PriorityQueue;
+
 import org.junit.After;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.util.PriorityQueue;
-
-import static org.junit.Assert.assertEquals;
+import ch.ethz.systems.netbench.core.Simulator;
+import ch.ethz.systems.netbench.core.run.traffic.FlowStartEvent;
 
 @RunWith(MockitoJUnitRunner.class)
 public class EventTest {
@@ -29,11 +29,11 @@ public class EventTest {
     public void testQueueOrder() {
 
         // Events
-        Event e1 = new FlowStartEvent(1000, null, 0, 0,"YT");
-        Event e2 = new FlowStartEvent(0, null, 0, 0, "YT");
-        Event e3 = new FlowStartEvent(848, null, 0, 0, "YT");
-        Event e4 = new FlowStartEvent(1000, null, 0, 0, "YT");
-        Event e5 = new FlowStartEvent(999999, null, 0, 0, "YT");
+        Event e1 = new FlowStartEvent(1000, null, 0, 0);
+        Event e2 = new FlowStartEvent(0, null, 0, 0);
+        Event e3 = new FlowStartEvent(848, null, 0, 0);
+        Event e4 = new FlowStartEvent(1000, null, 0, 0);
+        Event e5 = new FlowStartEvent(999999, null, 0, 0);
 
         // Create queue
         PriorityQueue<Event> queue = new PriorityQueue<>();

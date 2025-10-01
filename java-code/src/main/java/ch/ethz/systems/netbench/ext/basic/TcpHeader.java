@@ -16,13 +16,6 @@ public interface TcpHeader extends IpHeader {
      */
     int getSourcePort();
 
-    /*
-     * Get the serviceId
-     * 
-     * @return  Source port
-     */
-    String getServiceId();
-
     /**
      * Get the destination port.
      *

@@ -16,10 +16,9 @@ public class PfabricSocket extends NewRenoTcpSocket {
     	int sourceId,
     	int destinationId,
     	long flowSizeByte,
-    	long seed,
-        String serviceId
+    	long seed
     ) {
-		super(transportLayer, flowId, sourceId, destinationId, flowSizeByte, serviceId);
+		super(transportLayer, flowId, sourceId, destinationId, flowSizeByte);
         //RTO = 3* RTT, with an RTT of 32.12us for the leaf spine of 1-4Gbps
 		this.roundTripTimeout = 96384L;
 		this.congestionWindow = this.slowStartThreshold;
@@ -46,8 +45,7 @@ public class PfabricSocket extends NewRenoTcpSocket {
             false, ACK, false, // URG, ACK, PSH
             false, SYN, false, // RST, SYN, FIN
             0, // Window size
-            priority,
-            serviceId
+            priority
         );
     }
 

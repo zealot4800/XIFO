@@ -1,19 +1,5 @@
 package ch.ethz.systems.netbench.xpt.newreno.newrenotcp;
 
-import ch.ethz.systems.netbench.core.Simulator;
-import ch.ethz.systems.netbench.core.config.BaseAllowedProperties;
-import ch.ethz.systems.netbench.core.config.NBProperties;
-import ch.ethz.systems.netbench.core.network.NetworkDevice;
-import ch.ethz.systems.netbench.core.network.Packet;
-import ch.ethz.systems.netbench.core.run.traffic.FlowStartEvent;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.runners.MockitoJUnitRunner;
-import org.mockito.stubbing.Answer;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -22,7 +8,21 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
 import static org.mockito.Mockito.doAnswer;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.stubbing.Answer;
+
+import ch.ethz.systems.netbench.core.Simulator;
+import ch.ethz.systems.netbench.core.config.BaseAllowedProperties;
+import ch.ethz.systems.netbench.core.config.NBProperties;
+import ch.ethz.systems.netbench.core.network.NetworkDevice;
+import ch.ethz.systems.netbench.core.network.Packet;
+import ch.ethz.systems.netbench.core.run.traffic.FlowStartEvent;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TcpResendTest {
@@ -96,7 +96,7 @@ public class TcpResendTest {
         }).when(networkDeviceReceiver).receiveFromTransportLayer(receiverOutgoingPacketCaptor.capture());
 
         // Start a flow from 0 to 1 of size <bytes>
-        Simulator.registerEvent(new FlowStartEvent(0, senderLayer, 1, 700, "YT"));
+        Simulator.registerEvent(new FlowStartEvent(0, senderLayer, 1, 700));
 
         // Run the simulator for a 7 nanoseconds to allow a resend to happen
         Simulator.runNs(7);
