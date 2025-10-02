@@ -150,7 +150,7 @@ if __name__ == '__main__':
     w.write("8900   %s    %s    %s    %s    %s  \n" % (FCTs[3][0], FCTs[3][1], FCTs[3][2], FCTs[3][3], FCTs[3][4]))
     w.write("11100   %s    %s    %s    %s    %s  \n" % (FCTs[4][0], FCTs[4][1], FCTs[4][2], FCTs[4][3], FCTs[4][4]))
     w.write("14150   %s    %s    %s    %s    %s  \n" % (FCTs[5][0], FCTs[5][1], FCTs[5][2], FCTs[5][3], FCTs[5][4]))
-    w.write("19000   %s    %s    %s    %s    %s  \n" % (FCTs[6][0], FCTs[6][1], FCTs[6][2], FCTs[6][3], FCTs[6,0][4]))
+    w.write("19000   %s    %s    %s    %s    %s  \n" % (FCTs[6][0], FCTs[6][1], FCTs[6][2], FCTs[6][3], FCTs[6][4]))
     w.close()
 
 ########################################################################################################################
@@ -296,11 +296,10 @@ if __name__ == '__main__':
     w.close()
 
 ###########################################################################################################################
-
 # Packet drop vs. utilization pFabric
     lambdas = [3600, 5200, 7000, 8900, 11100, 14150, 19000]
 
-    FCTs = [[0,0,0,0],
+    drops = [[0,0,0,0],
             [0,0,0,0],
             [0,0,0,0],
             [0,0,0,0],
@@ -310,51 +309,51 @@ if __name__ == '__main__':
     row = 0
 
     for x in lambdas:
-        file = "temp/sppifo/sppifo_evaluation/pFabric/web_search_workload/"+str(x)+"/TCP/analysis/statistics.log"
+        file = "temp/sppifo/sppifo_evaluation/pFabric/web_search_workload/"+str(x)+"/TCP/statistics.log"
         r = open(file, 'r')
         lines = r.readlines()
         for i, line in enumerate(lines):
             if "PACKETS_DROPPED" in line:
-                FCTs[row][0]=line.split("=")[1].split("\n")[0]
+                drops[row][0]=float(line.split(":")[1]) / 100000.0
                 break
         r.close()
 
-        file = "temp/sppifo/sppifo_evaluation/pFabric/web_search_workload/"+str(x)+"/PIFO/analysis/statistics.log"
+        file = "temp/sppifo/sppifo_evaluation/pFabric/web_search_workload/"+str(x)+"/PIFO/statistics.log"
         r = open(file, 'r')
         lines = r.readlines()
         for i, line in enumerate(lines):
             if "PACKETS_DROPPED" in line:
-                FCTs[row][1]=line.split("=")[1].split("\n")[0]
+                drops[row][1]=float(line.split(":")[1]) / 100000.0
                 break
         r.close()
 
-        file = "temp/sppifo/sppifo_evaluation/pFabric/web_search_workload/"+str(x)+"/SPPIFO/analysis/statistics.log"
+        file = "temp/sppifo/sppifo_evaluation/pFabric/web_search_workload/"+str(x)+"/SPPIFO/statistics.log"
         r = open(file, 'r')
         lines = r.readlines()
         for i, line in enumerate(lines):
             if "PACKETS_DROPPED" in line:
-                FCTs[row][2]=line.split("=")[1].split("\n")[0]
+                drops[row][2]=float(line.split(":")[1]) / 100000.0
                 break
         r.close()
 
-        file = "temp/sppifo/sppifo_evaluation/pFabric/web_search_workload/"+str(x)+"/XIFO/analysis/statistics.log"
+        file = "temp/sppifo/sppifo_evaluation/pFabric/web_search_workload/"+str(x)+"/XIFO/statistics.log"
         r = open(file, 'r')
         lines = r.readlines()
         for i, line in enumerate(lines):
             if "PACKETS_DROPPED" in line:
-                FCTs[row][3]=line.split("=")[1].split("\n")[0]
+                drops[row][3]=float(line.split(":")[1]) / 100000.0
                 break
         row = row + 1
 
     w = open('projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_packet_drop.dat', 'w')
-    w.write("#    TCP    PIFO    SPPIFO   XIFO\n")
-    w.write("3600   %s    %s    %s    %s   \n" % (FCTs[0][0], FCTs[0][1], FCTs[0][2], FCTs[0][3]))
-    w.write("5200   %s    %s    %s    %s   \n" % (FCTs[1][0], FCTs[1][1], FCTs[1][2], FCTs[1][3]))
-    w.write("7000   %s    %s    %s    %s   \n" % (FCTs[2][0], FCTs[2][1], FCTs[2][2], FCTs[2][3]))
-    w.write("8900   %s    %s    %s    %s   \n" % (FCTs[3][0], FCTs[3][1], FCTs[3][2], FCTs[3][3]))
-    w.write("11100   %s    %s    %s    %s   \n" % (FCTs[4][0], FCTs[4][1], FCTs[4][2], FCTs[4][3]))
-    w.write("14150   %s    %s    %s    %s   \n" % (FCTs[5][0], FCTs[5][1], FCTs[5][2], FCTs[5][3]))
-    w.write("19000   %s    %s    %s    %s   \n" % (FCTs[6][0], FCTs[6][1], FCTs[6][2], FCTs[6][3]))
+    w.write("#    TCP     PIFO    SPPIFO    XIFO\n")
+    for idx, load in enumerate(lambdas):
+        w.write("%d    %s    %s    %s    %s\n" % (
+            load,
+            drops[idx][0],
+            drops[idx][1],
+            drops[idx][2],
+            drops[idx][3]
+        ))
     w.close()
-
 ###########################################################################################################################

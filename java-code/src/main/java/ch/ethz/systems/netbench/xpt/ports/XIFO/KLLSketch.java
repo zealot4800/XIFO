@@ -4,28 +4,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
 public class KLLSketch {
-
     private final int capacity;
+    private final int numQueues;
     private List<Integer> compactor;
-    private Integer p10;
-    private Integer p25;
-    private Integer p40;
-    private Integer p55;
-    private Integer p70;
-    private Integer p85;
-    private Integer p95;
+    private List<Integer> quantileBoundaries;
 
-    public KLLSketch(int capacity) {
+    public KLLSketch(int capacity, int numQueues) {
         this.capacity = capacity;
+        this.numQueues = numQueues;
         this.compactor = new ArrayList<>();
-        this.p10 = null;
-        this.p25 = null;
-        this.p40 = null;
-        this.p55 = null;
-        this.p70 = null;
-        this.p85 = null;
-        this.p95 = null;
+        this.quantileBoundaries = null;
     }
 
     public void insert(int value) {
@@ -41,7 +31,6 @@ public class KLLSketch {
             newCompactor.add(Math.min(compactor.get(i), compactor.get(i + 1)));
         }
         compactor = newCompactor;
-        Collections.sort(compactor);
     }
 
     private Integer query(double quantile) {
@@ -52,41 +41,23 @@ public class KLLSketch {
 
     private void cacheQuantiles() {
         Collections.sort(compactor);
-        p10 = query(0.12);
-        p25 = query(0.25);
-        p40 = query(0.37);
-        p55 = query(0.50);
-        p70 = query(0.63);
-        p85 = query(0.76);
-        p95 = query(0.88);
+        quantileBoundaries = new ArrayList<>();
+        for (int i = 1; i < numQueues; i++) {
+            double quantile = (double) i / numQueues;
+            quantileBoundaries.add(query(quantile));
+        }
         compact();
     }
 
     public int getQueueIndex(int value) {
-        if (p10 == null) {
-            return 7;
+        if (quantileBoundaries == null || quantileBoundaries.isEmpty()) {
+            return numQueues - 1;
         }
-        if (value <= p10) {
-            return 0;
+        for (int i = 0; i < quantileBoundaries.size(); i++) {
+            if (value <= quantileBoundaries.get(i)) {
+                return i;
+            }
         }
-        if (value <= p25) {
-            return 1;
-        }
-        if (value <= p40) {
-            return 2;
-        }
-        if (value <= p55) {
-            return 3;
-        }
-        if (value <= p70) {
-            return 4;
-        }
-        if (value <= p85) {
-            return 5;
-        }
-        if (value <= p95) {
-            return 6;
-        }
-        return 7;
+        return numQueues - 1;
     }
 }

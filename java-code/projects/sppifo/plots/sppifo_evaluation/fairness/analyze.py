@@ -419,10 +419,8 @@ if __name__ == '__main__':
 
 ########################################################################################################################
 
-########################################################################################################################
-
-    # Mean global flow completion time vs. utilization
-    lambdas = [3600, 5200, 7000, 8900, 11100, 14150, 19000]
+# Mean global flow completion time vs. utilization
+    lambdas = [3600, 7000, 11100, 19000]
     FCTs = [[0,0,0,0,0],
             [0,0,0,0,0],
             [0,0,0,0,0],
@@ -433,7 +431,7 @@ if __name__ == '__main__':
     row = 0
 
     for x in lambdas:
-        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/"+str(x)+"/TCP/analysis/flow_completion.statistics"
+        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/queue_analysis/"+str(x)+"/PIFOWFQ_32/analysis/flow_completion.statistics"
         r = open(file, 'r')
         lines = r.readlines()
         for i, line in enumerate(lines):
@@ -442,7 +440,7 @@ if __name__ == '__main__':
                 break
         r.close()
 
-        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/"+str(x)+"/DCTCP/analysis/flow_completion.statistics"
+        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/queue_analysis/"+str(x)+"/XIFOWFQ_8/analysis/flow_completion.statistics"
         r = open(file, 'r')
         lines = r.readlines()
         for i, line in enumerate(lines):
@@ -451,7 +449,7 @@ if __name__ == '__main__':
                 break
         r.close()
 
-        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/"+str(x)+"/AFQ_32/analysis/flow_completion.statistics"
+        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/queue_analysis/"+str(x)+"/XIFOWFQ_16/analysis/flow_completion.statistics"
         r = open(file, 'r')
         lines = r.readlines()
         for i, line in enumerate(lines):
@@ -460,7 +458,7 @@ if __name__ == '__main__':
                 break
         r.close()
 
-        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/"+str(x)+"/SPPIFOWFQ_32/analysis/flow_completion.statistics"
+        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/queue_analysis/"+str(x)+"/XIFOWFQ_24/analysis/flow_completion.statistics"
         r = open(file, 'r')
         lines = r.readlines()
         for i, line in enumerate(lines):
@@ -469,7 +467,7 @@ if __name__ == '__main__':
                 break
         r.close()
 
-        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/"+str(x)+"/PIFOWFQ_32/analysis/flow_completion.statistics"
+        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/queue_analysis/"+str(x)+"/XIFOWFQ_32/analysis/flow_completion.statistics"
         r = open(file, 'r')
         lines = r.readlines()
         for i, line in enumerate(lines):
@@ -480,13 +478,80 @@ if __name__ == '__main__':
 
         row = row + 1
 
-    w = open('projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_32.dat', 'w')
-    w.write("#    1000    2000    5000    10000    100000 \n")
-    w.write("4000   %s    %s    %s    %s    %s  \n" % (FCTs[0][0], FCTs[0][1], FCTs[0][2], FCTs[0][3], FCTs[0][4]))
-    w.write("6000   %s    %s    %s    %s    %s  \n" % (FCTs[1][0], FCTs[1][1], FCTs[1][2], FCTs[1][3], FCTs[1][4]))
-    w.write("10000   %s    %s    %s    %s    %s  \n" % (FCTs[2][0], FCTs[2][1], FCTs[2][2], FCTs[2][3], FCTs[2][4]))
-    w.write("15000   %s    %s    %s    %s    %s  \n" % (FCTs[3][0], FCTs[3][1], FCTs[3][2], FCTs[3][3], FCTs[3][4]))
-    w.write("22500   %s    %s    %s    %s    %s  \n" % (FCTs[4][0], FCTs[4][1], FCTs[4][2], FCTs[4][3], FCTs[4][4]))
-    w.write("37000   %s    %s    %s    %s    %s  \n" % (FCTs[5][0], FCTs[5][1], FCTs[5][2], FCTs[5][3], FCTs[5][4]))
-    w.write("60000   %s    %s    %s    %s    %s  \n" % (FCTs[6][0], FCTs[6][1], FCTs[6][2], FCTs[6][3], FCTs[6][4]))
+    w = open('projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_xifo_fct_queue_effect.dat', 'w')
+    w.write("#   PIFOWFQ_32    XIFOWFQ_8  XIFOWFQ_16  XIFOWFQ_24  XIFOWFQ_32\n")
+    w.write("3600   %s    %s    %s    %s    %s  \n" % (FCTs[0][0], FCTs[0][1], FCTs[0][2], FCTs[0][3], FCTs[0][4]))
+    w.write("7000   %s    %s    %s    %s    %s  \n" % (FCTs[1][0], FCTs[1][1], FCTs[1][2], FCTs[1][3], FCTs[1][4]))
+    w.write("11100   %s    %s    %s    %s    %s  \n" % (FCTs[2][0], FCTs[2][1], FCTs[2][2], FCTs[2][3], FCTs[2][4]))
+    w.write("19000   %s    %s    %s    %s    %s  \n" % (FCTs[3][0], FCTs[3][1], FCTs[3][2], FCTs[3][3], FCTs[3][4]))
+    w.close()
+
+
+########################################################################################################################
+
+# Mean global flow completion time vs. utilization
+    lambdas = [3600, 7000, 11100, 19000]
+    FCTs = [[0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,0,0,0,0]]
+    row = 0
+
+    for x in lambdas:
+        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/queue_analysis/"+str(x)+"/PIFOWFQ_32/analysis/flow_completion.statistics"
+        r = open(file, 'r')
+        lines = r.readlines()
+        for i, line in enumerate(lines):
+            if "all_mean_fct_ms" in line:
+                FCTs[row][0]=line.split("=")[1].split("\n")[0]
+                break
+        r.close()
+
+        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/queue_analysis/"+str(x)+"/SPPIFOWFQ_8/analysis/flow_completion.statistics"
+        r = open(file, 'r')
+        lines = r.readlines()
+        for i, line in enumerate(lines):
+            if "all_mean_fct_ms" in line:
+                FCTs[row][1]=line.split("=")[1].split("\n")[0]
+                break
+        r.close()
+
+        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/queue_analysis/"+str(x)+"/SPPIFOWFQ_16/analysis/flow_completion.statistics"
+        r = open(file, 'r')
+        lines = r.readlines()
+        for i, line in enumerate(lines):
+            if "all_mean_fct_ms" in line:
+                FCTs[row][2]=line.split("=")[1].split("\n")[0]
+                break
+        r.close()
+
+        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/queue_analysis/"+str(x)+"/SPPIFOWFQ_24/analysis/flow_completion.statistics"
+        r = open(file, 'r')
+        lines = r.readlines()
+        for i, line in enumerate(lines):
+            if "all_mean_fct_ms" in line:
+                FCTs[row][3]=line.split("=")[1].split("\n")[0]
+                break
+        r.close()
+
+        file = "temp/sppifo/sppifo_evaluation/fairness/web_search_workload/queue_analysis/"+str(x)+"/SPPIFOWFQ_32/analysis/flow_completion.statistics"
+        r = open(file, 'r')
+        lines = r.readlines()
+        for i, line in enumerate(lines):
+            if "all_mean_fct_ms" in line:
+                FCTs[row][4]=line.split("=")[1].split("\n")[0]
+                break
+        r.close()
+
+        row = row + 1
+
+    w = open('projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_sppifo_fct_queue_effect.dat', 'w')
+    w.write("#   PIFOWFQ_32    SPPIFOWFQ_8  SPPIFOWFQ_16  SPPIFOWFQ_24  SPPIFOWFQ_32\n")
+    w.write("3600   %s    %s    %s    %s    %s  \n" % (FCTs[0][0], FCTs[0][1], FCTs[0][2], FCTs[0][3], FCTs[0][4]))
+    w.write("7000   %s    %s    %s    %s    %s  \n" % (FCTs[1][0], FCTs[1][1], FCTs[1][2], FCTs[1][3], FCTs[1][4]))
+    w.write("11100   %s    %s    %s    %s    %s  \n" % (FCTs[2][0], FCTs[2][1], FCTs[2][2], FCTs[2][3], FCTs[2][4]))
+    w.write("19000   %s    %s    %s    %s    %s  \n" % (FCTs[3][0], FCTs[3][1], FCTs[3][2], FCTs[3][3], FCTs[3][4]))
     w.close()

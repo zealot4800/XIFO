@@ -80,8 +80,7 @@ set ylabel 'Number of Packet drops(·10^5)'
 set yrange [0:6]
 set ytics auto
 set key opaque
-plot "projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_packet_drop.dat" using 4 title "PIFO" w lp  ls 21 lw 4, \
-            '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
-            '' using 3 title "DCTCP" w lp ls 27 lw 4, \
-            '' using 2 title "TCP"  w lp ls 28 lw 4, \
-            '' using 6 title "XIFO" w lp ls 29 lw 4
+plot "projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_packet_drop.dat" using 2 title "TCP" w lp  ls 28 lw 4, \
+            '' using 3 title "PIFO"  w lp ls 21 lw 4, \
+            '' using 4 title "SP-PIFO"  w lp ls 23 lw 4, \
+            '' using 5 title "XIFO" w lp ls 29 lw 4

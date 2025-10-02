@@ -70,9 +70,9 @@ plot "projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairn
          '' using 3 title "SP-PIFO   Q8" linecolor rgb foam lw 4
 
 ########################################################################################################################
-# Different queues AFQ
+# Different queues XIFO
 ########################################################################################################################
-set output 'projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_afq_fct_queue_effect.pdf'
+set output 'projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_xifo_fct_queue_effect.pdf'
 
 set xlabel 'Load'
 set ylabel 'Flow Completion Time (ms)'
@@ -87,11 +87,11 @@ set key top left
 set xtics ("0.2" 0, "0.4" 1, "0.6" 2, "0.8" 3)
 set xrange [-0.5:3.5]
 
-plot "projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_afq_fct_queue_effect.dat" using 2 title "PIFO" linecolor rgb midnight lw 4, \
-         '' using 6 title "AFQ Q32" linecolor rgb aqua lw 4, \
-        '' using 5 title "AFQ Q24" linecolor rgb ocean lw 4, \
-         '' using 4 title "AFQ Q16" linecolor rgb wave lw 4, \
-         '' using 3 title "AFQ   Q8" linecolor rgb foam lw 4
+plot "projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_xifo_fct_queue_effect.dat" using 2 title "PIFO" linecolor rgb midnight lw 4, \
+         '' using 6 title "XIFO Q32" linecolor rgb aqua lw 4, \
+        '' using 5 title "XIFO Q24" linecolor rgb ocean lw 4, \
+         '' using 4 title "XIFO Q16" linecolor rgb wave lw 4, \
+         '' using 3 title "XIFO   Q8" linecolor rgb foam lw 4
 
 ########################################################################################################################
 # Mean flow completion time >10MB: pFabric-based scheduling schemes

@@ -1,12 +1,5 @@
 package ch.ethz.systems.netbench.xpt.ports.XIFO_WFQ;
 
-import ch.ethz.systems.netbench.core.log.SimulationLogger;
-import ch.ethz.systems.netbench.core.network.NetworkDevice;
-import ch.ethz.systems.netbench.core.network.Packet;
-import ch.ethz.systems.netbench.xpt.tcpbase.FullExtTcpPacket;
-import ch.ethz.systems.netbench.xpt.tcpbase.PriorityHeader;
-import ch.ethz.systems.netbench.xpt.ports.XIFO.KLLSketch;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -16,9 +9,14 @@ import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class WFQXIFOQueue implements Queue {
+import ch.ethz.systems.netbench.core.log.SimulationLogger;
+import ch.ethz.systems.netbench.core.network.NetworkDevice;
+import ch.ethz.systems.netbench.core.network.Packet;
+import ch.ethz.systems.netbench.xpt.ports.XIFO.KLLSketch;
+import ch.ethz.systems.netbench.xpt.tcpbase.FullExtTcpPacket;
+import ch.ethz.systems.netbench.xpt.tcpbase.PriorityHeader;
 
-    private static final int FLOW_WEIGHT = 8;
+public class WFQXIFOQueue implements Queue {
 
     private final ArrayList<ArrayBlockingQueue<Packet>> queueList;
     private final Map<Integer, Integer> queueBounds;
@@ -29,12 +27,12 @@ public class WFQXIFOQueue implements Queue {
     private final Map<Long, Integer> lastFinishTime;
     private int round;
 
-    public WFQXIFOQueue(long numQueues, long perQueueCapacity, NetworkDevice ownNetworkDevice, long window) {
+    public WFQXIFOQueue(long numQueues, long perQueueCapacity, NetworkDevice ownNetworkDevice, long bufferSize) {
         this.queueList = new ArrayList<>((int) numQueues);
         this.queueBounds = new HashMap<>();
         this.lock = new ReentrantLock();
         this.ownId = ownNetworkDevice.getIdentifier();
-        this.scheduler = new KLLSketch((int) window);
+        this.scheduler = new KLLSketch((int) bufferSize, (int) numQueues);
         this.lastFinishTime = new HashMap<>();
         this.round = 0;
 
@@ -44,29 +42,21 @@ public class WFQXIFOQueue implements Queue {
         }
     }
 
-    private int computeRank(Packet packet) {
+    public int computeRank(Packet p){
         int startTime = this.round;
-        long flowId = packet.getFlowId();
-
-        if (lastFinishTime.containsKey(flowId)) {
-            int finish = lastFinishTime.get(flowId);
-            if (finish > round) {
-                startTime = finish;
+        if(lastFinishTime.containsKey(p.getFlowId())){
+            if((int) lastFinishTime.get(p.getFlowId()) > round){
+                startTime = (int)lastFinishTime.get(p.getFlowId());
             }
         }
-
-        int delta = (int) packet.getSizeBit() / FLOW_WEIGHT;
-        lastFinishTime.put(flowId, startTime + delta);
+        int flowWeight = 8;
+        int finishingTime_update = startTime + ((int)p.getSizeBit()/flowWeight);
+        lastFinishTime.put(p.getFlowId(), finishingTime_update);
         return startTime;
     }
 
-    private void rollbackRank(Packet packet) {
-        long flowId = packet.getFlowId();
-        Integer finish = lastFinishTime.get(flowId);
-        if (finish != null) {
-            int delta = (int) packet.getSizeBit() / FLOW_WEIGHT;
-            lastFinishTime.put(flowId, finish - delta);
-        }
+    public void setbackFinishTime(Packet p, int startTime){
+        lastFinishTime.put(p.getFlowId(), startTime);
     }
 
     private void updateRound(Packet packet) {
@@ -77,20 +67,15 @@ public class WFQXIFOQueue implements Queue {
     @Override
     public boolean offer(Object o) {
         Packet packet = (Packet) o;
+        int rank = computeRank(packet);
         lock.lock();
         try {
-            int rank = computeRank(packet);
             ((PriorityHeader) packet).setPriority(rank);
-            scheduler.insert(rank);
             int queueIdx = scheduler.getQueueIndex(rank);
             boolean enqueued = queueList.get(queueIdx).offer(packet);
-
-            if (enqueued) {
-                queueBounds.put(queueIdx, rank);
-            } else {
-                rollbackRank(packet);
+            if(enqueued){
+                scheduler.insert(rank);
             }
-
             return enqueued;
         } finally {
             lock.unlock();

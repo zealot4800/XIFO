@@ -27,7 +27,7 @@ public class XIFOQueue implements Queue {
         this.queueBounds = new HashMap<>();
         this.ownId = ownNetworkDevice.getIdentifier();
         this.bufferSize = window;
-        this.scheduler = new KLLSketch((int) bufferSize);
+        this.scheduler = new KLLSketch((int) bufferSize, (int) numQueues);
 
         for (int i = 0; i < (int) numQueues; i++) {
             queueList.add(new ArrayBlockingQueue<>((int) perQueueCapacity));

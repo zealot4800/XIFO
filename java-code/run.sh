@@ -5,9 +5,9 @@ echo -e "Running SP-PIFO evaluation using run.sh"
 # Compile
 mvn clean compile assembly:single
 
-# #/* Figure 5: SP-PIFO performance (uniform rank distribution) */
+#/* Figure 5: SP-PIFO performance (uniform rank distribution) */
 
-# #/* Figure 5a: Uniform 8 queues */
+#/* Figure 5a: Uniform 8 queues */
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/FIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/SPPIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/Fixed_queue_bounds.properties 
@@ -56,27 +56,27 @@ mvn clean compile assembly:single
 # python3 projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/analyze.py
 # gnuplot projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/plot.gnuplot
 
-# # /* Figure 6: SP-PIFO performance (alternative distributions) */
+# /* Figure 6: SP-PIFO performance (alternative distributions) */
 
-# # /* Figure 6a: Exponential */
+# /* Figure 6a: Exponential */
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/FIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/SPPIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/Greedy.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/XIFO.properties 
 
-# #/* Figure 6b: Inverse exponential */
+# # /* Figure 6b: Inverse exponential */
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/FIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/SPPIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/Greedy.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/XIFO.properties 
 
-# #/* Figure 6c: Poisson */
+# # /* Figure 6c: Poisson */
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/FIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/SPPIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/Greedy.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/XIFO.properties 
 
-# #/* Figure 6d: Convex */
+# # /* Figure 6d: Convex */
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/FIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/SPPIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/Greedy.properties 
@@ -89,7 +89,7 @@ mvn clean compile assembly:single
 # gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/plot.gnuplot
 # gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/plot.gnuplot
 
-# #/* Figure 7: pFabric: FCT statistics across different flow sizes in data mining workload */
+#/* Figure 7: pFabric: FCT statistics across different flow sizes in data mining workload */
 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/DCTCP.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/TCP.properties 
@@ -133,11 +133,11 @@ mvn clean compile assembly:single
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/SPPIFO.properties
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/XIFO.properties 
 
-# #/* Analyze and plot */
+#/* Analyze and plot */
 # python3 projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
 # gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/plot.gnuplot
 
-# #/* Figure 8: pFabric: FCT statistics across different flow sizes in web search workload */
+#/* Figure 8: pFabric: FCT statistics across different flow sizes in web search workload */
 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/web_search_workload/3600/DCTCP.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/web_search_workload/3600/TCP.properties 
@@ -181,188 +181,147 @@ mvn clean compile assembly:single
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/web_search_workload/19000/SPPIFO.properties 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/web_search_workload/19000/XIFO.properties
 
-# #/* Analyze and plot */
+#/* Analyze and plot */
 # python3 projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/analyze.py
 # gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/plot.gnuplot
 
-#/* Figure 9 and 10: Fairness FCT statistics */
+# #/* Figure 9 and 10: Fairness FCT statistics */
 
-#/* Figure 9: Fairness: FCT statistics for all flows at different loads, over the web search workload */
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/TCP.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/DCTCP.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/AFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/AFQ_32.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/PIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/PIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/SPPIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/SPPIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/XIFOWFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/XIFOWFQ_32.properties
+# /* Figure 9: Fairness: FCT statistics for all flows at different loads, over the web search workload */
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/TCP.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/DCTCP.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/AFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/AFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/PIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/PIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/SPPIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/SPPIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/XIFOWFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/XIFOWFQ_32.properties
 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/TCP.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/DCTCP.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/AFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/AFQ_32.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/PIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/PIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/SPPIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/SPPIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/XIFOWFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/XIFOWFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/TCP.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/DCTCP.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/AFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/AFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/PIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/PIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/SPPIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/SPPIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/XIFOWFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/XIFOWFQ_32.properties
 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/TCP.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/DCTCP.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/AFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/AFQ_32.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/PIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/PIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/SPPIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/SPPIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/XIFOWFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/XIFOWFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/TCP.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/DCTCP.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/AFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/AFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/PIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/PIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/SPPIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/SPPIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/XIFOWFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/XIFOWFQ_32.properties
 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/TCP.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/DCTCP.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/AFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/AFQ_32.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/PIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/PIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/SPPIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/SPPIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/XIFOWFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/XIFOWFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/TCP.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/DCTCP.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/AFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/AFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/PIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/PIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/SPPIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/SPPIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/XIFOWFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/XIFOWFQ_32.properties
 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/TCP.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/DCTCP.properties   
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/AFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/AFQ_32.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/PIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/PIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/SPPIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/SPPIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/XIFOWFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/XIFOWFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/TCP.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/DCTCP.properties   
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/AFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/AFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/PIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/PIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/SPPIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/SPPIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/XIFOWFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/XIFOWFQ_32.properties
 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/TCP.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/DCTCP.properties   
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/AFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/AFQ_32.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/PIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/PIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/SPPIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/SPPIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/XIFOWFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/XIFOWFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/TCP.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/DCTCP.properties   
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/AFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/AFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/PIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/PIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/SPPIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/SPPIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/XIFOWFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/14150/XIFOWFQ_32.properties
 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/TCP.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/DCTCP.properties   
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/AFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/AFQ_32.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/PIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/PIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/SPPIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/SPPIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/XIFOWFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/XIFOWFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/TCP.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/DCTCP.properties   
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/AFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/AFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/PIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/PIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/SPPIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/SPPIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/XIFOWFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/XIFOWFQ_32.properties
 
-#/* Figure 10: Fairness: FCT statistics for all flows at different loads, when the number of queues is modified */
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/AFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/AFQ_16.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/AFQ_24.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/AFQ_32.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/PIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/SPPIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/SPPIFOWFQ_16.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/SPPIFOWFQ_24.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/SPPIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/XIFOWFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/XIFOWFQ_16.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/XIFOWFQ_24.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/XIFOWFQ_32.properties
+# /* Figure 10: Fairness: FCT statistics for all flows at different loads, when the number of queues is modified */
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/AFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/AFQ_16.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/AFQ_24.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/AFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/PIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/SPPIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/SPPIFOWFQ_16.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/SPPIFOWFQ_24.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/SPPIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/XIFOWFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/XIFOWFQ_16.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/XIFOWFQ_24.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/3600/XIFOWFQ_32.properties
 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/AFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/AFQ_16.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/AFQ_24.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/AFQ_32.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/PIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/SPPIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/SPPIFOWFQ_16.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/SPPIFOWFQ_24.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/SPPIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/XIFOWFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/XIFOWFQ_16.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/XIFOWFQ_24.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/XIFOWFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/AFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/AFQ_16.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/AFQ_24.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/AFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/PIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/SPPIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/SPPIFOWFQ_16.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/SPPIFOWFQ_24.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/SPPIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/XIFOWFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/XIFOWFQ_16.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/XIFOWFQ_24.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/7000/XIFOWFQ_32.properties
 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/AFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/AFQ_16.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/AFQ_24.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/AFQ_32.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/PIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/SPPIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/SPPIFOWFQ_16.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/SPPIFOWFQ_24.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/SPPIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/XIFOWFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/XIFOWFQ_16.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/XIFOWFQ_24.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/XIFOWFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/AFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/AFQ_16.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/AFQ_24.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/AFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/PIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/SPPIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/SPPIFOWFQ_16.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/SPPIFOWFQ_24.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/SPPIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/XIFOWFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/XIFOWFQ_16.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/XIFOWFQ_24.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/11100/XIFOWFQ_32.properties
 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/AFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/AFQ_16.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/AFQ_24.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/AFQ_32.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/PIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/SPPIFOWFQ_8.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/SPPIFOWFQ_16.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/SPPIFOWFQ_24.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/SPPIFOWFQ_32.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/XIFOWFQ_8.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/XIFOWFQ_16.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/XIFOWFQ_24.properties
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/XIFOWFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/AFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/AFQ_16.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/AFQ_24.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/AFQ_32.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/PIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/SPPIFOWFQ_8.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/SPPIFOWFQ_16.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/SPPIFOWFQ_24.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/SPPIFOWFQ_32.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/XIFOWFQ_8.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/XIFOWFQ_16.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/XIFOWFQ_24.properties
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/XIFOWFQ_32.properties
 
 #/* Analyze and plot */
-python projects/sppifo/plots/sppifo_evaluation/fairness/analyze.py
-gnuplot projects/sppifo/plots/sppifo_evaluation/fairness/plot.gnuplot
-
-
-# #/* Figure 11: Impact of sliding window size on FCT statistics */
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/XIFO_1000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/XIFO_2000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/XIFO_5000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/XIFO_10000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/3600/XIFO_100000.properties
-
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/XIFO_1000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/XIFO_2000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/XIFO_5000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/XIFO_10000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/5200/XIFO_100000.properties
-
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/XIFO_1000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/XIFO_2000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/XIFO_5000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/XIFO_10000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/7000/XIFO_100000.properties
-
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/XIFO_1000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/XIFO_2000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/XIFO_5000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/XIFO_10000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/8900/XIFO_100000.properties
-
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/XIFO_1000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/XIFO_2000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/XIFO_5000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/XIFO_10000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/11100/XIFO_100000.properties
-
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/XIFO_1000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/XIFO_2000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/XIFO_5000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/XIFO_10000.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/19000/XIFO_100000.properties
-
 # python projects/sppifo/plots/sppifo_evaluation/fairness/analyze.py
 # gnuplot projects/sppifo/plots/sppifo_evaluation/fairness/plot.gnuplot
