@@ -22,12 +22,12 @@ public class XIFOQueue implements Queue {
     private final int ownId;
     private final long bufferSize;
     
-    public XIFOQueue(long numQueues, long perQueueCapacity, NetworkDevice ownNetworkDevice, long window) {
+    public XIFOQueue(long numQueues, long perQueueCapacity, NetworkDevice ownNetworkDevice, long window, long bufferReduction) {
         this.queueList = new ArrayList<>((int) numQueues);
         this.queueBounds = new HashMap<>();
         this.ownId = ownNetworkDevice.getIdentifier();
         this.bufferSize = window;
-        this.scheduler = new KLLSketch((int) bufferSize, (int) numQueues);
+        this.scheduler = new KLLSketch((int) bufferSize, (int) numQueues, (int) bufferReduction);
 
         for (int i = 0; i < (int) numQueues; i++) {
             queueList.add(new ArrayBlockingQueue<>((int) perQueueCapacity));

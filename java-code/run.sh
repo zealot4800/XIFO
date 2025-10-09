@@ -325,3 +325,35 @@ mvn clean compile assembly:single
 #/* Analyze and plot */
 # python projects/sppifo/plots/sppifo_evaluation/fairness/analyze.py
 # gnuplot projects/sppifo/plots/sppifo_evaluation/fairness/plot.gnuplot
+
+
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/buffer_effect/XIFOWFQ_25.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/buffer_effect/XIFOWFQ_50.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/buffer_effect/XIFOWFQ_75.properties 
+
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/buffer_effect/XIFOWFQ_25.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/buffer_effect/XIFOWFQ_50.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/buffer_effect/XIFOWFQ_75.properties 
+
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/buffer_effect/XIFOWFQ_25.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/buffer_effect/XIFOWFQ_50.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/buffer_effect/XIFOWFQ_75.properties 
+
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/buffer_effect/XIFOWFQ_25.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/buffer_effect/XIFOWFQ_50.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/buffer_effect/XIFOWFQ_75.properties 
+
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/buffer_effect/XIFOWFQ_25.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/buffer_effect/XIFOWFQ_50.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/buffer_effect/XIFOWFQ_75.properties 
+
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/buffer_effect/XIFOWFQ_25.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/buffer_effect/XIFOWFQ_50.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/buffer_effect/XIFOWFQ_75.properties 
+
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_25.properties  
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_50.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_75.properties 
+
+python projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
+gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/plot.gnuplot

@@ -12,9 +12,9 @@ import ch.ethz.systems.netbench.ext.basic.IpHeader;
 public class WFQXIFOOutputPort extends OutputPort {
 
     public WFQXIFOOutputPort(NetworkDevice ownNetworkDevice, NetworkDevice targetNetworkDevice, Link link,
-                             long numberQueues, long sizePerQueuePackets, long bufferSize) {
+                             long numberQueues, long sizePerQueuePackets, long bufferSize, long bufferReduction) {
         super(ownNetworkDevice, targetNetworkDevice, link,
-                new WFQXIFOQueue(numberQueues, sizePerQueuePackets, ownNetworkDevice, bufferSize));
+                new WFQXIFOQueue(numberQueues, sizePerQueuePackets, ownNetworkDevice, bufferSize, bufferReduction));
     }
 
     @Override

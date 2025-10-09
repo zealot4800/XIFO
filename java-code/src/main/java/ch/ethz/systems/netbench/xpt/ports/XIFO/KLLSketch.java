@@ -8,12 +8,18 @@ import java.util.List;
 public class KLLSketch {
     private final int capacity;
     private final int numQueues;
+    private final int bufferReduction;
     private List<Integer> compactor;
     private List<Integer> quantileBoundaries;
 
     public KLLSketch(int capacity, int numQueues) {
+        this(capacity, numQueues, 1);
+    }
+
+    public KLLSketch(int capacity, int numQueues, int bufferReduction) {
         this.capacity = capacity;
         this.numQueues = numQueues;
+        this.bufferReduction = Math.max(1, bufferReduction);
         this.compactor = new ArrayList<>();
         this.quantileBoundaries = null;
     }
@@ -26,9 +32,20 @@ public class KLLSketch {
     }
 
     private void compact() {
+        if (bufferReduction <= 1 || compactor.isEmpty()) {
+            return;
+        }
+
         List<Integer> newCompactor = new ArrayList<>();
-        for (int i = 0; i < compactor.size() - 1; i += 2) {
-            newCompactor.add(Math.min(compactor.get(i), compactor.get(i + 1)));
+        for (int i = 0; i < compactor.size(); i += bufferReduction) {
+            int endExclusive = Math.min(i + bufferReduction, compactor.size());
+            long sum = 0;
+            for (int j = i; j < endExclusive; j++) {
+                sum += compactor.get(j);
+            }
+            int groupSize = endExclusive - i;
+            int averagedValue = (int) Math.round((double) sum / groupSize);
+            newCompactor.add(averagedValue);
         }
         compactor = newCompactor;
     }

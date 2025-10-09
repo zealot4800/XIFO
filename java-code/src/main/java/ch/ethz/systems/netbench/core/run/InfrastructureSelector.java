@@ -200,14 +200,16 @@ class InfrastructureSelector {
                 return new XIFOOutputPortGenerator(
                         Simulator.getConfiguration().getLongPropertyOrFail("output_port_number_queues"),
                         Simulator.getConfiguration().getLongPropertyOrFail("output_port_max_size_per_queue_packets"),
-                        Simulator.getConfiguration().getLongPropertyOrFail("sliding_window_size")
+                        Simulator.getConfiguration().getLongPropertyOrFail("sliding_window_size"),
+                        Simulator.getConfiguration().getLongPropertyOrFail("buffer_reduction")
                 );
 
             case "wfqxifo":
                 return new WFQXIFOOutputPortGenerator(
                         Simulator.getConfiguration().getLongPropertyOrFail("output_port_number_queues"),
                         Simulator.getConfiguration().getLongPropertyOrFail("output_port_max_size_per_queue_packets"),
-                        Simulator.getConfiguration().getLongPropertyOrFail("sliding_window_size")
+                        Simulator.getConfiguration().getLongPropertyOrFail("sliding_window_size"),
+                        Simulator.getConfiguration().getLongPropertyOrFail("buffer_reduction")
                 );
 
             case "greedy_simple":

@@ -9,8 +9,10 @@ import ch.ethz.systems.netbench.xpt.tcpbase.FullExtTcpPacket;
 
 public class XIFOOutputPort extends OutputPort {
 
-    public XIFOOutputPort(NetworkDevice ownNetworkDevice, NetworkDevice targetNetworkDevice, Link link, long numberQueues, long sizePerQueuePackets, long bufferSize) {
-        super(ownNetworkDevice, targetNetworkDevice, link, new XIFOQueue(numberQueues, sizePerQueuePackets, ownNetworkDevice, bufferSize));
+    public XIFOOutputPort(NetworkDevice ownNetworkDevice, NetworkDevice targetNetworkDevice, Link link,
+                          long numberQueues, long sizePerQueuePackets, long bufferSize, long bufferReduction) {
+        super(ownNetworkDevice, targetNetworkDevice, link,
+                new XIFOQueue(numberQueues, sizePerQueuePackets, ownNetworkDevice, bufferSize, bufferReduction));
     }
 
     /**

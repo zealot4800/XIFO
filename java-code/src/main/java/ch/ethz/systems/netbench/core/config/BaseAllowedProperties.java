@@ -100,6 +100,7 @@ public class BaseAllowedProperties {
             "transport_layer_rank_bound",
 
             "sliding_window_size",
+            "buffer_reduction",
 
             // TCP
             "TCP_ROUND_TRIP_TIMEOUT_NS",

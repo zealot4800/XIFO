@@ -27,12 +27,12 @@ public class WFQXIFOQueue implements Queue {
     private final Map<Long, Integer> lastFinishTime;
     private int round;
 
-    public WFQXIFOQueue(long numQueues, long perQueueCapacity, NetworkDevice ownNetworkDevice, long bufferSize) {
+    public WFQXIFOQueue(long numQueues, long perQueueCapacity, NetworkDevice ownNetworkDevice, long bufferSize, long bufferReduction) {
         this.queueList = new ArrayList<>((int) numQueues);
         this.queueBounds = new HashMap<>();
         this.lock = new ReentrantLock();
         this.ownId = ownNetworkDevice.getIdentifier();
-        this.scheduler = new KLLSketch((int) bufferSize, (int) numQueues);
+        this.scheduler = new KLLSketch((int) bufferSize, (int) numQueues, (int) bufferReduction);
         this.lastFinishTime = new HashMap<>();
         this.round = 0;
 
