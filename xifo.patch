@@ -1,0 +1,1950 @@
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/convex.dat b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/convex.dat
+index d51b8c1..26eca52 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/convex.dat
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/convex.dat
+@@ -1,101 +1,101 @@
+ #  FIFO    SPPIFO  Greedy XIFO
+ 0   0   0   0    0  
+-1   27400   1702   1376    1398  
+-2   31744   3177   2383    2596  
+-3   32612   4128   192    2402  
+-4   31863   4865   1466    894  
+-5   30620   5223   2608    1843  
+-6   29236   5092   1434    2500  
+-7   27233   4933   986    1592  
+-8   25570   4495   2110    1414  
+-9   23298   4116   2771    2120  
+-10   21450   3579   1398    2474  
+-11   19431   3244   796    2089  
+-12   17373   2824   1592    1533  
+-13   15231   2415   1957    1390  
+-14   13507   2012   2153    1556  
+-15   11630   1754   1754    1686  
+-16   9930   1442   556    1628  
+-17   8612   1278   413    1440  
+-18   7390   1047   561    1351  
+-19   6274   810   598    1079  
+-20   5021   654   604    921  
+-21   4142   541   562    734  
+-22   3536   390   522    610  
+-23   2960   368   430    483  
+-24   2236   241   353    397  
+-25   1780   218   282    293  
+-26   1468   137   254    246  
+-27   1071   107   225    204  
+-28   879   59   161    152  
+-29   666   71   133    120  
+-30   547   50   114    75  
+-31   377   29   70    64  
+-32   285   29   66    54  
+-33   249   25   37    35  
+-34   167   9   33    23  
+-35   112   7   23    25  
+-36   101   5   14    14  
+-37   61   5   14    10  
+-38   56   3   4    5  
+-39   41   1   8    6  
+-40   19   1   4    1  
+-41   24   0   5    6  
+-42   9   0   4    4  
+-43   7   1   1    2  
+-44   5   0   0    2  
+-45   4   0   2    1  
+-46   3   0   2    0  
+-47   2   0   0    0  
+-48   1   0   0    1  
+-49   0   0   1    0  
+-50   0   0   0    0  
++1   27260   1657   1298    1381  
++2   31696   3229   2329    2501  
++3   32418   4256   239    2564  
++4   31833   4681   1419    956  
++5   30770   4962   2608    1797  
++6   29351   5082   1357    2445  
++7   27644   4969   979    1711  
++8   25545   4533   2088    1434  
++9   23643   4142   2861    2068  
++10   21623   3565   1473    2303  
++11   19388   3254   767    2031  
++12   17299   2811   1476    1620  
++13   15331   2489   1935    1460  
++14   13230   2124   2047    1547  
++15   11483   1814   1862    1599  
++16   10070   1503   599    1544  
++17   8527   1267   398    1416  
++18   7271   1032   560    1272  
++19   6025   779   612    1061  
++20   5150   702   597    971  
++21   4336   526   637    711  
++22   3473   387   488    583  
++23   2872   307   459    483  
++24   2238   274   357    385  
++25   1746   175   320    311  
++26   1474   183   225    239  
++27   1150   113   174    216  
++28   860   91   159    135  
++29   701   65   142    114  
++30   531   47   95    103  
++31   399   29   85    52  
++32   321   23   64    57  
++33   221   10   50    40  
++34   173   7   34    27  
++35   132   4   14    13  
++36   102   9   11    17  
++37   82   3   14    9  
++38   64   3   5    9  
++39   26   1   9    6  
++40   21   1   3    6  
++41   19   1   2    4  
++42   15   0   2    3  
++43   10   0   0    0  
++44   6   1   0    1  
++45   5   0   0    0  
++46   6   1   0    0  
++47   0   0   0    0  
++48   3   0   0    0  
++49   2   0   0    0  
++50   1   0   1    0  
+ 51   1   0   0    0  
+ 52   0   0   0    0  
+ 53   0   0   0    0  
+ 54   0   0   0    0  
+ 55   0   0   0    0  
+ 56   0   0   0    0  
+-57   1   0   0    2  
+-58   1   0   0    0  
++57   1   0   0    0  
++58   1   0   0    1  
+ 59   3   0   0    0  
+-60   4   0   2    1  
+-61   6   0   1    4  
+-62   4   0   2    1  
+-63   13   1   1    4  
+-64   31   0   2    3  
+-65   41   1   3    6  
+-66   55   2   5    7  
+-67   75   1   8    19  
+-68   139   2   6    24  
+-69   237   5   5    26  
+-70   292   2   3    41  
+-71   398   7   8    66  
+-72   552   11   12    99  
+-73   742   11   19    130  
+-74   1026   17   22    158  
+-75   1403   35   38    235  
+-76   1829   51   69    293  
+-77   2436   57   118    370  
+-78   3067   98   187    502  
+-79   3869   136   298    616  
+-80   4815   251   494    873  
+-81   6068   393   743    1036  
+-82   7281   567   1151    1419  
+-83   8695   818   1568    1870  
+-84   10344   1212   2307    2412  
+-85   12023   1616   3103    3184  
+-86   14333   2326   4001    3933  
+-87   16523   3175   4208    4574  
+-88   18675   4452   3922    4926  
+-89   20760   5848   4042    4847  
+-90   23163   7657   7745    6002  
+-91   25734   9801   11408    8787  
+-92   27935   11897   13332    11616  
+-93   29599   14473   13625    10286  
+-94   31958   16554   10579    8127  
+-95   33284   19055   7809    14776  
+-96   35025   21186   16756    19292  
+-97   35951   22353   21052    8131  
+-98   36751   23922   23536    11691  
+-99   37256   24028   25204    18945  
++60   1   0   1    0  
++61   5   0   0    0  
++62   13   0   5    0  
++63   10   1   5    1  
++64   34   1   3    5  
++65   53   2   5    7  
++66   55   3   4    8  
++67   104   3   6    11  
++68   142   4   8    17  
++69   204   6   4    34  
++70   294   8   10    47  
++71   417   7   5    70  
++72   581   14   17    91  
++73   790   14   17    115  
++74   1044   21   24    169  
++75   1430   39   36    203  
++76   1776   42   76    318  
++77   2373   75   109    384  
++78   2981   122   171    450  
++79   3869   168   304    649  
++80   4663   283   489    835  
++81   5995   350   709    1070  
++82   7238   562   1123    1415  
++83   8789   849   1595    1860  
++84   10225   1225   2343    2400  
++85   12360   1647   3110    3096  
++86   14200   2394   4046    3976  
++87   16583   3270   4305    4630  
++88   18831   4592   4074    4964  
++89   20490   6121   4204    4957  
++90   23025   7655   8143    5875  
++91   25494   9730   11569    8716  
++92   27889   12008   13339    11666  
++93   30007   14413   13715    10723  
++94   31645   16608   10740    8277  
++95   33307   19284   7964    13865  
++96   34681   21061   16445    18678  
++97   35907   22237   20894    9713  
++98   37004   23683   23313    10791  
++99   37361   24155   25049    18520  
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/convex.pdf b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/convex.pdf
+index f49fd42..6863f9f 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/convex.pdf and b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/convex.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/plot.gnuplot b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/plot.gnuplot
+index bf3e845..3a64cdd 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/plot.gnuplot
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/plot.gnuplot
+@@ -10,7 +10,7 @@ set yrange[0:70000]
+ set ytics ("0" 0, "10" 10000, "20" 20000, "30" 30000, "40" 40000, "50" 50000, "60" 60000, "70" 70000)
+ 
+ set output 'projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/convex.pdf'
+-plot "projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/convex.dat" using 4 title "Greedy (optimal)" w l ls 9 lw 6, \
++plot "projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/convex.dat" using 4 title "Greedy (optimal)" w l ls 2 lw 6, \
+             '' using 3 title "SP-PIFO" w l ls 3 lw 6, \
+             '' using 2 title "FIFO" w l ls 8 lw 6, \
+-            '' using 5 title "XIFO" w l ls 5 lw 6
+\ No newline at end of file
++            '' using 5 title "XIFO" w l ls 9 lw 6
+\ No newline at end of file
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/exponential.dat b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/exponential.dat
+index d9c8b9b..8aa0dc3 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/exponential.dat
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/exponential.dat
+@@ -1,101 +1,101 @@
+ #  FIFO    SPPIFO  Greedy XIFO
+ 0   0   0   0    0  
+-1   27047   1606   1272    1349  
+-2   30302   2716   2348    2306  
+-3   30517   3569   3350    2305  
+-4   29966   3953   1280    855  
+-5   29060   4220   1032    1562  
+-6   28030   4267   2207    2261  
+-7   27112   4163   3320    1954  
+-8   26236   4104   3372    1347  
+-9   25508   3838   1662    1947  
+-10   24587   3926   1419    2626  
+-11   23496   3768   2504    2577  
+-12   22741   3644   3470    1900  
+-13   21935   3807   3781    1980  
+-14   20865   3797   3401    2796  
+-15   20377   3837   2210    3398  
+-16   19479   3817   2149    3228  
+-17   18569   3872   3095    2769  
+-18   17822   4087   3867    2462  
+-19   17334   4015   4135    2811  
+-20   16512   4188   3856    3455  
+-21   16143   4381   3672    4125  
+-22   15220   4281   2949    4225  
+-23   14621   4500   2845    3686  
+-24   14301   4532   3504    3371  
+-25   13658   4639   4123    3159  
+-26   13176   4619   4335    3299  
+-27   12630   4609   4192    3975  
+-28   12139   4518   4225    4299  
+-29   11653   4541   4144    4647  
+-30   11166   4341   3849    4561  
+-31   10546   4396   3658    4504  
+-32   10349   4397   3166    4118  
+-33   9819   4601   3483    3759  
+-34   9547   4306   3849    3316  
+-35   9061   4250   3890    3124  
+-36   8900   4135   3713    3196  
+-37   8192   4152   3716    3212  
+-38   8160   3939   3814    3575  
+-39   7732   3789   3634    3838  
+-40   7546   3850   3477    3848  
+-41   7241   3551   3390    4001  
+-42   6999   3450   3070    4001  
+-43   6691   3393   2663    3824  
+-44   6401   3258   2445    3724  
+-45   6232   3166   2542    3513  
+-46   5874   3112   2676    3187  
+-47   5725   3051   2773    2750  
+-48   5504   3017   2816    2537  
+-49   5156   2752   2623    2058  
+-50   5139   2652   2483    1902  
+-51   4798   2641   2347    1696  
+-52   4601   2552   2311    1536  
+-53   4589   2521   2253    1473  
+-54   4261   2489   2010    1501  
+-55   4223   2265   1972    1461  
+-56   3903   2216   1771    1553  
+-57   3789   2064   1667    1553  
+-58   3634   2070   1530    1595  
+-59   3505   1918   1365    1537  
+-60   3403   1995   1130    1533  
+-61   3248   1847   937    1566  
+-62   3195   1804   903    1479  
+-63   3013   1744   892    1452  
+-64   2790   1648   963    1436  
+-65   2747   1636   1010    1430  
+-66   2613   1555   1028    1342  
+-67   2492   1479   1019    1324  
+-68   2427   1420   1056    1356  
+-69   2370   1376   1004    1221  
+-70   2320   1288   1024    1219  
+-71   2099   1232   954    1195  
+-72   2120   1221   906    1127  
+-73   2000   1185   917    1099  
+-74   1947   1086   911    1033  
+-75   1830   1044   852    981  
+-76   1766   1029   867    957  
+-77   1689   960   812    984  
+-78   1648   943   785    929  
+-79   1600   904   795    894  
+-80   1514   872   757    885  
+-81   1469   836   713    829  
+-82   1374   788   680    799  
+-83   1330   781   685    713  
+-84   1323   738   640    714  
+-85   1147   752   655    663  
+-86   1205   734   639    663  
+-87   1152   647   584    698  
+-88   1111   692   521    668  
+-89   1034   605   521    630  
+-90   1053   601   540    640  
+-91   950   606   507    539  
+-92   926   560   491    557  
+-93   898   525   496    491  
+-94   882   504   462    524  
+-95   795   508   428    474  
+-96   822   457   405    482  
+-97   785   463   379    423  
+-98   728   432   389    454  
+-99   680   413   403    422  
++1   26706   1721   1333    1361  
++2   30280   2710   2388    2395  
++3   30468   3609   3221    2386  
++4   29972   3955   783    966  
++5   29293   4294   1173    1533  
++6   28348   4215   2320    2247  
++7   27364   4131   3236    1967  
++8   26264   3892   3291    1360  
++9   25209   3844   1352    1893  
++10   24200   3847   1507    2666  
++11   23530   3666   2713    2587  
++12   22560   3690   3587    1991  
++13   21870   3556   3706    2034  
++14   21013   3708   3079    2679  
++15   20037   3732   2250    3186  
++16   19592   3818   2367    3121  
++17   18477   3880   3396    2804  
++18   17757   4128   4053    2600  
++19   17268   4171   4020    2898  
++20   16385   4229   3582    3495  
++21   15791   4273   3565    4028  
++22   15377   4483   3061    4076  
++23   14898   4422   3095    3761  
++24   14362   4629   3808    3396  
++25   13632   4469   4227    3212  
++26   13192   4515   4279    3242  
++27   12664   4557   4109    3819  
++28   12051   4541   4191    4273  
++29   11643   4516   4033    4564  
++30   11194   4419   3813    4783  
++31   10767   4415   3404    4511  
++32   10223   4400   3473    4230  
++33   9765   4239   3662    3782  
++34   9555   4274   3953    3329  
++35   9150   4026   4037    3135  
++36   8715   4090   3962    3156  
++37   8490   4052   3864    3296  
++38   8234   3913   3717    3374  
++39   7743   3842   3616    3718  
++40   7453   3709   3396    3736  
++41   7114   3676   3167    3898  
++42   6950   3560   2951    3876  
++43   6683   3509   2580    3928  
++44   6516   3385   2608    3620  
++45   6172   3306   2630    3454  
++46   5872   3167   2726    3229  
++47   5715   3116   2730    2961  
++48   5554   2951   2679    2586  
++49   5330   2840   2671    2258  
++50   5153   2785   2530    1926  
++51   4774   2641   2366    1785  
++52   4573   2613   2241    1583  
++53   4496   2520   2050    1518  
++54   4306   2484   1993    1426  
++55   4071   2408   1773    1427  
++56   3949   2174   1708    1450  
++57   3862   2198   1560    1519  
++58   3743   2056   1458    1522  
++59   3449   2003   1248    1443  
++60   3334   2000   1017    1495  
++61   3178   1922   962    1504  
++62   3196   1782   908    1457  
++63   2947   1639   986    1476  
++64   2848   1696   1008    1365  
++65   2856   1668   1034    1367  
++66   2694   1564   1039    1377  
++67   2518   1523   1059    1288  
++68   2481   1445   1094    1256  
++69   2427   1410   956    1271  
++70   2248   1408   1043    1192  
++71   2227   1193   959    1150  
++72   2096   1197   966    1124  
++73   1984   1186   912    1054  
++74   1977   1183   932    1060  
++75   1858   1096   889    1018  
++76   1793   1126   845    950  
++77   1723   1091   794    957  
++78   1588   975   795    862  
++79   1623   907   774    869  
++80   1503   864   706    867  
++81   1464   896   714    853  
++82   1311   830   660    763  
++83   1298   762   689    690  
++84   1269   771   602    690  
++85   1210   722   667    715  
++86   1147   713   652    677  
++87   1186   682   541    630  
++88   1121   620   550    605  
++89   1017   632   548    587  
++90   1041   651   537    580  
++91   958   578   504    557  
++92   1000   530   471    537  
++93   827   554   460    500  
++94   875   485   450    513  
++95   830   469   451    471  
++96   807   459   411    448  
++97   759   464   379    448  
++98   772   476   370    461  
++99   787   461   401    425  
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/exponential.pdf b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/exponential.pdf
+index 52b52fe..366938c 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/exponential.pdf and b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/exponential.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/plot.gnuplot b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/plot.gnuplot
+index 75801e5..c873f90 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/plot.gnuplot
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/plot.gnuplot
+@@ -10,7 +10,7 @@ set yrange[0:70000]
+ set ytics ("0" 0, "10" 10000, "20" 20000, "30" 30000, "40" 40000, "50" 50000, "60" 60000, "70" 70000)
+ 
+ set output 'projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/exponential.pdf'
+-plot "projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/exponential.dat" using 4 title "Greedy (optimal)" w l ls 9 lw 6, \
++plot "projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/exponential.dat" using 4 title "Greedy (optimal)" w l ls 2 lw 6, \
+             '' using 3 title "SP-PIFO" w l ls 3 lw 6, \
+             '' using 2 title "FIFO" w l ls 8 lw 6, \
+-            '' using 5 title "XIFO" w l ls 5 lw 6
+\ No newline at end of file
++            '' using 5 title "XIFO" w l ls 9 lw 6
+\ No newline at end of file
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/inverse_exponential.dat b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/inverse_exponential.dat
+index 9a6bd92..c24b476 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/inverse_exponential.dat
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/inverse_exponential.dat
+@@ -1,101 +1,101 @@
+ #  FIFO    SPPIFO  Greedy XIFO
+ 0   0   0   0    0  
+ 1   0   0   0    0  
+-2   28   0   0    0  
+-3   51   0   2    1  
+-4   82   1   2    3  
+-5   108   2   3    0  
+-6   135   1   2    1  
+-7   177   3   4    6  
+-8   212   2   5    5  
+-9   233   6   4    6  
+-10   290   6   3    7  
+-11   335   9   12    9  
+-12   422   12   8    7  
+-13   440   11   9    12  
+-14   501   11   12    10  
+-15   577   28   17    13  
+-16   611   10   22    19  
+-17   704   21   13    32  
+-18   689   22   21    26  
+-19   784   25   20    27  
+-20   815   21   17    25  
+-21   886   23   28    34  
+-22   1065   31   30    44  
+-23   1050   40   45    42  
+-24   1201   36   36    55  
+-25   1237   42   55    53  
+-26   1388   42   47    63  
+-27   1429   60   60    74  
+-28   1545   49   63    73  
+-29   1528   55   84    93  
+-30   1664   52   103    92  
+-31   1783   75   107    91  
+-32   1934   61   101    116  
+-33   2028   86   111    103  
+-34   2154   83   115    132  
+-35   2284   87   128    143  
+-36   2439   118   102    158  
+-37   2518   96   90    169  
+-38   2679   108   64    180  
+-39   2809   114   44    208  
+-40   2974   153   54    228  
+-41   3135   134   52    212  
+-42   3242   156   82    259  
+-43   3331   162   88    253  
+-44   3494   189   108    281  
+-45   3730   189   138    296  
+-46   3877   211   184    325  
+-47   4047   236   212    330  
+-48   4194   238   240    385  
+-49   4431   274   249    389  
+-50   4692   262   274    398  
+-51   4895   320   356    377  
+-52   4985   304   396    368  
+-53   5276   383   409    312  
+-54   5561   406   423    295  
+-55   5812   462   336    308  
+-56   6041   475   243    274  
+-57   6410   523   244    295  
+-58   6594   561   295    346  
+-59   6904   651   374    390  
+-60   7180   679   445    470  
+-61   7525   760   549    561  
+-62   7882   892   666    659  
+-63   8250   863   789    744  
+-64   8401   997   929    830  
+-65   8781   1091   1075    878  
+-66   9307   1218   1023    923  
+-67   9574   1359   891    824  
+-68   10066   1587   741    750  
+-69   10382   1754   674    734  
+-70   10828   1951   890    712  
+-71   11565   2001   1226    845  
+-72   11850   2461   1547    1020  
+-73   12233   2684   1861    1244  
+-74   12837   2879   2197    1509  
+-75   13476   3330   2126    1656  
+-76   13829   3627   2032    1797  
+-77   14484   4066   1662    1759  
+-78   15192   4610   1743    1598  
+-79   15720   4932   2356    1628  
+-80   16467   5536   3132    1944  
+-81   17149   6358   3870    2411  
+-82   17685   6746   4098    3041  
+-83   18655   7527   3932    3274  
+-84   19616   8232   3733    3002  
+-85   19988   9275   3644    2958  
+-86   21229   10173   5524    3579  
+-87   21916   11200   7167    4905  
+-88   22968   12229   7752    6000  
+-89   23529   13272   7825    5993  
+-90   24834   14557   8016    5054  
+-91   25845   15591   8007    6717  
+-92   27005   16787   12287    9910  
+-93   28260   18515   14359    11703  
+-94   29375   19501   13912    8624  
+-95   30360   20714   12366    8804  
+-96   31512   22372   7593    15062  
+-97   33330   22889   15660    17187  
+-98   34509   23793   20069    7319  
+-99   35664   24635   22632    12181  
++2   24   0   1    0  
++3   52   2   2    3  
++4   87   0   2    1  
++5   93   2   6    1  
++6   143   1   0    5  
++7   184   2   1    7  
++8   191   7   10    8  
++9   247   9   10    4  
++10   278   8   6    9  
++11   356   8   13    15  
++12   428   12   5    15  
++13   432   9   10    14  
++14   497   11   21    18  
++15   492   15   19    15  
++16   637   19   17    18  
++17   653   16   15    21  
++18   686   15   24    19  
++19   818   24   28    25  
++20   907   29   29    38  
++21   900   28   24    45  
++22   1075   35   35    27  
++23   1010   26   34    48  
++24   1140   25   53    38  
++25   1216   38   49    47  
++26   1306   46   49    62  
++27   1424   58   73    60  
++28   1469   47   72    64  
++29   1603   75   75    69  
++30   1709   65   79    80  
++31   1694   73   82    80  
++32   1887   61   90    91  
++33   1994   68   102    124  
++34   2141   84   99    122  
++35   2321   79   138    118  
++36   2368   110   120    162  
++37   2617   109   79    170  
++38   2636   121   56    181  
++39   2735   138   32    199  
++40   2940   136   40    223  
++41   3000   149   65    250  
++42   3240   179   85    257  
++43   3388   171   104    273  
++44   3464   163   104    283  
++45   3737   198   124    304  
++46   3855   240   190    317  
++47   4134   229   215    377  
++48   4197   244   222    368  
++49   4484   265   257    367  
++50   4790   314   287    377  
++51   4863   289   312    400  
++52   5047   354   363    368  
++53   5284   359   416    343  
++54   5658   385   423    330  
++55   5877   427   339    306  
++56   6093   454   222    273  
++57   6238   491   231    268  
++58   6535   565   259    308  
++59   6836   599   354    346  
++60   7091   651   449    456  
++61   7441   739   572    542  
++62   7815   779   645    610  
++63   8143   862   763    734  
++64   8618   957   908    798  
++65   8834   1052   1075    877  
++66   9367   1228   1035    863  
++67   9727   1384   926    840  
++68   10090   1500   779    734  
++69   10485   1674   660    699  
++70   10754   1905   949    711  
++71   11352   2123   1162    854  
++72   11758   2341   1479    978  
++73   12212   2561   1762    1236  
++74   12892   2838   2043    1499  
++75   13470   3251   2182    1594  
++76   13887   3473   1944    1747  
++77   14862   4032   1604    1661  
++78   15241   4500   1734    1562  
++79   15763   4994   2452    1545  
++80   16551   5544   3079    1907  
++81   17120   6134   3898    2506  
++82   17980   6863   4304    2962  
++83   18736   7453   4126    3304  
++84   19515   8333   3499    3063  
++85   20387   9260   3540    2924  
++86   21018   10161   5336    3329  
++87   21920   11166   7008    4598  
++88   22707   12176   7885    6043  
++89   23713   13450   8124    6169  
++90   24824   14871   7634    5253  
++91   26445   15627   7902    6453  
++92   26887   17106   11916    9558  
++93   27832   18353   14037    11516  
++94   29310   19556   14094    9279  
++95   30433   20743   11889    8703  
++96   31778   21982   7937    14491  
++97   33065   23222   14875    17658  
++98   34102   24191   19911    9168  
++99   35372   24631   22687    11162  
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/inverse_exponential.pdf b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/inverse_exponential.pdf
+index 656aa01..c132c54 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/inverse_exponential.pdf and b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/inverse_exponential.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/plot.gnuplot b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/plot.gnuplot
+index 0e580fd..8ce23c8 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/plot.gnuplot
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/plot.gnuplot
+@@ -10,7 +10,7 @@ set yrange[0:70000]
+ set ytics ("0" 0, "10" 10000, "20" 20000, "30" 30000, "40" 40000, "50" 50000, "60" 60000, "70" 70000)
+ 
+ set output 'projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/inverse_exponential.pdf'
+-plot "projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/inverse_exponential.dat" using 4 title "Greedy (optimal)" w l ls 9 lw 6, \
++plot "projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/inverse_exponential.dat" using 4 title "Greedy (optimal)" w l ls 2 lw 6, \
+            '' using 3 title "SP-PIFO" w l ls 3 lw 6, \
+            '' using 2 title "FIFO" w l ls 8 lw 6, \
+-           '' using 5 title "XIFO" w l ls 5 lw 6
+\ No newline at end of file
++           '' using 5 title "XIFO" w l ls 9 lw 6
+\ No newline at end of file
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/plot.gnuplot b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/plot.gnuplot
+index a76905c..1251fc6 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/plot.gnuplot
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/plot.gnuplot
+@@ -10,7 +10,7 @@ set yrange[0:70000]
+ set ytics ("0" 0, "10" 10000, "20" 20000, "30" 30000, "40" 40000, "50" 50000, "60" 60000, "70" 70000)
+ 
+ set output 'projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/poisson.pdf'
+-plot "projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/poisson.dat" using 4 title "Greedy (optimal)" w l ls 9 lw 6, \
++plot "projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/poisson.dat" using 4 title "Greedy (optimal)" w l ls 2 lw 6, \
+           '' using 3 title "SP-PIFO" w l ls 3 lw 6, \
+           '' using 2 title "FIFO" w l ls 8 lw 6, \
+-          '' using 5 title "XIFO" w l ls 5 lw 6
++          '' using 5 title "XIFO" w l ls 9 lw 6
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/poisson.dat b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/poisson.dat
+index 0b5b2bb..25fd1a4 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/poisson.dat
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/poisson.dat
+@@ -23,72 +23,72 @@
+ 21   0   0   0    0  
+ 22   0   0   0    0  
+ 23   0   0   0    0  
+-24   0   0   0    0  
++24   1   0   0    0  
+ 25   0   0   0    0  
+-26   2   0   0    0  
+-27   2   0   0    0  
+-28   2   0   0    0  
+-29   9   0   0    0  
+-30   23   1   2    0  
+-31   69   3   0    1  
+-32   163   4   2    4  
+-33   428   13   13    8  
+-34   945   25   17    22  
+-35   1893   51   36    61  
+-36   3496   112   84    99  
+-37   5694   167   203    238  
+-38   8724   289   392    394  
+-39   12840   520   654    739  
+-40   17070   789   810    1181  
+-41   21601   1082   338    1865  
+-42   26689   1532   1162    2152  
+-43   32111   2015   2462    1059  
+-44   36585   2464   2137    1926  
+-45   41164   3062   1894    3639  
+-46   45334   3930   5017    2001  
+-47   48306   5219   4026    3672  
+-48   50717   7173   4369    4593  
+-49   51591   9535   8818    3872  
+-50   51961   12382   4872    7247  
+-51   50959   15386   10252    4854  
+-52   49147   17849   11110    11342  
+-53   46808   19361   9563    6194  
+-54   43276   20475   15096    13836  
+-55   38793   20646   14585    11973  
+-56   34818   19770   9824    8364  
+-57   30777   18400   14485    14909  
+-58   26448   16505   12936    12936  
+-59   22449   14082   8897    5589  
+-60   18808   12001   4733    5415  
+-61   15434   9945   5922    6325  
+-62   12293   7960   5844    6124  
+-63   9904   6383   5069    5037  
+-64   7646   5025   4075    4190  
+-65   5954   3796   3201    3150  
+-66   4403   2805   2599    2472  
+-67   3384   2092   1865    1889  
+-68   2430   1523   1477    1341  
+-69   1689   1141   968    1009  
+-70   1252   821   747    694  
+-71   837   534   486    495  
+-72   619   354   371    377  
+-73   415   206   226    238  
+-74   311   190   155    181  
+-75   202   134   118    107  
+-76   110   101   74    85  
+-77   65   33   54    52  
+-78   44   25   28    35  
+-79   31   12   20    24  
+-80   15   7   12    12  
+-81   16   9   6    8  
+-82   8   4   6    5  
+-83   3   4   2    3  
+-84   3   2   2    1  
+-85   3   0   0    0  
+-86   2   0   0    1  
+-87   1   0   0    0  
+-88   0   0   0    0  
+-89   0   0   0    0  
++26   0   0   0    0  
++27   0   0   0    0  
++28   3   0   0    0  
++29   8   0   0    1  
++30   25   0   0    0  
++31   62   1   5    2  
++32   171   4   6    2  
++33   462   10   14    5  
++34   897   23   22    27  
++35   1839   41   57    52  
++36   3378   100   103    94  
++37   5870   194   230    220  
++38   8901   307   383    390  
++39   12702   502   673    661  
++40   17072   777   602    1227  
++41   21724   1137   412    1771  
++42   26963   1419   1275    2227  
++43   31839   1933   2450    1305  
++44   36343   2328   1270    1795  
++45   41133   3041   2406    3404  
++46   45258   3964   5404    2211  
++47   48539   5040   2637    3663  
++48   51153   6986   5816    4755  
++49   51613   9252   8470    3808  
++50   51864   12092   4888    7305  
++51   51033   15008   10661    4901  
++52   49025   17361   11738    10806  
++53   46499   19574   10162    6755  
++54   42745   20680   14744    12740  
++55   39443   20768   14612    12623  
++56   34468   19668   10417    8219  
++57   30581   18082   14588    14308  
++58   26526   16226   12334    13320  
++59   22529   14446   8780    6639  
++60   18798   12029   4594    5090  
++61   15404   10159   6120    6213  
++62   12494   8013   5971    5804  
++63   9911   6383   5107    5009  
++64   7681   5036   4148    3978  
++65   5773   3914   3389    3347  
++66   4592   2808   2581    2355  
++67   3277   2263   1913    1860  
++68   2450   1594   1376    1365  
++69   1795   1167   1016    1006  
++70   1261   759   770    749  
++71   925   551   497    505  
++72   617   367   362    322  
++73   430   283   239    226  
++74   308   140   179    180  
++75   182   132   101    112  
++76   131   96   89    81  
++77   78   50   39    39  
++78   45   40   41    33  
++79   31   18   26    14  
++80   21   9   13    10  
++81   14   6   7    10  
++82   10   4   5    7  
++83   4   4   4    3  
++84   2   3   2    0  
++85   2   2   1    1  
++86   0   0   1    1  
++87   0   1   0    0  
++88   0   0   1    0  
++89   0   1   0    0  
+ 90   0   0   0    0  
+ 91   0   0   0    0  
+ 92   0   0   0    0  
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/poisson.pdf b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/poisson.pdf
+index d29881b..05afd20 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/poisson.pdf and b/java-code/projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/poisson.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/plot.gnuplot b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/plot.gnuplot
+index 6637abc..b62624d 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/plot.gnuplot
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/plot.gnuplot
+@@ -10,9 +10,9 @@ set yrange[0:25000]
+ set ytics ("0" 0, "5" 5000, "10" 10000, "15"15000, "20" 20000, "25" 25000)
+ 
+ set output 'projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.pdf'
+-plot "projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.dat" using 5 title "Fixed Queue Bounds" w l ls 7 lw 6, \
+-            '' using 4 title "Greedy (optimal)" w l ls 9 lw 6, \
++plot "projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.dat" using 5 title "Fixed Queue Bounds" w l ls 26 lw 6, \
++            '' using 4 title "Greedy (optimal)" w l ls 2 lw 6, \
+             '' using 3 title "SP-PIFO" w l ls 3 lw 6, \
+             '' using 2 title "FIFO" w l ls 8 lw 6, \
+-            '' using 6 title "XIFO" w l ls 5 lw 6
++            '' using 6 title "XIFO" w l ls 9 lw 6
+ 
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.dat b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.dat
+index b95f53e..63ebb32 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.dat
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.dat
+@@ -1,101 +1,101 @@
+ #  FIFO    SPPIFO  SPPIFOFIXED Fixed_queue_bounds XIFO
+ 0   0   0   0   0   0 
+-1   6091   63   76   87   79 
+-2   7674   116   80   169   140 
+-3   8414   152   66   0   143 
+-4   8691   147   55   79   125 
+-5   9101   132   93   146   88 
+-6   9037   130   54   0   115 
+-7   9276   119   59   89   120 
+-8   9414   103   79   184   124 
+-9   9431   96   88   0   116 
+-10   9476   62   71   97   103 
+-11   9561   51   75   162   120 
+-12   9438   57   66   0   134 
+-13   9714   54   77   89   141 
+-14   9775   41   124   197   137 
+-15   9595   26   62   0   127 
+-16   9674   23   91   96   147 
+-17   9722   17   110   213   131 
+-18   9735   14   100   0   155 
+-19   9607   27   96   118   131 
+-20   9718   22   114   222   165 
+-21   9795   29   91   0   153 
+-22   9880   18   111   126   160 
+-23   9887   36   123   241   165 
+-24   9800   27   113   0   168 
+-25   9987   24   107   125   190 
+-26   9819   34   157   238   161 
+-27   9818   21   123   0   178 
+-28   9710   35   148   162   184 
+-29   9682   33   140   299   189 
+-30   9785   38   112   0   205 
+-31   9848   38   139   169   201 
+-32   9847   49   203   323   200 
+-33   9877   36   139   0   245 
+-34   9811   42   204   190   235 
+-35   9821   55   243   360   237 
+-36   9932   45   167   0   216 
+-37   9949   69   236   235   250 
+-38   9962   61   287   397   260 
+-39   9896   51   200   0   268 
+-40   9865   58   292   219   298 
+-41   10034   76   319   447   303 
+-42   9805   88   272   0   271 
+-43   9937   90   326   243   306 
+-44   9746   93   408   503   328 
+-45   9816   91   321   0   286 
+-46   10010   119   384   270   347 
+-47   9848   109   452   573   404 
+-48   10056   112   370   0   422 
+-49   9875   113   455   353   358 
+-50   9844   158   571   623   394 
+-51   9751   150   499   0   418 
+-52   9925   206   557   399   455 
+-53   9849   209   643   699   476 
+-54   9787   227   582   0   474 
+-55   9947   236   643   375   519 
+-56   9899   242   768   783   554 
+-57   10108   278   631   0   539 
+-58   10033   342   746   517   592 
+-59   10082   330   808   1023   642 
+-60   9864   372   840   0   675 
+-61   9919   445   975   597   676 
+-62   10108   444   864   1156   762 
+-63   10021   539   962   0   730 
+-64   9962   618   1094   709   806 
+-65   10034   643   1051   1302   826 
+-66   9834   722   1020   0   951 
+-67   10016   775   1396   874   977 
+-68   9841   906   1134   1556   1034 
+-69   9965   908   1182   0   1073 
+-70   9896   935   1598   1091   1202 
+-71   9896   1081   1343   1890   1152 
+-72   10068   1181   1415   0   1298 
+-73   9904   1309   1785   1342   1344 
+-74   10054   1421   1591   2109   1522 
+-75   9831   1467   1901   0   1527 
+-76   9930   1681   2073   1568   1646 
+-77   9770   1724   1745   2584   1730 
+-78   9772   1941   2073   0   1866 
+-79   9764   2006   2234   1843   1949 
+-80   9963   2231   2408   2844   1995 
+-81   9972   2402   2423   0   2210 
+-82   9926   2497   2493   2263   2199 
+-83   9704   2707   2617   3379   2369 
+-84   9979   2744   2720   0   2423 
+-85   9986   2990   2942   2587   2578 
+-86   9874   3030   2979   3686   2614 
+-87   9993   3214   2678   0   2617 
+-88   10055   3538   3070   2737   2831 
+-89   10042   3546   3216   3983   2734 
+-90   10054   3550   3137   0   2911 
+-91   10066   3772   2986   2878   2937 
+-92   9864   3931   2808   4068   2814 
+-93   10081   4029   2772   0   2768 
+-94   9989   4028   2930   1753   2656 
+-95   10112   4338   2956   2746   2757 
+-96   10068   4228   2608   3286   2744 
+-97   10019   4226   3033   3671   2232 
+-98   9996   4363   3741   3855   2258 
+-99   10027   4343   4131   4094   3153 
++1   6171   74   75   78   72 
++2   7701   137   87   158   147 
++3   8227   157   24   0   153 
++4   8689   147   50   83   126 
++5   8726   143   89   178   115 
++6   9116   130   50   0   109 
++7   9042   104   69   80   110 
++8   9303   82   106   160   123 
++9   9343   66   48   0   114 
++10   9454   62   73   99   102 
++11   9627   59   103   199   135 
++12   9505   36   79   0   131 
++13   9672   30   66   86   141 
++14   9659   38   107   187   117 
++15   9665   35   89   0   128 
++16   9626   27   73   100   131 
++17   9829   30   104   215   144 
++18   9625   23   85   0   129 
++19   9662   23   80   112   154 
++20   9661   16   90   237   136 
++21   9830   22   127   0   162 
++22   9682   26   91   121   179 
++23   9821   27   150   245   162 
++24   9853   23   126   0   168 
++25   9710   29   87   135   189 
++26   9856   34   150   271   197 
++27   9884   36   146   0   180 
++28   9845   34   154   167   217 
++29   9794   35   160   300   192 
++30   9940   38   178   0   201 
++31   9948   44   156   168   183 
++32   9869   41   176   316   196 
++33   10108   51   187   0   242 
++34   9722   41   187   181   224 
++35   9908   55   165   355   241 
++36   9797   53   255   0   247 
++37   9901   55   228   198   256 
++38   9853   58   236   416   267 
++39   9929   62   274   0   256 
++40   9964   58   316   236   259 
++41   9674   69   234   461   297 
++42   9899   87   302   0   290 
++43   9926   86   360   245   316 
++44   9921   113   298   468   314 
++45   9906   96   373   0   315 
++46   9945   106   404   280   377 
++47   10093   121   376   543   387 
++48   9818   145   426   0   384 
++49   9878   151   554   331   402 
++50   10068   177   461   616   422 
++51   9981   186   520   0   440 
++52   9964   188   654   373   427 
++53   9820   226   520   739   448 
++54   9974   234   559   0   519 
++55   9926   264   739   442   469 
++56   9699   282   589   805   508 
++57   10076   295   689   0   568 
++58   9980   330   774   495   652 
++59   9876   366   715   919   593 
++60   9929   441   769   0   685 
++61   9909   494   1008   605   698 
++62   10037   492   777   1050   749 
++63   9994   546   932   0   807 
++64   9869   629   1155   750   869 
++65   9838   668   1133   1233   934 
++66   10086   716   1120   0   926 
++67   9908   809   1170   862   955 
++68   10094   887   1295   1468   1074 
++69   9993   945   1384   0   1102 
++70   9676   1074   1463   1087   1153 
++71   10023   1107   1434   1831   1215 
++72   10060   1223   1584   0   1349 
++73   9933   1421   1741   1237   1401 
++74   10007   1492   1598   2156   1433 
++75   9915   1630   1851   0   1578 
++76   9994   1680   2148   1499   1608 
++77   10029   1844   1841   2471   1703 
++78   10046   2029   2090   0   1858 
++79   9819   2139   2372   1951   1954 
++80   10015   2217   2398   2898   2119 
++81   10037   2334   2381   0   2096 
++82   9988   2564   2639   2260   2320 
++83   9946   2642   2567   3451   2429 
++84   10007   2862   2584   0   2364 
++85   10031   2871   3030   2602   2533 
++86   10054   3034   2969   3769   2719 
++87   9918   3311   2812   0   2785 
++88   9988   3254   3033   2855   2812 
++89   10057   3521   3265   3932   3031 
++90   9898   3569   3191   0   3025 
++91   9837   3713   3002   2968   2871 
++92   10124   3859   3051   4022   2878 
++93   10038   3919   2680   0   2682 
++94   9952   4063   2741   1811   2704 
++95   10084   4235   2978   2834   2631 
++96   9886   4209   2759   3361   2684 
++97   10064   4155   3066   3760   2423 
++98   9821   4357   3675   3974   2152 
++99   9764   4344   4039   4172   2896 
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.pdf b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.pdf
+index 8789c8a..b096935 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.pdf and b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/uniform32.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/plot.gnuplot b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/plot.gnuplot
+index 1de48c8..8bf93f9 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/plot.gnuplot
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/plot.gnuplot
+@@ -10,9 +10,9 @@ set yrange[0:25000]
+ set ytics ("0" 0, "5" 5000, "10" 10000, "15"15000, "20" 20000, "25" 25000)
+ 
+ set output 'projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/uniform.pdf'
+-plot "projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/uniform.dat" using 5 title "Fixed Queue Bounds" w l ls 7 lw 6, \
+-            '' using 4 title "Greedy (optimal)" w l ls 9 lw 6, \
++plot "projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/uniform.dat" using 5 title "Fixed Queue Bounds" w l ls 26 lw 6, \
++            '' using 4 title "Greedy (optimal)" w l ls 2 lw 6, \
+             '' using 3 title "SP-PIFO" w l ls 3 lw 6, \
+             '' using 2 title "FIFO" w l ls 8 lw 6, \
+-            '' using 6 title "XIFO" w l ls 5 lw 6
++            '' using 6 title "XIFO" w l ls 9 lw 6
+ 
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/uniform.dat b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/uniform.dat
+index 890cb24..943c3fe 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/uniform.dat
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/uniform.dat
+@@ -1,101 +1,101 @@
+ #  FIFO    SPPIFO  Greedy Fixed_queue_bounds XIFO
+ 0   0   0   0   0   0  
+-1   3183   123   104   83   83  
+-2   5038   185   182   164   209  
+-3   6246   287   258   250   285  
+-4   6883   339   328   342   357  
+-5   7579   456   392   404   418  
+-6   7565   509   449   567   498  
+-7   8033   607   521   541   606  
+-8   8212   640   584   702   682  
+-9   8359   725   655   716   694  
+-10   8404   704   761   813   751  
+-11   8566   750   675   959   735  
+-12   8770   762   181   0   629  
+-13   8745   809   151   108   498  
+-14   8711   860   259   218   379  
+-15   8887   843   319   345   392  
+-16   8914   791   460   455   421  
+-17   8772   851   557   556   488  
+-18   8833   808   692   641   542  
+-19   8928   852   732   804   621  
+-20   8716   809   879   900   760  
+-21   8903   824   981   922   874  
+-22   8923   827   968   1017   807  
+-23   9052   886   819   1191   863  
+-24   9042   893   415   1240   806  
+-25   8985   809   312   0   713  
+-26   9016   787   413   180   656  
+-27   8987   823   581   363   581  
+-28   9248   801   779   475   598  
+-29   9173   813   851   704   697  
+-30   9148   832   1023   753   768  
+-31   8961   834   1123   1019   843  
+-32   9161   959   1225   1095   933  
+-33   9163   919   1354   1181   1068  
+-34   9270   910   1320   1382   1091  
+-35   9215   983   1175   1453   1152  
+-36   9274   975   731   1656   1131  
+-37   8991   1022   623   0   1014  
+-38   9080   1019   709   266   969  
+-39   9288   1136   908   556   927  
+-40   9190   1146   1108   818   903  
+-41   9123   1260   1336   1014   993  
+-42   9114   1233   1523   1250   1116  
+-43   9215   1309   1694   1473   1211  
+-44   9340   1378   1782   1553   1401  
+-45   9244   1467   1793   1815   1590  
+-46   9135   1515   1737   2029   1616  
+-47   9082   1549   1645   2159   1689  
+-48   9226   1695   1322   2343   1678  
+-49   9280   1784   1058   2384   1562  
+-50   9287   1889   1261   0   1540  
+-51   9190   2044   1494   499   1390  
+-52   9139   2062   1878   935   1449  
+-53   9407   2178   2071   1364   1546  
+-54   9315   2278   2286   1719   1715  
+-55   9310   2404   2448   2062   1883  
+-56   9259   2435   2547   2265   2146  
+-57   9364   2552   2471   2446   2208  
+-58   9297   2689   2546   2746   2602  
+-59   9306   2854   2406   2962   2591  
+-60   9202   2855   2395   3179   2583  
+-61   9351   2982   2074   3280   2510  
+-62   9548   3117   2115   0   2424  
+-63   9501   3324   2604   965   2364  
+-64   9397   3390   2897   1669   2240  
+-65   9331   3537   3114   2406   2297  
+-66   9328   3633   3413   2814   2656  
+-67   9257   3868   3715   3428   2963  
+-68   9263   3873   3639   3719   3249  
+-69   9180   3983   3787   3953   3646  
+-70   9199   4154   3830   4331   3824  
+-71   9240   4322   3768   4724   3875  
+-72   9190   4252   3726   4766   3971  
+-73   9428   4555   3438   5108   3966  
+-74   9429   4617   3156   5083   3610  
+-75   9131   4781   3692   0   3390  
+-76   9445   4748   4108   1608   3167  
+-77   9318   5060   4374   2647   3231  
+-78   9281   5131   4798   3524   3392  
+-79   9286   5018   4803   4027   3849  
+-80   9296   5276   4764   4625   4289  
+-81   9287   5490   4707   4921   4721  
+-82   9281   5589   4745   5242   4985  
+-83   9044   5550   4434   5554   5187  
+-84   9307   5565   4097   5807   5481  
+-85   9146   5746   3912   5970   5303  
+-86   9349   5845   2917   6201   4782  
+-87   9260   5818   2761   0   4038  
+-88   9343   5716   3367   1531   3259  
+-89   9358   5970   3964   2766   2888  
+-90   9296   6053   4347   3327   3061  
+-91   9263   5983   4821   3890   3389  
+-92   9388   6233   5022   4231   3869  
+-93   9244   6105   5196   4424   4252  
+-94   9395   6075   5210   4740   4475  
+-95   9297   6183   5518   4767   4697  
+-96   9329   6046   5576   5111   4957  
+-97   9305   6149   5613   5195   5023  
+-98   9271   6138   5784   5376   5353  
+-99   9205   6159   5882   5401   5328  
++1   3121   90   77   82   75  
++2   5152   200   184   161   158  
++3   6180   292   244   264   240  
++4   7184   358   358   326   352  
++5   7266   441   406   394   441  
++6   7759   518   479   543   503  
++7   8165   562   523   543   589  
++8   8313   644   628   643   664  
++9   8483   661   683   727   732  
++10   8527   727   766   828   773  
++11   8686   709   679   874   700  
++12   8644   763   250   0   669  
++13   8547   809   127   129   549  
++14   8940   841   215   224   500  
++15   8849   819   372   345   368  
++16   8898   827   448   481   383  
++17   8889   822   577   561   433  
++18   8831   812   644   707   549  
++19   9178   820   746   761   612  
++20   8946   797   826   832   786  
++21   8998   871   969   993   852  
++22   9021   786   1073   1043   844  
++23   8976   833   845   1145   855  
++24   8953   885   572   1222   849  
++25   9103   806   319   0   818  
++26   9152   823   420   167   651  
++27   9241   846   591   372   615  
++28   9088   814   696   508   618  
++29   9151   888   800   636   621  
++30   9157   860   985   876   759  
++31   9160   937   1064   923   867  
++32   9060   842   1193   1076   931  
++33   9189   910   1293   1212   1114  
++34   9074   981   1300   1343   1058  
++35   9046   961   1151   1496   1136  
++36   9107   940   940   1496   1155  
++37   9177   1081   665   0   1093  
++38   9215   1137   614   282   1028  
++39   9080   1082   894   512   921  
++40   9390   1170   1062   785   1011  
++41   9086   1263   1317   977   1008  
++42   9138   1364   1454   1251   1126  
++43   9267   1314   1630   1371   1208  
++44   9153   1437   1755   1592   1309  
++45   9362   1476   1800   1815   1498  
++46   9404   1509   1678   1913   1647  
++47   9121   1606   1604   2109   1636  
++48   9167   1777   1484   2307   1735  
++49   9188   1804   1303   2457   1597  
++50   9180   1951   1204   0   1546  
++51   9255   2035   1441   477   1525  
++52   9142   2082   1713   871   1505  
++53   9342   2137   2015   1318   1604  
++54   9361   2256   2226   1592   1703  
++55   9017   2468   2346   1932   1767  
++56   9325   2543   2486   2239   2098  
++57   9094   2620   2490   2521   2271  
++58   9246   2738   2538   2739   2407  
++59   9323   2833   2477   3014   2411  
++60   9181   2894   2425   3208   2660  
++61   9045   3039   2288   3422   2537  
++62   9240   3106   2230   0   2415  
++63   9049   3406   2352   903   2385  
++64   9286   3368   2949   1672   2359  
++65   9156   3519   3211   2293   2511  
++66   9267   3594   3147   2773   2620  
++67   9372   3848   3604   3222   2908  
++68   9420   3994   3597   3817   3251  
++69   9293   4038   3703   4127   3429  
++70   9227   4101   3717   4353   3688  
++71   9356   4321   3702   4507   4064  
++72   9214   4456   3675   4679   4124  
++73   9294   4460   3639   5000   3974  
++74   9241   4749   3447   5359   3767  
++75   9434   4774   3595   0   3571  
++76   9244   5004   3895   1544   3300  
++77   9329   4913   4300   2787   3152  
++78   9196   5101   4743   3422   3396  
++79   9204   5151   4885   4114   3742  
++80   9490   5312   4922   4697   4135  
++81   9417   5449   4807   5033   4453  
++82   9314   5362   4484   5365   4957  
++83   9233   5580   4438   5639   5215  
++84   9347   5489   3918   5819   5491  
++85   9093   5826   3556   6138   5320  
++86   9324   5690   3150   6193   4866  
++87   9128   5874   2814   0   4290  
++88   9276   5890   3269   1577   3637  
++89   9187   5866   3893   2603   3094  
++90   9273   5914   4460   3432   3107  
++91   9392   5918   4730   3791   3451  
++92   9239   6038   4986   4402   3794  
++93   9207   5968   5208   4637   4236  
++94   9203   6176   5313   4767   4680  
++95   9493   6205   5579   4911   4780  
++96   9456   6039   5664   5124   5066  
++97   9270   6144   5611   5168   5208  
++98   9145   6152   5799   5337   5289  
++99   9288   6113   5907   5469   5240  
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/uniform.pdf b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/uniform.pdf
+index 8e08bc3..aa33ab5 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/uniform.pdf and b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/uniform.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/plot.gnuplot b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/plot.gnuplot
+index 69d06db..b8922cf 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/plot.gnuplot
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/plot.gnuplot
+@@ -12,8 +12,8 @@ set ytics ("0" 0, "10" 1000000, "20" 2000000, "30" 3000000, "40" 4000000, "50" 5
+ set xrange[20:90]
+ 
+ set output 'projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.pdf'
+-plot "projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.dat" using 1:4 title "Greedy (optimal)" w lp ls 29 lw 6, \
++plot "projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.dat" using 1:4 title "Greedy (optimal)" w lp ls 2 lw 6, \
+              '' using 1:3 title "SP-PIFO" w lp ls 23 lw 6, \
+              '' using 1:2 title "FIFO" w lp ls 28 lw 6, \
+-             '' using 1:5 title "XIFO" w lp ls 24 lw 6
++             '' using 1:5 title "XIFO" w lp ls 29 lw 6
+ 
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.dat b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.dat
+index 0a24b38..20e259e 100644
+--- a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.dat
++++ b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.dat
+@@ -1,6 +1,6 @@
+ #  FIFO    SPPIFO  Greedy   XIFO
+-20   343003   79264   107849   66376
+-40   787277   196281   204394   167054
+-60   1275228   349114   321421   290838
+-80   2092871   667221   533272   518638
+-90   2493161   922882   678336   678838
++20   343133   78895   107634   65601
++40   787490   196448   205523   168344
++60   1275168   349379   322629   293423
++80   2093252   664155   535353   520446
++90   2493058   926567   678085   681634
+diff --git a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.pdf b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.pdf
+index d51034b..776ab27 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.pdf and b/java-code/projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/utilization.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/plot.gnuplot b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/plot.gnuplot
+index fc7a552..0738dba 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/plot.gnuplot
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/plot.gnuplot
+@@ -1,5 +1,5 @@
+ load 'projects/sppifo/plots/spectral.pal'
+-midnight = "#D53E4F"; aqua = "#F46D43"; ocean = "#FDAE61"; wave = "#66C2A5"; stone = "#ABDDA4"; foam = "#3288BD"
++midnight = "#D53E4F"; aqua = "#F46D43"; ocean = "#FDAE61"; wave = "#66C2A5"; stone = '#00CC66'; foam = "#3288BD"
+ 
+ set terminal pdfcairo
+ set term pdfcairo enhanced font "Helvetica,16" size 4in,2.5in
+@@ -22,7 +22,7 @@ plot "projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairn
+             '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
+             '' using 3 title "DCTCP" w lp ls 27 lw 4, \
+             '' using 2 title "TCP"  w lp ls 28 lw 4, \
+-            '' using 7 title "XIFO" w lp ls 24 lw 4
++            '' using 7 title "XIFO" w lp ls 9 lw 4
+ 
+ ########################################################################################################################
+ # Mean flow completion time <100KB: pFabric-based scheduling schemes
+@@ -40,7 +40,7 @@ plot "projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairn
+            '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
+            '' using 3 title "DCTCP" w lp ls 27 lw 4, \
+            '' using 2 title "TCP"  w lp ls 28 lw 4, \
+-           '' using 7 title "XIFO" w lp ls 24 lw 4
++           '' using 7 title "XIFO" w lp ls 9 lw 4
+ 
+ 
+ ########################################################################################################################
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_32.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_32.dat
+index e737cf4..b8b8f9c 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_32.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_32.dat
+@@ -1,8 +1,8 @@
+ #    TCP    DCTCP    AFQ_32    SPPIFOWFQ_32    PIFOWFQ_32    XIFOWFQ_32
+-4000   1.8628884926435691    1.0909895111427217    0.6151046137440759    0.525509172985782    0.43630135355450234    0.5907824919431279
+-6000   2.8859517150127227    1.5394009799872934    0.8337792838996507    0.6861433447619047    0.5620939104761905    0.7596586704761905
+-10000   4.051084489795919    1.9904306051196965    1.0679996441601518    0.862367140488036    0.7011619393508647    0.9337027448471926
+-15000   5.251350927679404    2.5413070317725754    1.3598740464166357    1.0913764612100965    0.8940027691165553    1.1706995860404676
+-22500   6.779566340538089    3.21927523063036    1.7336498761075236    1.4853518532812735    1.2095955916866745    1.5411707855320427
+-37000   8.819339351856259    4.148471636643026    2.3665478693342776    2.2100111390791026    1.828946653927813    2.265126490795374
+-60000   11.869212043108789    5.488112631236823    3.617169026405825    3.689286238747039    3.1477597063359917    3.7785836904720127
++4000   1.8628884926435691    1.0909895111427217    0.6151046137440759    0.525509172985782    0.43630135355450234    0.6445631118483411
++6000   2.8859517150127227    1.5394009799872934    0.8337792838996507    0.6861433447619047    0.5620939104761905    0.8283969714285714
++10000   4.051084489795919    1.9904306051196965    1.0679996441601518    0.862367140488036    0.7011619393508647    1.0097219957356076
++15000   5.251350927679404    2.5413070317725754    1.3598740464166357    1.0913764612100965    0.8940027691165553    1.303573575937616
++22500   6.779566340538089    3.21927523063036    1.7336498761075236    1.4853518532812735    1.2095955916866745    1.7216099981984687
++37000   8.819339351856259    4.148471636643026    2.3665478693342776    2.2100111390791026    1.828946653927813    2.5009999519480517
++60000   11.869212043108789    5.488112631236823    3.617169026405825    3.689286238747039    3.1477597063359917    4.043940827937177
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_32.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_32.pdf
+index 1bdd73a..5b5e5bb 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_32.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_32.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_8.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_8.dat
+index 4aaaa2f..ceee39f 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_8.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_8.dat
+@@ -1,8 +1,8 @@
+ #    TCP    DCTCP    AFQ_8    SPPIFOWFQ_8    PIFOWFQ_8   XIFOWFQ_8
+-4000   1.8628884926435691    1.0909895111427217    0.6116996597156398    0.525509172985782    0.4389059251184834    0.6310494213270142
+-6000   2.8859517150127227    1.5394009799872934    0.8230958072403938    0.6861433447619047    0.5722579095238096    0.8129299911111111
+-10000   4.051084489795919    1.9904306051196965    1.0571815065150438    0.862367140488036    0.7225939928926794    0.9936526555318645
+-15000   5.251350927679404    2.5413070317725754    1.3235048804307463    1.0913764612100965    0.9319502260579065    1.245159295450325
+-22500   6.779566340538089    3.21927523063036    1.6881001019825772    1.4893081330330329    1.282012803541948    1.6387701763027482
+-37000   8.819339351856259    4.148471636643026    2.3027666731972145    2.2122241451498703    1.9645094792256848    2.3758449707271008
+-60000   11.869212043108789    5.488112631236823    3.529519270414876    3.6887852275916506    3.4053527246033832    3.9083970141339655
++4000   1.8628884926435691    1.0909895111427217    0.6116996597156398    0.525509172985782    0.4389059251184834    0.685571706635071
++6000   2.8859517150127227    1.5394009799872934    0.8230958072403938    0.6861433447619047    0.5722579095238096    0.8785071546522706
++10000   4.051084489795919    1.9904306051196965    1.0571815065150438    0.862367140488036    0.7225939928926794    1.056557172903837
++15000   5.251350927679404    2.5413070317725754    1.3235048804307463    1.0913764612100965    0.9319502260579065    1.3383926927218714
++22500   6.779566340538089    3.21927523063036    1.6881001019825772    1.4893081330330329    1.282012803541948    1.7656212950007506
++37000   8.819339351856259    4.148471636643026    2.3027666731972145    2.2122241451498703    1.9645094792256848    2.636547049621928
++60000   11.869212043108789    5.488112631236823    3.529519270414876    3.6887852275916506    3.4053527246033832    4.2758234160301996
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_8.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_8.pdf
+index 3b73ebc..a361ec2 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_8.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_8.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_split_mean_fct_ms_32.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_split_mean_fct_ms_32.dat
+index bd1ecb4..d9100a5 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_split_mean_fct_ms_32.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_split_mean_fct_ms_32.dat
+@@ -1,8 +1,8 @@
+ #    TCP    DCTCP    AFQ_32    SPPIFOWFQ_32    PIFOWFQ_32    XIFOWFQ_32
+-2M+   187.07726945643154    669.3630769700004    187.07726945643154    176.77510307025642   654.06637379   176.77510307025642    227.52664934450323    719.519968    227.52664934450323   195.93952298859315   685.1111021999994    195.93952298859315    177.86467461848827    633.3829570300002   177.86467461848827    194.40910430069928    664.1028406000004    194.40910430069928 
+-200K-1M   48.45097573076923    177.69244284999994    48.45097573076923    35.85569543420074   172.1902627900006   35.85569543420074    43.756908509248774    141.33438912    43.756908509248774   37.841920208910516   157.69495350000014    37.841920208910516    33.013308443578325    133.56144146000014   33.013308443578325    37.014477226542056    142.26252723999997    37.014477226542056 
+-80K   16.241296020263423    35.137597279999994    16.241296020263423    7.805070129909366   16.604989920000005   7.805070129909366    6.201508106212425    14.00967258    6.201508106212425   5.635244605210421   16.235059109999995    5.635244605210421    4.820961989    15.25818626   4.820961989    5.562692071071071    14.496606659999992    5.562692071071071 
+-50K   12.785107817425084    27.664550719999998    12.785107817425084    6.085361183471075   12.564365979999998   6.085361183471075    3.8702411463951565    8.48661808    3.8702411463951565   3.5940840016510736   10.762253399999999    3.5940840016510736    2.9787068401098904    8.008649129999993   2.9787068401098904    3.6142465052226496    10.143723159999993    3.6142465052226496 
+-30K   9.918453880714287    21.806500030000002    9.918453880714287    4.653147778561354   9.552185419999994   4.653147778561354    2.418205147286822    5.2573094999999945    2.418205147286822   2.2713249541284406   6.166822799999984    2.2713249541284406    1.8295998408450702    4.85365525   1.8295998408450702    2.333731221438646    6.598882929999997    2.333731221438646 
+-20K   8.423749257489302    18.551799230000004    8.423749257489302    3.9062617627478753   7.599570400000003   3.9062617627478753    1.788605795903955    4.155202399999999    1.788605795903955   1.6697144230225989   4.768774849999998    1.6697144230225989    1.2963726814971752    3.3917624499999977   1.2963726814971752    1.727931697740113    4.7460212499999965    1.727931697740113 
+-10K   6.12611326300578    13.99958671    6.12611326300578    2.7292844257142854   5.432191239999998   2.7292844257142854    0.79254125    2.0637589299999974    0.79254125   0.9104766257142858   2.9443742    0.9104766257142858    0.7038249428571429    1.7680001899999997   0.7038249428571429    1.0138297571428572    2.9878943599999994    1.0138297571428572 
++2M+   187.07726945643154    669.3630769700004    187.07726945643154    176.77510307025642   654.06637379   176.77510307025642    227.52664934450323    719.519968    227.52664934450323   195.93952298859315   685.1111021999994    195.93952298859315    177.86467461848827    633.3829570300002   177.86467461848827    199.53039297642545    691.54765688    199.53039297642545 
++200K-1M   48.45097573076923    177.69244284999994    48.45097573076923    35.85569543420074   172.1902627900006   35.85569543420074    43.756908509248774    141.33438912    43.756908509248774   37.841920208910516   157.69495350000014    37.841920208910516    33.013308443578325    133.56144146000014   33.013308443578325    38.580454931332085    155.68028788000004    38.580454931332085 
++80K   16.241296020263423    35.137597279999994    16.241296020263423    7.805070129909366   16.604989920000005   7.805070129909366    6.201508106212425    14.00967258    6.201508106212425   5.635244605210421   16.235059109999995    5.635244605210421    4.820961989    15.25818626   4.820961989    5.893424599198397    16.71755631    5.893424599198397 
++50K   12.785107817425084    27.664550719999998    12.785107817425084    6.085361183471075   12.564365979999998   6.085361183471075    3.8702411463951565    8.48661808    3.8702411463951565   3.5940840016510736   10.762253399999999    3.5940840016510736    2.9787068401098904    8.008649129999993   2.9787068401098904    3.902509780165289    11.93456485999998    3.902509780165289 
++30K   9.918453880714287    21.806500030000002    9.918453880714287    4.653147778561354   9.552185419999994   4.653147778561354    2.418205147286822    5.2573094999999945    2.418205147286822   2.2713249541284406   6.166822799999984    2.2713249541284406    1.8295998408450702    4.85365525   1.8295998408450702    2.653555957746479    8.844542029999998    2.653555957746479 
++20K   8.423749257489302    18.551799230000004    8.423749257489302    3.9062617627478753   7.599570400000003   3.9062617627478753    1.788605795903955    4.155202399999999    1.788605795903955   1.6697144230225989   4.768774849999998    1.6697144230225989    1.2963726814971752    3.3917624499999977   1.2963726814971752    1.9129471716101696    6.794008799999987    1.9129471716101696 
++10K   6.12611326300578    13.99958671    6.12611326300578    2.7292844257142854   5.432191239999998   2.7292844257142854    0.79254125    2.0637589299999974    0.79254125   0.9104766257142858   2.9443742    0.9104766257142858    0.7038249428571429    1.7680001899999997   0.7038249428571429    1.2377200057142856    4.07458599    1.2377200057142856 
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_split_mean_fct_ms_32.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_split_mean_fct_ms_32.pdf
+index 6d8d134..9b5f050 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_split_mean_fct_ms_32.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_split_mean_fct_ms_32.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_sppifo_fct_queue_effect.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_sppifo_fct_queue_effect.pdf
+index b5e38cb..4262c28 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_sppifo_fct_queue_effect.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_sppifo_fct_queue_effect.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_xifo_fct_queue_effect.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_xifo_fct_queue_effect.dat
+index 8710dc3..5d03060 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_xifo_fct_queue_effect.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_xifo_fct_queue_effect.dat
+@@ -1,5 +1,5 @@
+ #   PIFOWFQ_32    XIFOWFQ_8  XIFOWFQ_16  XIFOWFQ_24  XIFOWFQ_32
+-3600   12.01884820051635    12.597835827833572    12.62682390011481    12.610198824390244    12.578281984487218  
+-7000   18.506625185541466    20.074410838512033    20.121214288778635    20.015781330462705    20.046507007150154  
+-11100   28.27668930627237    31.096382607058153    30.65565838170616    30.503652970911503    30.30979101270383  
+-19000   40.38953376576148    42.16008428599976    41.78133034326464    41.34294553103449    41.558570421746495  
++3600   12.01884820051635    12.575063267431851    12.657285314113597    12.667254573314203    12.679170628013777  
++7000   18.506625185541466    20.046320753502627    20.19313136514886    20.253458645617616    20.29437633284714  
++11100   28.27668930627237    30.986904343776704    31.310471790662362    31.31120087100142    31.133422874561152  
++19000   40.38953376576148    42.720672046555386    42.58196136339377    42.60089971341168    42.58648009333899  
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_xifo_fct_queue_effect.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_xifo_fct_queue_effect.pdf
+index 549edd2..1b7d1f1 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_xifo_fct_queue_effect.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairness_xifo_fct_queue_effect.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
+index 3ae65eb..9c852f4 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
+@@ -565,7 +565,7 @@ if __name__ == '__main__':
+         row = row + 1
+ 
+     w = open('projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/buffer_reduction_effect.dat', 'w')
+-    w.write("#     25%   50%   75%  \n")
++    w.write("#     25   50   75  \n")
+     w.write("4000   %s    %s   %s   \n" % (FCTs[0][0], FCTs[0][1], FCTs[0][2]))
+     w.write("6000   %s    %s   %s   \n" % (FCTs[1][0], FCTs[1][1], FCTs[1][2]))
+     w.write("10000   %s    %s   %s   \n" % (FCTs[2][0], FCTs[2][1], FCTs[2][2]))
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/buffer_reduction_effect.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/buffer_reduction_effect.dat
+index 528522c..8ae79e7 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/buffer_reduction_effect.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/buffer_reduction_effect.dat
+@@ -1,4 +1,4 @@
+-#     25%   50%   75%  
++#     25   50   75  
+ 4000   1.6507390105534105    1.4091108815653965   1.4091108815653965   
+ 6000   1.3642974025402201    1.3583920906318823   1.3583920906318823   
+ 10000   1.4478540524489796    1.4409248567493114   1.4409248567493114   
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_buffer_reduction_effect.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_buffer_reduction_effect.pdf
+index dc024c3..055b566 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_buffer_reduction_effect.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_buffer_reduction_effect.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_geq_1MB_mean_fct_ms.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_geq_1MB_mean_fct_ms.dat
+index 130ed97..c3bb190 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_geq_1MB_mean_fct_ms.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_geq_1MB_mean_fct_ms.dat
+@@ -1,8 +1,8 @@
+ #      TCP    DCTCP    PIFO    SPPIFO    XIFO
+-4000   60.73462071    56.42773763366336    32.7296482815534    41.16888860576923    57.645943367924524    
+-6000   64.7206141547619    60.970811787356325    35.567686412429374    34.862537740113    37.672793828729276    
+-10000   72.0819403800738    65.27036154578754    38.752591749128925    38.294713721254354    34.20492018685121    
+-15000   87.38105418925831    77.26973233418367    42.29433591509434    42.317502247641514    35.79619817096019    
+-22500   114.60454279385172    103.46780298046181    48.965172339477725    49.38394594316436    40.53440417754173    
+-37000   160.1736240493827    152.28155050122248    60.67388499023438    62.06878653470186    50.6468528063279    
+-60000   231.6609933541867    227.43412687279843    88.16259890642544    90.73937279396985    75.53276813167702    
++4000   60.73462071    56.42773763366336    32.7296482815534    41.16888860576923    49.41647341904762    
++6000   64.7206141547619    60.970811787356325    35.567686412429374    34.862537740113    34.21454685393258    
++10000   72.0819403800738    65.27036154578754    38.752591749128925    38.294713721254354    36.50906469310345    
++15000   87.38105418925831    77.26973233418367    42.29433591509434    42.317502247641514    37.954484873536295    
++22500   114.60454279385172    103.46780298046181    48.965172339477725    49.38394594316436    43.13364591793313    
++37000   160.1736240493827    152.28155050122248    60.67388499023438    62.06878653470186    52.894621938342965    
++60000   231.6609933541867    227.43412687279843    88.16259890642544    90.73937279396985    80.19873025358255    
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_geq_1MB_mean_fct_ms.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_geq_1MB_mean_fct_ms.pdf
+index f135276..e0c5980 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_geq_1MB_mean_fct_ms.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_geq_1MB_mean_fct_ms.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_99th_fct_ms.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_99th_fct_ms.dat
+index 6e2d874..5316ebd 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_99th_fct_ms.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_99th_fct_ms.dat
+@@ -1,8 +1,8 @@
+ #      TCP    DCTCP    PIFO    SPPIFO    XIFO
+-4000   5.091522150000021    0.6503197399999996    0.42210745999999966    0.4673077299999996    1.0856288899999962    
+-6000   5.7056875    0.8302753499999991    0.46692024999999926    0.49402604999999983    1.09500365    
+-10000   6.839014000000002    0.9934315200000005    0.5055805    0.52365405    1.136666    
+-15000   8.157497829999997    1.1860783399999943    0.52555044    0.5182456    1.11562274    
+-22500   9.063732049999993    1.4690441399999992    0.5353592000000006    0.5417352000000006    1.1217791000000006    
+-37000   10.169307839999998    1.9539743899999846    0.5489110599999998    0.5808226800000004    1.1004796400000034    
+-60000   11.782759649999997    2.6074660099999996    0.5588241199999999    0.62544185    1.0750669099999997    
++4000   5.091522150000021    0.6503197399999996    0.42210745999999966    0.4673077299999996    0.7270399799999986    
++6000   5.7056875    0.8302753499999991    0.46692024999999926    0.49402604999999983    0.6695926399999994    
++10000   6.839014000000002    0.9934315200000005    0.5055805    0.52365405    0.7031765    
++15000   8.157497829999997    1.1860783399999943    0.52555044    0.5182456    0.66017706    
++22500   9.063732049999993    1.4690441399999992    0.5353592000000006    0.5417352000000006    0.6371451199999996    
++37000   10.169307839999998    1.9539743899999846    0.5489110599999998    0.5808226800000004    0.6121164000000006    
++60000   11.782759649999997    2.6074660099999996    0.5588241199999999    0.62544185    0.5915895899999999    
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_99th_fct_ms.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_99th_fct_ms.pdf
+index 2da15c9..79d75c7 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_99th_fct_ms.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_99th_fct_ms.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_mean_fct_ms.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_mean_fct_ms.dat
+index 77a42d5..1e1c4c0 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_mean_fct_ms.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_mean_fct_ms.dat
+@@ -1,8 +1,8 @@
+ #      TCP    DCTCP    PIFO    SPPIFO    XIFO
+-4000   0.686869245272525    0.15522459377604889    0.08947173040578099    0.09190584213451918    0.17890665091717622    
+-6000   0.9840569341405248    0.20573486271994135    0.10882097543988269    0.10852116092375366    0.1908569853372434    
+-10000   1.4120028349020042    0.2739084920441989    0.1337123630538062    0.12481245437472382    0.22578476544028284    
+-15000   1.8697092917593006    0.33813449523598493    0.1537047553340716    0.13666106851236617    0.23700109385615126    
+-22500   2.401689828904475    0.4202681251046644    0.16972158529860665    0.15104653123922998    0.24553539953719658    
+-37000   3.1632818241084637    0.5478231639492209    0.18740887173396675    0.1703792211263794    0.2528686394611013    
+-60000   4.027976861632531    0.7332980239152969    0.2020097992600814    0.18855945396026783    0.25099056871739855    
++4000   0.686869245272525    0.15522459377604889    0.08947173040578099    0.09190584213451918    0.12394062173429683    
++6000   0.9840569341405248    0.20573486271994135    0.10882097543988269    0.10852116092375366    0.13898406303829944    
++10000   1.4120028349020042    0.2739084920441989    0.1337123630538062    0.12481245437472382    0.1583781184399514    
++15000   1.8697092917593006    0.33813449523598493    0.1537047553340716    0.13666106851236617    0.16566360725097837    
++22500   2.401689828904475    0.4202681251046644    0.16972158529860665    0.15104653123922998    0.17427138868649075    
++37000   3.1632818241084637    0.5478231639492209    0.18740887173396675    0.1703792211263794    0.1809987952010103    
++60000   4.027976861632531    0.7332980239152969    0.2020097992600814    0.18855945396026783    0.18701281965151123    
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_mean_fct_ms.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_mean_fct_ms.pdf
+index 415a177..94080e2 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_mean_fct_ms.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_less_100KB_mean_fct_ms.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_mean_throughput.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_mean_throughput.dat
+index 33cc34e..2e4765a 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_mean_throughput.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_mean_throughput.dat
+@@ -1,8 +1,8 @@
+ #      TCP    DCTCP    PIFO    SPPIFO    XIFO
+-4000   60.73462071    0.20583286120358366    0.23729857643156707    0.2464476374283573    0.2164171037411452    
+-6000   64.7206141547619    0.16844691834572909    0.2047007693278355    0.21439274080157614    0.1881066005719898    
+-10000   72.0819403800738    0.12575907875777978    0.16891788701625    0.1813395524777696    0.15699423016127448    
+-15000   87.38105418925831    0.09904906247677837    0.1475611419059327    0.16123404530063914    0.13960946491208864    
+-22500   114.60454279385172    0.07537555267124278    0.1281661725895273    0.14070066657042207    0.1255525218389438    
+-37000   160.1736240493827    0.051879424282854344    0.10990233109406643    0.1198327547242336    0.11040720207422328    
+-60000   231.6609933541867    0.034413370002910094    0.09595496827016764    0.10246294076445196    0.09960983751038185    
++4000   60.73462071    0.20583286120358366    0.23729857643156707    0.2464476374283573    0.22910524619890982    
++6000   64.7206141547619    0.16844691834572909    0.2047007693278355    0.21439274080157614    0.20177468172143218    
++10000   72.0819403800738    0.1257590787577798    0.16891788701625    0.1813395524777696    0.17023143733917698    
++15000   87.38105418925831    0.09904906247677837    0.1475611419059327    0.16123404530063914    0.15563823383147402    
++22500   114.60454279385172    0.07537555267124278    0.12816617258952728    0.1407006665704221    0.13954254250275902    
++37000   160.1736240493827    0.051879424282854344    0.10990233109406641    0.1198327547242336    0.1243022988098922    
++60000   231.6609933541867    0.034413370002910094    0.09595496827016764    0.10246294076445198    0.11182117545835812    
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_mean_throughput.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_mean_throughput.pdf
+index 1365330..4f8228a 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_mean_throughput.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_mean_throughput.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_packet_drop.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_packet_drop.dat
+index 7e34598..216baed 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_packet_drop.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_packet_drop.dat
+@@ -1,8 +1,8 @@
+ #    TCP     PIFO    SPPIFO    XIFO
+-4000    0.00148    0.16996    0.23538    0.50358
+-6000    0.01124    0.12014    0.29762    0.76745
+-10000    0.04798    0.06363    0.43656    1.15636
+-15000    0.1095    0.03975    0.64838    1.53708
+-22500    0.24062    0.01788    1.00015    1.96951
+-37000    0.53833    0.01543    1.69496    2.70499
+-60000    1.27007    0.0519    2.54645    3.73603
++4000    0.00148    0.16996    0.23538    0.42102
++6000    0.01124    0.12014    0.29762    0.6004
++10000    0.04798    0.06363    0.43656    0.8731
++15000    0.1095    0.03975    0.64838    1.16945
++22500    0.24062    0.01788    1.00015    1.56595
++37000    0.53833    0.01543    1.69496    2.2472
++60000    1.27007    0.0519    2.54645    3.35913
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_packet_drop.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_packet_drop.pdf
+index b668d15..da48542 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_packet_drop.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/pFabric_packet_drop.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_geq_1MB_mean_fct_ms.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_geq_1MB_mean_fct_ms.dat
+index bf4eab5..468418a 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_geq_1MB_mean_fct_ms.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_geq_1MB_mean_fct_ms.dat
+@@ -1,8 +1,8 @@
+ #    TCP    DCTCP    PIFO    SPPIFO   XIFO
+-3600   41.82640720788177    39.8623869410609    37.60170879452055    36.44873668066406    35.71456752872444  
+-5200   54.85173084289618    50.98464786122449    46.34330021045485    46.085312188858694    42.42871787373396  
+-7000   68.52395075865634    63.26303194915254    57.35120517322432    57.528249945156325    50.8587379964557  
+-8900   83.90809213636363    79.231978758936    66.70525031116688    69.13946403059514    59.11145691502463  
+-11100   108.69245629459843    103.00413153352355    73.784382828892    79.30304880793764    67.21313400446735  
+-14150   141.01146232888198    133.64250197846738    79.88620858398382    86.07554915204679    73.60482788378684  
+-19000   177.80964145228572    178.42001121180252    89.39275455229532    95.32480114829899    80.26781114500942  
++3600   41.82640720788177    39.8623869410609    37.60170879452055    36.44873668066406    35.86724447851562  
++5200   54.85173084289618    50.98464786122449    46.34330021045485    46.085312188858694    44.297170549257764  
++7000   68.52395075865634    63.26303194915254    57.35120517322432    57.528249945156325    53.30129941047813  
++8900   83.90809213636363    79.231978758936    66.70525031116688    69.13946403059514    62.23593915413223  
++11100   108.69245629459843    103.00413153352355    73.784382828892    79.30304880793764    69.77621805859917  
++14150   141.01146232888198    133.64250197846738    79.88620858398382    86.07554915204679    75.54048360125857  
++19000   177.80964145228572    178.42001121180252    89.39275455229532    95.32480114829899    84.91753477287814  
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_geq_1MB_mean_fct_ms.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_geq_1MB_mean_fct_ms.pdf
+index 2976beb..278fc44 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_geq_1MB_mean_fct_ms.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_geq_1MB_mean_fct_ms.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_99th_fct_ms.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_99th_fct_ms.dat
+index 3c6599c..077e60c 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_99th_fct_ms.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_99th_fct_ms.dat
+@@ -1,8 +1,8 @@
+ #    TCP    DCTCP    PIFO    SPPIFO    XIFO
+-3600   13.671238760000003    2.7348623899999995    1.3212201399999992    1.430376669999996    4.201566579999988    
+-5200   15.983365270000014    3.4101889399999967    1.420755    1.6787045    3.817337069999996    
+-7000   18.2789362    4.190028909999999    1.4490979499999999    1.7940581399999986    3.6624701699999997    
+-8900   20.956832879999993    4.933801499999991    1.5163334199999998    1.9684562699999995    3.2188366000000013    
+-11100   23.70900895000001    6.476139980000008    1.5643998399999994    2.112039679999999    3.161651679999997    
+-14150   27.82587207999995    9.79302508    1.7642773400000034    2.2615749199999993    3.0484563199999974    
+-19000   36.48242807999983    17.69209232    1.8919990500000001    2.3642376500000015    3.031978939999991    
++3600   13.671238760000003    2.7348623899999995    1.3212201399999992    1.430376669999996    1.6232537499999966    
++5200   15.983365270000014    3.4101889399999967    1.420755    1.6787045    1.7430922299999991    
++7000   18.2789362    4.190028909999999    1.4490979499999999    1.7940581399999986    1.8848734299999994    
++8900   20.956832879999993    4.933801499999991    1.5163334199999998    1.9684562699999995    2.0038400199999984    
++11100   23.70900895000001    6.476139980000008    1.5643998399999994    2.112039679999999    2.1049137499999997    
++14150   27.82587207999995    9.79302508    1.7642773400000034    2.2615749199999993    2.219366550000005    
++19000   36.48242807999983    17.69209232    1.8919990500000001    2.3642376500000015    2.376113050000004    
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_99th_fct_ms.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_99th_fct_ms.pdf
+index 86eb312..bce6e04 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_99th_fct_ms.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_99th_fct_ms.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_mean_fct_ms.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_mean_fct_ms.dat
+index 534258f..6a4ba0c 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_mean_fct_ms.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_mean_fct_ms.dat
+@@ -1,8 +1,8 @@
+ #    TCP    DCTCP    PIFO    SPPIFO   XIFO 
+-3600   1.8628884926435691    0.5345507933649289    0.38434471469194315    0.4133309582938388    0.8434194393364929  
+-5200   2.8859517150127227    0.6833043647619048    0.4381963471913678    0.49077804411298004    0.8677746979034308  
+-7000   4.051084489795919    0.8560758372809095    0.4801942977261961    0.5493565754203174    0.9179069036001894  
+-8900   5.251350927679404    1.072103591719272    0.5227445437847866    0.6126936185528757    0.9354534873793615  
+-11100   6.779566340538089    1.4155680631847516    0.5673085207677312    0.6771586255810467    0.9694319548657969  
+-14150   8.819339351856259    2.036474642359882    0.6081421541539186    0.7362011675300212    0.9924214507357269  
+-19000   11.869212043108789    3.309417792934163    0.6392537386522347    0.7917626128666201    1.0042527735288982  
++3600   1.8628884926435691    0.5345507933649289    0.38434471469194315    0.4133309582938388    0.4868697682464455  
++5200   2.8859517150127227    0.6833043647619048    0.4381963471913678    0.49077804411298004    0.5551958042512691  
++7000   4.051084489795919    0.8560758372809095    0.4801942977261961    0.5493565754203174    0.6006446361913784  
++8900   5.251350927679404    1.072103591719272    0.5227445437847866    0.6126936185528757    0.645558317625232  
++11100   6.779566340538089    1.4155680631847516    0.5673085207677312    0.6771586255810467    0.6824759271364318  
++14150   8.819339351856259    2.036474642359882    0.6081421541539186    0.7362011675300212    0.7096650680160038  
++19000   11.869212043108789    3.309417792934163    0.6392537386522347    0.7917626128666201    0.7306042535789106  
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_mean_fct_ms.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_mean_fct_ms.pdf
+index 3833160..8313f74 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_mean_fct_ms.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_less_100KB_mean_fct_ms.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_mean_throughput.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_mean_throughput.dat
+index f9edf43..08b2831 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_mean_throughput.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_mean_throughput.dat
+@@ -1,8 +1,8 @@
+ #    TCP    DCTCP    PIFO    SPPIFO   XIFO
+-3600   0.4663388143897891    0.523913458884071    0.578677240185205    0.5730421320547208    0.4653938375463034  
+-5200   0.3562705661810204    0.4380182469748231    0.5216956832933082    0.504875283160932    0.4194181026157705  
+-7000   0.262246273136643    0.3560326423449406    0.460955842693887    0.43759041938862103    0.3783356526320329  
+-8900   0.19567106298067022    0.28861147802610065    0.414094001080227    0.38586362735579094    0.34991991720987253  
+-11100   0.13969655755604066    0.2241655870573355    0.37786105609350934    0.34452340570181555    0.3257794876318507  
+-14150   0.09307317672803592    0.16327863898095124    0.3445653247235552    0.30800526084894897    0.2998045430120309  
+-19000   0.05853048684733741    0.10677550278822631    0.314333183189149    0.27396754442500093    0.2737839178474624  
++3600   0.4663388143897891    0.523913458884071    0.578677240185205    0.5730421320547208    0.5404554121969591  
++5200   0.3562705661810204    0.4380182469748231    0.5216956832933082    0.504875283160932    0.4860580998441971  
++7000   0.262246273136643    0.3560326423449406    0.460955842693887    0.43759041938862103    0.4353240509586531  
++8900   0.19567106298067025    0.28861147802610054    0.414094001080227    0.3858636273557909    0.39761567960787214  
++11100   0.13969655755604066    0.2241655870573355    0.3778610560935093    0.34452340570181555    0.368864712823181  
++14150   0.09307317672803593    0.16327863898095124    0.3445653247235552    0.30800526084894897    0.3429731984599345  
++19000   0.0585304868473374    0.10677550278822631    0.314333183189149    0.27396754442500093    0.31561101032671224  
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_mean_throughput.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_mean_throughput.pdf
+index 76fecdf..aaec447 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_mean_throughput.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_mean_throughput.pdf differ
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_packet_drop.dat b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_packet_drop.dat
+index a9442d3..7847b7a 100644
+--- a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_packet_drop.dat
++++ b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_packet_drop.dat
+@@ -1,8 +1,8 @@
+ #    TCP     PIFO    SPPIFO    XIFO
+-3600    0.00605    0.08218    0.49549    0.8315
+-5200    0.02949    0.03848    0.68276    1.2932
+-7000    0.06867    0.01815    0.9035    1.73788
+-8900    0.13977    0.00857    1.27596    2.19437
+-11100    0.30545    0.00491    1.8727    2.77703
+-14150    0.67689    0.01192    2.7899    3.57403
+-19000    1.52274    0.06793    4.31093    4.74257
++3600    0.00605    0.08218    0.49549    0.72382
++5200    0.02949    0.03848    0.68276    1.0878
++7000    0.06867    0.01815    0.9035    1.45375
++8900    0.13977    0.00857    1.27596    1.86301
++11100    0.30545    0.00491    1.8727    2.44063
++14150    0.67689    0.01192    2.7899    3.27827
++19000    1.52274    0.06793    4.31093    4.7405
+diff --git a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_packet_drop.pdf b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_packet_drop.pdf
+index fc324f2..4bac7a3 100644
+Binary files a/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_packet_drop.pdf and b/java-code/projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/pFabric_packet_drop.pdf differ
+diff --git a/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/XIFO.properties b/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/XIFO.properties
+index 8275d8f..0038acd 100644
+--- a/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/XIFO.properties
++++ b/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/XIFO.properties
+@@ -25,7 +25,7 @@ output_port=xifo
+ output_port_number_queues=8
+ output_port_max_size_per_queue_packets=10
+ sliding_window_size = 256
+-
++buffer_reduction=25
+ # Link
+ link=perfect_simple
+ link_delay_ns=20
+diff --git a/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/XIFO.properties b/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/XIFO.properties
+index 691bf37..7a0b59d 100644
+--- a/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/XIFO.properties
++++ b/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/exponential/XIFO.properties
+@@ -25,7 +25,7 @@ output_port=xifo
+ output_port_number_queues=8
+ output_port_max_size_per_queue_packets=10
+ sliding_window_size = 256
+-
++buffer_reduction=25
+ # Link
+ link=perfect_simple
+ link_delay_ns=20
+diff --git a/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/XIFO.properties b/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/XIFO.properties
+index 68d9d1c..c4926d5 100644
+--- a/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/XIFO.properties
++++ b/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/inverse_exponential/XIFO.properties
+@@ -25,7 +25,7 @@ output_port=xifo
+ output_port_number_queues=8
+ output_port_max_size_per_queue_packets=10
+ sliding_window_size = 256
+-
++buffer_reduction=25
+ # Link
+ link=perfect_simple
+ link_delay_ns=20
+diff --git a/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/XIFO.properties b/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/XIFO.properties
+index a78920d..c48ee0e 100644
+--- a/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/XIFO.properties
++++ b/java-code/projects/sppifo/runs/sppifo_analysis/alternative_distributions/poisson/XIFO.properties
+@@ -25,7 +25,7 @@ output_port=xifo
+ output_port_number_queues=8
+ output_port_max_size_per_queue_packets=10
+ sliding_window_size = 256
+-
++buffer_reduction=25
+ # Link
+ link=perfect_simple
+ link_delay_ns=20
+diff --git a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/XIFO_32.properties b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/XIFO_32.properties
+index 419d4fe..9b7ab63 100644
+--- a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/XIFO_32.properties
++++ b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/XIFO_32.properties
+@@ -25,7 +25,7 @@ output_port=xifo
+ output_port_number_queues=32
+ output_port_max_size_per_queue_packets=10
+ sliding_window_size = 256
+-
++buffer_reduction=25
+ # Link
+ link=perfect_simple
+ link_delay_ns=20
+diff --git a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/XIFO.properties b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/XIFO.properties
+index 2f1457c..8d061e9 100644
+--- a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/XIFO.properties
++++ b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/XIFO.properties
+@@ -25,7 +25,7 @@ output_port=xifo
+ output_port_number_queues=8
+ output_port_max_size_per_queue_packets=10
+ sliding_window_size = 256
+-
++buffer_reduction=25
+ # Link
+ link=perfect_simple
+ link_delay_ns=20
+diff --git a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_20.properties b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_20.properties
+index 1678fb0..c6e4fab 100644
+--- a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_20.properties
++++ b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_20.properties
+@@ -25,7 +25,7 @@ output_port=xifo
+ output_port_number_queues=8
+ output_port_max_size_per_queue_packets=10
+ sliding_window_size = 256
+-
++buffer_reduction=25
+ # Link
+ link=perfect_simple
+ link_delay_ns=20
+diff --git a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_40.properties b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_40.properties
+index 4957607..261f38b 100644
+--- a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_40.properties
++++ b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_40.properties
+@@ -25,7 +25,7 @@ output_port=xifo
+ output_port_number_queues=8
+ output_port_max_size_per_queue_packets=10
+ sliding_window_size = 256
+-
++buffer_reduction=25
+ # Link
+ link=perfect_simple
+ link_delay_ns=20
+diff --git a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_60.properties b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_60.properties
+index b645288..7995c6b 100644
+--- a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_60.properties
++++ b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_60.properties
+@@ -25,7 +25,7 @@ output_port=xifo
+ output_port_number_queues=8
+ output_port_max_size_per_queue_packets=10
+ sliding_window_size = 256
+-
++buffer_reduction=25
+ # Link
+ link=perfect_simple
+ link_delay_ns=20
+diff --git a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_80.properties b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_80.properties
+index 5ce0803..54f9eb1 100644
+--- a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_80.properties
++++ b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_80.properties
+@@ -25,7 +25,7 @@ output_port=xifo
+ output_port_number_queues=8
+ output_port_max_size_per_queue_packets=10
+ sliding_window_size = 256
+-
++buffer_reduction=25
+ # Link
+ link=perfect_simple
+ link_delay_ns=20
+diff --git a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_90.properties b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_90.properties
+index be3833a..b7ab028 100644
+--- a/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_90.properties
++++ b/java-code/projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_90.properties
+@@ -25,7 +25,7 @@ output_port=xifo
+ output_port_number_queues=8
+ output_port_max_size_per_queue_packets=10
+ sliding_window_size = 256
+-
++buffer_reduction=25
+ # Link
+ link=perfect_simple
+ link_delay_ns=20
+diff --git a/java-code/run.sh b/java-code/run.sh
+index 9ddb7fb..c819129 100755
+--- a/java-code/run.sh
++++ b/java-code/run.sh
+@@ -47,14 +47,14 @@ mvn clean compile assembly:single
+ # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/uniform_rank_distribution/utilization/XIFO_90.properties
+ 
+ # #/* Analyze and plot */
+-# python3 projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/analyze.py
+-# gnuplot projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/plot.gnuplot
++python3 projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/analyze.py
++gnuplot projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_8_queues/plot.gnuplot
+ 
+-# python3 projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/analyze.py
+-# gnuplot projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/plot.gnuplot
++python3 projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/analyze.py
++gnuplot projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/uniform_32_queues/plot.gnuplot
+ 
+-# python3 projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/analyze.py
+-# gnuplot projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/plot.gnuplot
++python3 projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/analyze.py
++gnuplot projects/sppifo/plots/sppifo_analysis/uniform_rank_distribution/utilization/plot.gnuplot
+ 
+ # /* Figure 6: SP-PIFO performance (alternative distributions) */
+ 
+@@ -83,11 +83,11 @@ mvn clean compile assembly:single
+ # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_analysis/alternative_distributions/convex/XIFO.properties 
+ 
+ # # /* Analyze and plot */
+-# python3 projects/sppifo/plots/sppifo_analysis/alternative_distributions/analyze.py
+-# gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/plot.gnuplot
+-# gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/plot.gnuplot
+-# gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/plot.gnuplot
+-# gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/plot.gnuplot
++python3 projects/sppifo/plots/sppifo_analysis/alternative_distributions/analyze.py
++gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/exponential/plot.gnuplot
++gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/inverse_exponential/plot.gnuplot
++gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/poisson/plot.gnuplot
++gnuplot projects/sppifo/plots/sppifo_analysis/alternative_distributions/convex/plot.gnuplot
+ 
+ #/* Figure 7: pFabric: FCT statistics across different flow sizes in data mining workload */
+ 
+@@ -134,8 +134,8 @@ mvn clean compile assembly:single
+ # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/XIFO.properties 
+ 
+ #/* Analyze and plot */
+-# python3 projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
+-# gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/plot.gnuplot
++python3 projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
++gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/plot.gnuplot
+ 
+ #/* Figure 8: pFabric: FCT statistics across different flow sizes in web search workload */
+ 
+@@ -182,8 +182,8 @@ mvn clean compile assembly:single
+ # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/web_search_workload/19000/XIFO.properties
+ 
+ #/* Analyze and plot */
+-# python3 projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/analyze.py
+-# gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/plot.gnuplot
++python3 projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/analyze.py
++gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/web_search_workload/plot.gnuplot
+ 
+ # #/* Figure 9 and 10: Fairness FCT statistics */
+ 
+@@ -323,37 +323,37 @@ mvn clean compile assembly:single
+ # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/fairness/web_search_workload/queue_analysis/19000/XIFOWFQ_32.properties
+ 
+ #/* Analyze and plot */
+-# python projects/sppifo/plots/sppifo_evaluation/fairness/analyze.py
+-# gnuplot projects/sppifo/plots/sppifo_evaluation/fairness/plot.gnuplot
++python projects/sppifo/plots/sppifo_evaluation/fairness/analyze.py
++gnuplot projects/sppifo/plots/sppifo_evaluation/fairness/plot.gnuplot
+ 
+ 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/buffer_effect/XIFOWFQ_25.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/buffer_effect/XIFOWFQ_50.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/buffer_effect/XIFOWFQ_75.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/buffer_effect/XIFOWFQ_25.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/buffer_effect/XIFOWFQ_50.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/buffer_effect/XIFOWFQ_75.properties 
+ 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/buffer_effect/XIFOWFQ_25.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/buffer_effect/XIFOWFQ_50.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/buffer_effect/XIFOWFQ_75.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/buffer_effect/XIFOWFQ_25.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/buffer_effect/XIFOWFQ_50.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/buffer_effect/XIFOWFQ_75.properties 
+ 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/buffer_effect/XIFOWFQ_25.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/buffer_effect/XIFOWFQ_50.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/buffer_effect/XIFOWFQ_75.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/buffer_effect/XIFOWFQ_25.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/buffer_effect/XIFOWFQ_50.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/buffer_effect/XIFOWFQ_75.properties 
+ 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/buffer_effect/XIFOWFQ_25.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/buffer_effect/XIFOWFQ_50.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/buffer_effect/XIFOWFQ_75.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/buffer_effect/XIFOWFQ_25.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/buffer_effect/XIFOWFQ_50.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/buffer_effect/XIFOWFQ_75.properties 
+ 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/buffer_effect/XIFOWFQ_25.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/buffer_effect/XIFOWFQ_50.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/buffer_effect/XIFOWFQ_75.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/buffer_effect/XIFOWFQ_25.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/buffer_effect/XIFOWFQ_50.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/buffer_effect/XIFOWFQ_75.properties 
+ 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/buffer_effect/XIFOWFQ_25.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/buffer_effect/XIFOWFQ_50.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/buffer_effect/XIFOWFQ_75.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/buffer_effect/XIFOWFQ_25.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/buffer_effect/XIFOWFQ_50.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/buffer_effect/XIFOWFQ_75.properties 
+ 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_25.properties  
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_50.properties 
+-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_75.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_25.properties  
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_50.properties 
++# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_75.properties 
+ 
+ python projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
+ gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/plot.gnuplot
+\ No newline at end of file

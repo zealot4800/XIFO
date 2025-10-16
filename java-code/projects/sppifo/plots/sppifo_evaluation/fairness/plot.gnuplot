@@ -1,5 +1,5 @@
 load 'projects/sppifo/plots/spectral.pal'
-midnight = "#D53E4F"; aqua = "#F46D43"; ocean = "#FDAE61"; wave = "#66C2A5"; stone = "#ABDDA4"; foam = "#3288BD"
+midnight = "#D53E4F"; aqua = "#F46D43"; ocean = "#FDAE61"; wave = "#66C2A5"; stone = '#00CC66'; foam = "#3288BD"
 
 set terminal pdfcairo
 set term pdfcairo enhanced font "Helvetica,16" size 4in,2.5in
@@ -22,7 +22,7 @@ plot "projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairn
             '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
             '' using 3 title "DCTCP" w lp ls 27 lw 4, \
             '' using 2 title "TCP"  w lp ls 28 lw 4, \
-            '' using 7 title "XIFO" w lp ls 24 lw 4
+            '' using 7 title "XIFO" w lp ls 9 lw 4
 
 ########################################################################################################################
 # Mean flow completion time <100KB: pFabric-based scheduling schemes
@@ -40,7 +40,7 @@ plot "projects/sppifo/plots/sppifo_evaluation/fairness/web_search_workload/fairn
            '' using 5 title "SP-PIFO"  w lp ls 23 lw 4, \
            '' using 3 title "DCTCP" w lp ls 27 lw 4, \
            '' using 2 title "TCP"  w lp ls 28 lw 4, \
-           '' using 7 title "XIFO" w lp ls 24 lw 4
+           '' using 7 title "XIFO" w lp ls 9 lw 4
 
 
 ########################################################################################################################
