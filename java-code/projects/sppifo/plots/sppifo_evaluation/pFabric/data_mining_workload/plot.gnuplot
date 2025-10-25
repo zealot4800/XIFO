@@ -10,7 +10,7 @@ set output 'projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload
 
 set xlabel 'Load'
 set xrange [0:6]
-set xtics ("0.2" 0, "0.3" 1, "0.4" 2, "0.5" 3, "0.6" 4, "0.7" 5, "0.8" 6)
+set xtics ("0.2" 0, "0.3" 1, "0.4" 2, "0.5" 3, "0.6" 4, "0.7" 5, "0.5" 6)
 
 set ylabel 'Flow Completion Time (ms)'
 set yrange [0:50]
@@ -99,3 +99,20 @@ plot "projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/buffe
             '' using 4 title "33%" w lp ls 23 lw 4, \
             '' using 2 title "50%" w lp ls 28 lw 4, \
             '' using 5 title "66%" w lp ls 29 lw 4
+
+
+########################################################################################################################
+# Sliding Window Effect: pFabric
+########################################################################################################################
+set output 'projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/sliding_window_effect.pdf'
+
+set xlabel 'Load'
+set ylabel 'Flow Completion Time (ms)'
+set yrange [1:3]
+set ytics auto
+set key opaque left
+plot "projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/sliding_window_effect.dat" using 2 title "W=16" w lp pt 7 ps 0.4 lc rgb "#D53E4F" lw 4, \
+            '' using 3 title "W=32" w lp pt 7 ps 0.4 lc rgb "#F46D43" lw 4, \
+            '' using 4 title "W=64" w lp pt 7 ps 0.4 lc rgb "#FDAE61" lw 4, \
+            '' using 5 title "W=128" w lp pt 7 ps 0.4 lc rgb "#66C2A5" lw 4, \
+            '' using 6 title "W=256" w lp pt 7 ps 0.4 lc rgb "#3288BD" lw 4

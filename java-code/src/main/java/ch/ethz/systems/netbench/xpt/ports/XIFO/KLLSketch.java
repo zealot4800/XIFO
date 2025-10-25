@@ -51,7 +51,7 @@ public class KLLSketch {
     }
 
     private Integer query(double quantile) {
-        int index = (int) (quantile * compactor.size());
+        int index = (int) (quantile * compactor.size()) + 1;
         index = Math.min(index, compactor.size() - 1);
         return compactor.get(index);
     }
@@ -59,7 +59,7 @@ public class KLLSketch {
     private void cacheQuantiles() {
         Collections.sort(compactor);
         quantileBoundaries = new ArrayList<>();
-        for (int i = 1; i < numQueues; i++) {
+        for (int i = 0; i < numQueues; i++) {
             double quantile = (double) i / numQueues;
             quantileBoundaries.add(query(quantile));
         }
@@ -70,11 +70,11 @@ public class KLLSketch {
         if (quantileBoundaries == null || quantileBoundaries.isEmpty()) {
             return numQueues - 1;
         }
-        for (int i = 0; i < quantileBoundaries.size(); i++) {
-            if (value <= quantileBoundaries.get(i)) {
+        for (int i = quantileBoundaries.size() - 1; i >= 0; i--) {
+            if (value >= quantileBoundaries.get(i)) {
                 return i;
             }
         }
-        return numQueues - 1;
+        return 0;
     }
 }
