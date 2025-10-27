@@ -32,7 +32,7 @@ public class WFQXIFOQueue implements Queue {
         this.queueBounds = new HashMap<>();
         this.lock = new ReentrantLock();
         this.ownId = ownNetworkDevice.getIdentifier();
-        this.scheduler = new KLLSketch((int) bufferSize, (int) numQueues, (int) bufferReduction);
+        this.scheduler = new KLLSketch(32, (int) numQueues, (int) bufferReduction);
         this.lastFinishTime = new HashMap<>();
         this.round = 0;
 
