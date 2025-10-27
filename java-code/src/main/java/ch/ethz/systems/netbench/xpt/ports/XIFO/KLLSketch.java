@@ -8,7 +8,7 @@ import java.util.List;
 public class KLLSketch {
     private final int capacity;
     private final int numQueues;
-    private final int bufferReduction;
+    private final int bufferReductionPercent;
     private List<Integer> compactor;
     private List<Integer> quantileBoundaries;
 
@@ -19,7 +19,7 @@ public class KLLSketch {
     public KLLSketch(int capacity, int numQueues, int bufferReduction) {
         this.capacity = capacity;
         this.numQueues = numQueues;
-        this.bufferReduction = Math.max(1, bufferReduction);
+        this.bufferReductionPercent = Math.max(0, Math.min(100, bufferReduction));
         this.compactor = new ArrayList<>();
         this.quantileBoundaries = null;
     }
@@ -32,20 +32,26 @@ public class KLLSketch {
     }
 
     private void compact() {
-        if (bufferReduction <= 1 || compactor.isEmpty()) {
+        if (bufferReductionPercent <= 0 || compactor.isEmpty()) {
             return;
         }
 
-        List<Integer> newCompactor = new ArrayList<>();
-        for (int i = 0; i < compactor.size(); i += bufferReduction) {
-            int endExclusive = Math.min(i + bufferReduction, compactor.size());
+        int originalSize = compactor.size();
+        int targetSize = (int) Math.round(originalSize * (1.0 - (bufferReductionPercent / 100.0)));
+        int groupSize = (int) Math.ceil((double) originalSize / targetSize);
+        List<Integer> newCompactor = new ArrayList<>(targetSize);
+        for (int i = 0; i < originalSize; i += groupSize) {
+            int endExclusive = Math.min(i + groupSize, originalSize);
             long sum = 0;
             for (int j = i; j < endExclusive; j++) {
                 sum += compactor.get(j);
             }
-            int groupSize = endExclusive - i;
-            int averagedValue = (int) Math.round((double) sum / groupSize);
+            int itemsInGroup = endExclusive - i;
+            int averagedValue = (int) Math.round((double) sum / itemsInGroup);
             newCompactor.add(averagedValue);
+        }
+        if (newCompactor.size() > targetSize) {
+            newCompactor = new ArrayList<>(newCompactor.subList(0, targetSize));
         }
         compactor = newCompactor;
     }
