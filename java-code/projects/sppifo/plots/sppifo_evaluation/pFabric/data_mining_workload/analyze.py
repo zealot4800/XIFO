@@ -565,7 +565,7 @@ if __name__ == '__main__':
         row = row + 1
 
     w = open('projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/buffer_reduction_effect.dat', 'w')
-    w.write("#     25   50   75  \n")
+    w.write("#     25   50   100  \n")
     w.write("4000   %s    %s   %s   \n" % (FCTs[0][0], FCTs[0][1], FCTs[0][2]))
     w.write("6000   %s    %s   %s   \n" % (FCTs[1][0], FCTs[1][1], FCTs[1][2]))
     w.write("10000   %s    %s   %s   \n" % (FCTs[2][0], FCTs[2][1], FCTs[2][2]))

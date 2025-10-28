@@ -327,53 +327,53 @@ mvn clean compile assembly:single
 # gnuplot projects/sppifo/plots/sppifo_evaluation/fairness/plot.gnuplot
 
 
-# #/* Figure 7: pFabric: FCT statistics across different flow sizes in data mining workload */
+#/* Figure 7: pFabric: FCT statistics across different flow sizes in data mining workload */
 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/sliding_window_effect/XIFO_16.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/sliding_window_effect/XIFO_32.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/sliding_window_effect/XIFO_64.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/sliding_window_effect/XIFO_128.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/sliding_window_effect/XIFO_256.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/sliding_window_effect/XIFO_16.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/sliding_window_effect/XIFO_32.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/sliding_window_effect/XIFO_64.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/sliding_window_effect/XIFO_128.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/4000/sliding_window_effect/XIFO_256.properties
 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/sliding_window_effect/XIFO_16.properties 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/sliding_window_effect/XIFO_32.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/sliding_window_effect/XIFO_64.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/sliding_window_effect/XIFO_128.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/sliding_window_effect/XIFO_256.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/sliding_window_effect/XIFO_16.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/sliding_window_effect/XIFO_32.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/sliding_window_effect/XIFO_64.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/sliding_window_effect/XIFO_128.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/6000/sliding_window_effect/XIFO_256.properties
 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/sliding_window_effect/XIFO_16.properties 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/sliding_window_effect/XIFO_32.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/sliding_window_effect/XIFO_64.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/sliding_window_effect/XIFO_128.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/sliding_window_effect/XIFO_256.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/sliding_window_effect/XIFO_16.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/sliding_window_effect/XIFO_32.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/sliding_window_effect/XIFO_64.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/sliding_window_effect/XIFO_128.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/10000/sliding_window_effect/XIFO_256.properties
 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/sliding_window_effect/XIFO_16.properties 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/sliding_window_effect/XIFO_32.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/sliding_window_effect/XIFO_64.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/sliding_window_effect/XIFO_128.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/sliding_window_effect/XIFO_256.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/sliding_window_effect/XIFO_16.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/sliding_window_effect/XIFO_32.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/sliding_window_effect/XIFO_64.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/sliding_window_effect/XIFO_128.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/15000/sliding_window_effect/XIFO_256.properties
 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/sliding_window_effect/XIFO_16.properties 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/sliding_window_effect/XIFO_32.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/sliding_window_effect/XIFO_64.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/sliding_window_effect/XIFO_128.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/sliding_window_effect/XIFO_256.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/sliding_window_effect/XIFO_16.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/sliding_window_effect/XIFO_32.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/sliding_window_effect/XIFO_64.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/sliding_window_effect/XIFO_128.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/22500/sliding_window_effect/XIFO_256.properties
 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/sliding_window_effect/XIFO_16.properties 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/sliding_window_effect/XIFO_32.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/sliding_window_effect/XIFO_64.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/sliding_window_effect/XIFO_128.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/sliding_window_effect/XIFO_256.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/sliding_window_effect/XIFO_16.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/sliding_window_effect/XIFO_32.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/sliding_window_effect/XIFO_64.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/sliding_window_effect/XIFO_128.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/sliding_window_effect/XIFO_256.properties
 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/sliding_window_effect/XIFO_16.properties 
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/sliding_window_effect/XIFO_32.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/sliding_window_effect/XIFO_64.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/sliding_window_effect/XIFO_128.properties
-# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/sliding_window_effect/XIFO_256.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/sliding_window_effect/XIFO_16.properties 
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/sliding_window_effect/XIFO_32.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/sliding_window_effect/XIFO_64.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/sliding_window_effect/XIFO_128.properties
+java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/sliding_window_effect/XIFO_256.properties
 
 # /* Analyze and plot */
-# python3 projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
-# gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/plot.gnuplot
+python3 projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
+gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/plot.gnuplot
 
 #/* Measurement of buffer effect */
 
@@ -402,8 +402,8 @@ mvn clean compile assembly:single
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/37000/buffer_effect/XIFOWFQ_75.properties 
 
 # java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_25.properties  
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_50.properties 
-java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_75.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_50.properties 
+# java -jar -ea NetBench.jar projects/sppifo/runs/sppifo_evaluation/pFabric/data_mining_workload/60000/buffer_effect/XIFOWFQ_75.properties 
 
-python projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
-gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/plot.gnuplot
+# python projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/analyze.py
+# gnuplot projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/plot.gnuplot

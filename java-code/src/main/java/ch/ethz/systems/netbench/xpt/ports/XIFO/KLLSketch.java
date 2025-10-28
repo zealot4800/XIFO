@@ -9,18 +9,14 @@ public class KLLSketch {
     private final int capacity;
     private final int numQueues;
     private final int bufferReductionPercent;
-    private List<Integer> compactor;
+    private final List<Integer> compactor;
     private List<Integer> quantileBoundaries;
-
-    public KLLSketch(int capacity, int numQueues) {
-        this(capacity, numQueues, 1);
-    }
 
     public KLLSketch(int capacity, int numQueues, int bufferReduction) {
         this.capacity = capacity;
         this.numQueues = numQueues;
-        this.bufferReductionPercent = Math.max(0, Math.min(100, bufferReduction));
-        this.compactor = new ArrayList<>();
+        this.bufferReductionPercent = bufferReduction;
+        this.compactor = new ArrayList<>(capacity);
         this.quantileBoundaries = null;
     }
 
@@ -32,28 +28,21 @@ public class KLLSketch {
     }
 
     private void compact() {
-        if (bufferReductionPercent <= 0 || compactor.isEmpty()) {
-            return;
-        }
-
         int originalSize = compactor.size();
         int targetSize = (int) Math.round(originalSize * (1.0 - (bufferReductionPercent / 100.0)));
         int groupSize = (int) Math.ceil((double) originalSize / targetSize);
-        List<Integer> newCompactor = new ArrayList<>(targetSize);
+        List<Integer> newBuffer = new ArrayList<>(targetSize);
         for (int i = 0; i < originalSize; i += groupSize) {
             int endExclusive = Math.min(i + groupSize, originalSize);
             long sum = 0;
             for (int j = i; j < endExclusive; j++) {
                 sum += compactor.get(j);
             }
-            int itemsInGroup = endExclusive - i;
-            int averagedValue = (int) Math.round((double) sum / itemsInGroup);
-            newCompactor.add(averagedValue);
+            int count = endExclusive - i;
+            newBuffer.add((int) Math.round((double) sum / count));
         }
-        if (newCompactor.size() > targetSize) {
-            newCompactor = new ArrayList<>(newCompactor.subList(0, targetSize));
-        }
-        compactor = newCompactor;
+        compactor.clear();
+        compactor.addAll(newBuffer);
     }
 
     private Integer query(double quantile) {

@@ -92,13 +92,12 @@ set output 'projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload
 
 set xlabel 'Load'
 set ylabel 'Flow Completion Time (ms)'
-set yrange [1:3]
+set yrange [0:0.25]
 set ytics auto
 set key opaque
 plot "projects/sppifo/plots/sppifo_evaluation/pFabric/data_mining_workload/buffer_reduction_effect.dat" using 3 title "25%" w lp ls 21 lw 4, \
             '' using 4 title "50%" w lp ls 23 lw 4, \
-            '' using 2 title "75%" w lp ls 28 lw 4, \
-            '' using 5 title "66%" w lp ls 29 lw 4
+            '' using 2 title "75%" w lp ls 28 lw 4
 
 
 ########################################################################################################################
